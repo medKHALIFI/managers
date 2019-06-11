@@ -1,0 +1,616 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddLayer" xml:space="preserve">
+    <value>Voeg Laag Toe</value>
+    <comment>Add Layer</comment>
+  </data>
+  <data name="AddQuery" xml:space="preserve">
+    <value>Nieuwe Query</value>
+    <comment>Add Query</comment>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Afbreken</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>Wis Selectie en Highlight</value>
+    <comment>Clear Selection</comment>
+  </data>
+  <data name="FeatureDetailsGettingFeature" xml:space="preserve">
+    <value>Feature ophalen</value>
+    <comment>Getting Feature</comment>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Exporteer</value>
+    <comment>Export</comment>
+  </data>
+  <data name="ExportQueryResults" xml:space="preserve">
+    <value>Exporteer Query Resultaten</value>
+    <comment>Export Query Results</comment>
+  </data>
+  <data name="ExpressionAddLine" xml:space="preserve">
+    <value>Voeg Regel Toe</value>
+    <comment>Add Line</comment>
+  </data>
+  <data name="ExpressionRemoveLine" xml:space="preserve">
+    <value>Verwijder Regel</value>
+    <comment>Remove Line</comment>
+  </data>
+  <data name="GeoLocatorEmptyRequest" xml:space="preserve">
+    <value>Empty Place</value>
+    <comment>Empty Place</comment>
+  </data>
+  <data name="GotoHomeView" xml:space="preserve">
+    <value>Ga Naar Home View</value>
+    <comment>Go To Home View</comment>
+  </data>
+  <data name="GotoSelection" xml:space="preserve">
+    <value>Ga Naar Selectie</value>
+    <comment>Go To Selection</comment>
+  </data>
+  <data name="HighlightSelectionInMap" xml:space="preserve">
+    <value>Highlight Selectie in Kaart</value>
+    <comment>Highlight Selection in Map</comment>
+  </data>
+  <data name="Layers" xml:space="preserve">
+    <value>Lagen</value>
+    <comment>Layers</comment>
+  </data>
+  <data name="LayersNewLayerServiceProvider" xml:space="preserve">
+    <value>Provider</value>
+    <comment>Provider</comment>
+  </data>
+  <data name="LayersNewLayerServiceProviderGroupType" xml:space="preserve">
+    <value>Type</value>
+    <comment>Type</comment>
+  </data>
+  <data name="LayersNewLayerServiceProviderLayer" xml:space="preserve">
+    <value>Laag</value>
+    <comment>Layer</comment>
+  </data>
+  <data name="MapGoToPreviousWorld" xml:space="preserve">
+    <value>Terug naar Geografische Kaart</value>
+    <comment>Return to Geographic Map</comment>
+  </data>
+  <data name="MapLayersDescriptionFormat" xml:space="preserve">
+    <value>{0} - Lagen</value>
+    <comment>{0} - Layers</comment>
+  </data>
+  <data name="Maps" xml:space="preserve">
+    <value>Kaarten</value>
+    <comment>Maps</comment>
+  </data>
+  <data name="MapsAddMap" xml:space="preserve">
+    <value>Voeg kaart toe</value>
+    <comment>Add a Map</comment>
+  </data>
+  <data name="MapsNewMapServiceProvider" xml:space="preserve">
+    <value>Provider</value>
+    <comment>Provider</comment>
+  </data>
+  <data name="MapsNewMapServiceProviderGroupType" xml:space="preserve">
+    <value>Type</value>
+    <comment>Type</comment>
+  </data>
+  <data name="MapsNewMapServiceProviderMap" xml:space="preserve">
+    <value>Kaart</value>
+    <comment>Base On</comment>
+  </data>
+  <data name="MessageBoxCancel" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="MessageBoxOK" xml:space="preserve">
+    <value>OK</value>
+    <comment>OK</comment>
+  </data>
+  <data name="NoServerAddressInHtmlPage" xml:space="preserve">
+    <value>Er is geen serveradres opgegeven in de Html pagina van deze application</value>
+    <comment>No server address has been specified in the html page of the application</comment>
+  </data>
+  <data name="NoServerAddressInHtmlPageTitle" xml:space="preserve">
+    <value>Geen Serveradres Gevonden</value>
+    <comment>No Server Address Found</comment>
+  </data>
+  <data name="OverviewMapHide" xml:space="preserve">
+    <value>Verberg Overzichtskaart</value>
+    <comment>Hide the mini map</comment>
+  </data>
+  <data name="OverviewMapShow" xml:space="preserve">
+    <value>Toon Overzichtskaart</value>
+    <comment>See the mini map</comment>
+  </data>
+  <data name="PlaceFinderSnapShot" xml:space="preserve">
+    <value>Snapshot</value>
+    <comment>Snapshot</comment>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Printen</value>
+    <comment>Print</comment>
+  </data>
+  <data name="Queries" xml:space="preserve">
+    <value>Queries</value>
+    <comment>Queries</comment>
+  </data>
+  <data name="QueriesNewQueryTableServiceProvider" xml:space="preserve">
+    <value>Provider</value>
+    <comment>Provider</comment>
+  </data>
+  <data name="QueriesNewQueryTableServiceProviderGroupType" xml:space="preserve">
+    <value>Type</value>
+    <comment>From</comment>
+  </data>
+  <data name="QueriesNewQueryTableServiceProviderTable" xml:space="preserve">
+    <value>Tabel</value>
+    <comment>Table</comment>
+  </data>
+  <data name="Query" xml:space="preserve">
+    <value>Query</value>
+    <comment>Query</comment>
+  </data>
+  <data name="QueryCreatingExport" xml:space="preserve">
+    <value>Export wordt gemaakt</value>
+    <comment>Creating Export</comment>
+  </data>
+  <data name="QueryCreatingReport" xml:space="preserve">
+    <value>Rapport wordt gemaakt</value>
+    <comment>Creating Report</comment>
+  </data>
+  <data name="QueryRemoveStringFormat" xml:space="preserve">
+    <value>Weet u zeker dat u de Query {0} wilt verwijderen?</value>
+    <comment>Are you sure you want to remove the Query '{0}'?</comment>
+  </data>
+  <data name="QueryRemoveTitle" xml:space="preserve">
+    <value>Query verwijderen?</value>
+    <comment>Remove Query?</comment>
+  </data>
+  <data name="QuerySelectCurveFromMap" xml:space="preserve">
+    <value>Selecteer een curve op de kaart</value>
+    <comment>Select a curve from the map</comment>
+  </data>
+  <data name="QuerySelectGeometryFromMap" xml:space="preserve">
+    <value>Selecteer een geometrie op de kaart</value>
+    <comment>Select a geometry from the map</comment>
+  </data>
+  <data name="QuerySelectPointFromMap" xml:space="preserve">
+    <value>Selecteer een punt op de kaart</value>
+    <comment>Select a point from the map</comment>
+  </data>
+  <data name="QuerySelectPolygonFromMap" xml:space="preserve">
+    <value>Selecteer een polygoon op de kaart</value>
+    <comment>Select a polygon from the map</comment>
+  </data>
+  <data name="QueryViaExpressionBuilder" xml:space="preserve">
+    <value>Builder</value>
+    <comment>Builder</comment>
+  </data>
+  <data name="RemoveQuery" xml:space="preserve">
+    <value>Verwijder Query</value>
+    <comment>Remove Query</comment>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Rapportages</value>
+    <comment>Report</comment>
+  </data>
+  <data name="ReportQueryResults" xml:space="preserve">
+    <value>Rapporteer Query Resultaten</value>
+    <comment>Report Query Results</comment>
+  </data>
+  <data name="RunQuery" xml:space="preserve">
+    <value>Draai Query</value>
+    <comment>Run Query</comment>
+  </data>
+  <data name="SaveQuery" xml:space="preserve">
+    <value>Bewaar Query</value>
+    <comment>Save Query</comment>
+  </data>
+  <data name="ShowFavorites" xml:space="preserve">
+    <value>Toon Favorieten</value>
+    <comment>Show Favorites</comment>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Afmelden</value>
+    <comment>Sign Out</comment>
+  </data>
+  <data name="SwitchScaleBar" xml:space="preserve">
+    <value>Schaalstok aan/uit</value>
+    <comment>Switch Scalebar</comment>
+  </data>
+  <data name="SwitchUnits" xml:space="preserve">
+    <value>Wissel Units</value>
+    <comment>Switch Units</comment>
+  </data>
+  <data name="TrackSelectionInDetails" xml:space="preserve">
+    <value>Volg Selectie in Details</value>
+    <comment>Track Selection in Details</comment>
+  </data>
+  <data name="TrackSelectionInMap" xml:space="preserve">
+    <value>Volg Selectie in Kaart</value>
+    <comment>Track Selection in Map</comment>
+  </data>
+  <data name="ValueActivationCancel" xml:space="preserve">
+    <value>Stop</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="ValueActivationSelectValue" xml:space="preserve">
+    <value>Spring naar</value>
+    <comment>Jump to</comment>
+  </data>
+  <data name="FeatureDetails" xml:space="preserve">
+    <value>Details</value>
+    <comment>Details</comment>
+  </data>
+  <data name="FeatureDetailsSelectFeatureFromMap" xml:space="preserve">
+    <value>Selecteer een feature op de Kaart</value>
+    <comment>Select a Feature from the Map</comment>
+  </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>Taal wijzigen</value>
+    <comment>Change language</comment>
+  </data>
+  <data name="MapDefaultMode" xml:space="preserve">
+    <value>Standaard Modus</value>
+    <comment>Select Mode</comment>
+  </data>
+  <data name="MapMeasureDimMode" xml:space="preserve">
+    <value>Orthogonaal</value>
+    <comment>Orthogonal</comment>
+  </data>
+  <data name="MapMeasurer" xml:space="preserve">
+    <value>Meten</value>
+    <comment>Measurer</comment>
+  </data>
+  <data name="MapMeasureFreeMode" xml:space="preserve">
+    <value>Enkel</value>
+    <comment>Measure</comment>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Kaart</value>
+    <comment>Map</comment>
+  </data>
+  <data name="MapRemoveStringFormat" xml:space="preserve">
+    <value>Weet u zeker dat u de Kaart {0} wilt verwijderen?</value>
+    <comment>Are you sure you want to remove the Map '{0}'?</comment>
+  </data>
+  <data name="MapRemoveTitle" xml:space="preserve">
+    <value>Kaart verwijderen?</value>
+    <comment>Remove Map?</comment>
+  </data>
+  <data name="FeatureResultListRetrievingCollection" xml:space="preserve">
+    <value>Collectie wordt opgehaald</value>
+    <comment>Retrieving Collection</comment>
+  </data>
+  <data name="FeatureDetailsMultipleFeatures" xml:space="preserve">
+    <value>Meerdere Features</value>
+    <comment>Multiple Features</comment>
+  </data>
+  <data name="FeatureDetailsMultipleFeaturesArea" xml:space="preserve">
+    <value>Totale Oppervlakte</value>
+    <comment>Total Area</comment>
+  </data>
+  <data name="FeatureDetailsMultipleFeaturesLength" xml:space="preserve">
+    <value>Totale Lengte</value>
+    <comment>Total Length</comment>
+  </data>
+  <data name="FeatureDetailsMultipleFeaturesNumberOfElements" xml:space="preserve">
+    <value>Elementen</value>
+    <comment>Elements</comment>
+  </data>
+  <data name="HeterogeneousMainCollectionDescription" xml:space="preserve">
+    <value>Alle</value>
+    <comment>All</comment>
+  </data>
+  <data name="HeterogeneousSubCollectionDescription" xml:space="preserve">
+    <value>{0}</value>
+    <comment>{0}</comment>
+  </data>
+  <data name="TrailPoint" xml:space="preserve">
+    <value>Punt</value>
+    <comment>Point</comment>
+  </data>
+  <data name="TrailCurve" xml:space="preserve">
+    <value>Lijn</value>
+    <comment>Curve</comment>
+  </data>
+  <data name="TrailCircle" xml:space="preserve">
+    <value>Cirkel</value>
+    <comment>Circle</comment>
+  </data>
+  <data name="TrailPolygon" xml:space="preserve">
+    <value>Vlak</value>
+    <comment>Polygon</comment>
+  </data>
+  <data name="TrailRectangle" xml:space="preserve">
+    <value>Rechthoek</value>
+    <comment>Rectangle</comment>
+  </data>
+  <data name="MapTrail" xml:space="preserve">
+    <value>Trail</value>
+    <comment>Trail</comment>
+  </data>
+  <data name="ExpressionBuilderFieldColumn" xml:space="preserve">
+    <value>Veld</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ExpressionBuilderOperatorColumn" xml:space="preserve">
+    <value>Operator</value>
+    <comment>Operator</comment>
+  </data>
+  <data name="ExpressionBuilderValueColumn" xml:space="preserve">
+    <value>Waarde</value>
+    <comment>Value</comment>
+  </data>
+  <data name="FeatureEditInsertCategoryHeader" xml:space="preserve">
+    <value>Nieuwe GeoNote</value>
+    <comment>Insert GeoNote</comment>
+  </data>
+  <data name="MapMeasurerModeCategoryHeader" xml:space="preserve">
+    <value>Meet Modus</value>
+    <comment>Measure Mode</comment>
+  </data>
+  <data name="MapTrailCreateCategoryHeader" xml:space="preserve">
+    <value>Maak Trail</value>
+    <comment>Create Trail</comment>
+  </data>
+  <data name="CopyToClipboardCancel" xml:space="preserve">
+    <value>Annuleer</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="CopyToClipboardOK" xml:space="preserve">
+    <value>OK</value>
+    <comment>OK</comment>
+  </data>
+  <data name="ExportSettings" xml:space="preserve">
+    <value>Export Instellingen</value>
+    <comment>Export Settings</comment>
+  </data>
+  <data name="StreetView" xml:space="preserve">
+    <value>Street View</value>
+    <comment>Street View</comment>
+  </data>
+  <data name="MapTrailActionsCategoryHeader" xml:space="preserve">
+    <value>Trail Acties</value>
+    <comment>Trail Actions</comment>
+  </data>
+  <data name="ClearTrail" xml:space="preserve">
+    <value>Verwijder Trail</value>
+    <comment>Clear Trail</comment>
+  </data>
+  <data name="MapTrailClearAll" xml:space="preserve">
+    <value>Verwijder Alle</value>
+    <comment>Clear All</comment>
+  </data>
+  <data name="TransactionDeleteFailedCaption" xml:space="preserve">
+    <value>Verwijderen Mislukt</value>
+    <comment>Delete Failed</comment>
+  </data>
+  <data name="TransactionDeleteFailedMessage" xml:space="preserve">
+    <value>Verwijderen van feature is mislukt</value>
+    <comment>Deleting the feature failed</comment>
+  </data>
+  <data name="TransactionInsertFailedCaption" xml:space="preserve">
+    <value>Toevoegen mislukt</value>
+    <comment>Insert Failed</comment>
+  </data>
+  <data name="TransactionInsertFailedMessage" xml:space="preserve">
+    <value>Toevoegen van feature is mislukt</value>
+    <comment>Inserting the feature failed</comment>
+  </data>
+  <data name="TransactionUpdateFailedCaption" xml:space="preserve">
+    <value>Wijzigen mislukt</value>
+    <comment>Update Failed</comment>
+  </data>
+  <data name="TransactionUpdateFailedMessage" xml:space="preserve">
+    <value>Wijzigen van feature is mislukt</value>
+    <comment>Updating the feature failed</comment>
+  </data>
+  <data name="TransactionDeleteQuestionCaption" xml:space="preserve">
+    <value>Verwijder Feature</value>
+    <comment>Delete Feature</comment>
+  </data>
+  <data name="TransactionDeleteQuestionMessage" xml:space="preserve">
+    <value>Weet U zeker dat U deze feature wilt verwijderen?</value>
+    <comment>Are you sure you want to delete the feature?</comment>
+  </data>
+  <data name="GeoNoteInsert" xml:space="preserve">
+    <value>Toevoegen GeoNote</value>
+    <comment>Insert GeoNote</comment>
+  </data>
+  <data name="FeatureDetailsAttachNewItem" xml:space="preserve">
+    <value>Koppel nieuw {0}</value>
+    <comment>Attach new {0}</comment>
+  </data>
+  <data name="TypedValueGeometryControlClearToolTip" xml:space="preserve">
+    <value>Verwijder geometrie</value>
+    <comment>Clear geometry</comment>
+  </data>
+  <data name="TypedValueGeometryControlCopyToolTip" xml:space="preserve">
+    <value>Zet van selectie</value>
+    <comment>Set from selection</comment>
+  </data>
+  <data name="TypedValueGeometryControlEditToolTip" xml:space="preserve">
+    <value>Wijzig geometrie</value>
+    <comment>Edit geometry</comment>
+  </data>
+  <data name="TypedValueJoinControlClearToolTip" xml:space="preserve">
+    <value>Verwijder relatie</value>
+    <comment>Clear join</comment>
+  </data>
+  <data name="TypedValueJoinControlCopyToolTip" xml:space="preserve">
+    <value>Zet van selectie</value>
+    <comment>Set from selection</comment>
+  </data>
+  <data name="MapPopupCopyCoordinateToClipboard" xml:space="preserve">
+    <value>Kopieër coordinaat</value>
+    <comment>Copy Coordinate</comment>
+  </data>
+  <data name="MapPopupGotoSelection" xml:space="preserve">
+    <value>Naar geselecteerde features</value>
+    <comment>To Selected Features</comment>
+  </data>
+  <data name="MapPopupClearSelection" xml:space="preserve">
+    <value>Maak Selectie Leeg</value>
+    <comment>Clear Selection</comment>
+  </data>
+  <data name="MapPopupEditGeometrySelection" xml:space="preserve">
+    <value>Wijzig geselecteerde geometrie</value>
+    <comment>Edit Selected Geometry</comment>
+  </data>
+  <data name="MapPopupCreateTrailFromSelection" xml:space="preserve">
+    <value>Maak Trail van Selectie</value>
+    <comment>Create Trail from Selection</comment>
+  </data>
+  <data name="MapPopupRemoveTrail" xml:space="preserve">
+    <value>Verwijder Trail</value>
+    <comment>Remove Trail</comment>
+  </data>
+  <data name="MapPopupObjectProperties" xml:space="preserve">
+    <value>Object Eigenschappen</value>
+    <comment>Object Properties</comment>
+  </data>
+  <data name="PrintTemplateDefault" xml:space="preserve">
+    <value>{0} Standaard Sjabloon</value>
+    <comment>{0} Default Template</comment>
+  </data>
+  <data name="PrintTemplateDefaultWithLegend" xml:space="preserve">
+    <value>{0} Legenda Sjabloon</value>
+    <comment>{0} Legend Template</comment>
+  </data>
+  <data name="PrintTemplateDefaultDescription" xml:space="preserve">
+    <value>Standaard afdruk sjabloon</value>
+    <comment>Default print template</comment>
+  </data>
+  <data name="PrintTemplateDefaultWithLegendDescription" xml:space="preserve">
+    <value>Sjabloon met legenda</value>
+    <comment>Template with legend</comment>
+  </data>
+  <data name="QueriesNewQueryTableServiceProviderGroup" xml:space="preserve">
+    <value>Groep</value>
+    <comment>Group</comment>
+  </data>
+  <data name="MapMeasureDimModeDescription" xml:space="preserve">
+    <value>Meten (Orthogonaal) met WGS84 coördinaten systeem</value>
+    <comment>Measuring (Orthogonal) using WGS84 coordinate system</comment>
+  </data>
+  <data name="MapMeasureFreeModeDescription" xml:space="preserve">
+    <value>Meten met WGS84 coördinaten systeem</value>
+    <comment>Measuring using WGS84 coordinate system</comment>
+  </data>
+</root>

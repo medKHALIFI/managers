@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Lite.LiteProspectosView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:local="clr-namespace:Lite" 
+    xmlns:sfc="http://schemas.spatialeye.com/clienttoolkit"       
+    mc:Ignorable="d" Height="349" Width="336" Background="#FF060649">
+
+    <Grid x:Name="LayoutRoot" Margin="0,0,10,0" Background="{StaticResource SchemeBrush.Background.5}">
+        <TextBox x:Name="txtLatitud" IsHitTestVisible="{Binding DecoratorIsHitTestVisible}" 
+                                		Foreground="{StaticResource SchemeBrush.Text.1}" 
+                                		Background="{StaticResource SchemeBrush.Background.4}" 
+                                		HorizontalAlignment="Right" BorderThickness="0,0,0,0" Padding="4,0,4,0" Margin="0,221,12,0"  OpacityMask="#D8000000" 
+                                        Visibility="{Binding CenterCoordinateViewVisibility}" 
+                                        Text="{Binding MapMarkViewModel.Latitud, Mode=TwoWay, BindsDirectlyToSource=True}"
+                                		ToolTipService.ToolTip="Latitud" Width="212" Height="22" VerticalAlignment="Top" Opacity="0.75"/>
+        <TextBox x:Name="txtLongitud" IsHitTestVisible="{Binding DecoratorIsHitTestVisible}" 
+                                		Foreground="{StaticResource SchemeBrush.Text.1}" 
+                                		Background="{StaticResource SchemeBrush.Background.4}" 
+                                		HorizontalAlignment="Right" BorderThickness="0,0,0,0" Padding="4,0,4,0" Margin="0,250,12,0"  OpacityMask="#D8000000" 
+                                        Visibility="{Binding CenterCoordinateViewVisibility}" 
+                                        Text="{Binding MapMarkViewModel.Longitud, Mode=TwoWay, BindsDirectlyToSource=True}"
+                                		ToolTipService.ToolTip="Longitud" Width="212" Height="19" VerticalAlignment="Top" Opacity="0.75"/>
+        <sdk:Label x:Name="lblLatitud" HorizontalAlignment="Left" Height="23" Margin="5,222,0,0" VerticalAlignment="Top" Width="120" Content="LATITUD:" Foreground="White"/>
+        <sdk:Label x:Name="lblLongitud" HorizontalAlignment="Left" Height="23" Margin="5,250,0,0" VerticalAlignment="Top" Width="120" Content="LONGITUD:" Foreground="White"/>
+        <Button x:Name="cmdAlmacena" Content="ALMACENAR" HorizontalAlignment="Left" Margin="5,278,0,0" VerticalAlignment="Top" Width="97" Click="cmdAlmacena_Click" Opacity="0.75" Foreground="#FF1E75CD"/>
+        <sdk:Label x:Name="lblProspecto" HorizontalAlignment="Left" Height="28" Margin="0,-1,0,0" VerticalAlignment="Top" Width="245" Content="UBICACION  DE PROSPECTO" Foreground="White"/>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="102,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" Opacity="0.75" Foreground="#FF07315B"/>
+        <sdk:Label x:Name="lblNombre" HorizontalAlignment="Left" Height="23" Margin="5,53,0,0" VerticalAlignment="Top" Width="120" Content="NOMBRE:" Foreground="White"/>
+        <Button x:Name="cmdEliminar" Content="ELIMINAR" HorizontalAlignment="Left" Margin="133,278,0,0" VerticalAlignment="Top" Width="78" Click="cmdElimina_Click" Opacity="0.75" Foreground="#FF1E75CD"/>
+        <sdk:Label x:Name="lblTipo" HorizontalAlignment="Left" Height="23" Margin="5,137,0,0" VerticalAlignment="Top" Width="120" Content="TIPO:" Foreground="White"/>
+        <TextBox x:Name="txtPaquete" HorizontalAlignment="Left" Height="23" Margin="102,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" Opacity="0.75" Foreground="#FF07315B"/>
+        <sdk:Label x:Name="lblPaquete" HorizontalAlignment="Left" Height="23" Margin="5,165,0,0" VerticalAlignment="Top" Width="120" Content="PAQUETE:" Foreground="White"/>
+        <sdk:Label x:Name="lblFechaDeteccion" HorizontalAlignment="Left" Height="23" Margin="5,193,0,0" VerticalAlignment="Top" Width="78" Content="FECHA DE DETECCION:" Foreground="White"/>
+        <TextBox x:Name="txtTelefono" HorizontalAlignment="Left" Height="23" Margin="102,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" Opacity="0.75" Foreground="#FF07315B"/>
+        <sdk:Label x:Name="lblTelefono" HorizontalAlignment="Left" Height="23" Margin="5,109,0,0" VerticalAlignment="Top" Width="120" Content="TELEFONO:" Foreground="White"/>
+        <TextBox x:Name="txtDireccion" HorizontalAlignment="Left" Height="23" Margin="102,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" Opacity="0.75" Foreground="#FF07315B"/>
+        <sdk:Label x:Name="lblNombre_Copy4" HorizontalAlignment="Left" Height="23" Margin="5,81,0,0" VerticalAlignment="Top" Width="120" Content="DIRECCION:" Foreground="White"/>
+        <ComboBox x:Name="cboTipo" HorizontalAlignment="Left" Margin="102,137,0,0" VerticalAlignment="Top" Width="212" Height="23" Opacity="0.75" Foreground="#FF07315B"/>
+        <sdk:DatePicker x:Name="dpFecha" HorizontalAlignment="Left" Height="23" Margin="102,193,0,0" VerticalAlignment="Top" Width="212" Opacity="0.75" Foreground="#FF07315B"/>
+        <sdk:Label x:Name="lblIdSw" HorizontalAlignment="Left" Height="23" Margin="5,27,0,0" VerticalAlignment="Top" Width="120" Content="Id:" Foreground="White"/>
+        <TextBox x:Name="txtIdSw" HorizontalAlignment="Left" Height="23" Margin="102,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" Opacity="0.75" Foreground="#FF07315B"/>
+        <Button  x:Name="cmdLimpiar" Content="Limpiar" HorizontalAlignment="Left" Height="20" Margin="238,280,0,0" VerticalAlignment="Top" Width="78" Click="cmdLimpiar_Click" Foreground="#FF2175C9" Opacity="0.75"/>
+        <TextBlock x:Name="lblErrores" Margin="10,305,17,0" TextWrapping="Wrap" Text="" Foreground="#FFE0CD0A" FontStyle="Italic" FontWeight="Normal" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="44" VerticalAlignment="Top"/>
+        <sfc:ProgressIndicator x:Name="Indicador" Grid.Row="0" Visibility="Visible" InProgress="False" Content="Ejecutando" d:IsHidden="True"/>
+
+    </Grid>
+</UserControl>

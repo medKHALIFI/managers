@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="77dc2641-aea9-499b-b151-046402c109d3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>true</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/gss/web/services/WsAlmacenaUbicacionProspectoFV?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WsAlmacenaUbicacionProspectoFV3.xsd" MetadataType="Schema" ID="a4c22b39-5a2c-4214-aee5-2d3c47fdb889" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsAlmacenaUbicacionProspectoFV?xsd=GisCommonTypeSchema.xsd" />
+    <MetadataFile FileName="WsAlmacenaUbicacionProspectoFV31.xsd" MetadataType="Schema" ID="7da6377a-2674-49c7-af92-aa47226c7cec" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsAlmacenaUbicacionProspectoFV?xsd=WsAlmacenaUbicacionProspectoFV-RS.xsd" />
+    <MetadataFile FileName="WsAlmacenaUbicacionProspectoFV32.xsd" MetadataType="Schema" ID="5e902f04-0714-409c-bdda-b2ab26fa58b1" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsAlmacenaUbicacionProspectoFV?xsd=WsAlmacenaUbicacionProspectoFV-RQ.xsd" />
+    <MetadataFile FileName="WsAlmacenaUbicacionProspectoFV1.wsdl" MetadataType="Wsdl" ID="a6492a0e-430e-4481-9040-eacd80e258cb" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsAlmacenaUbicacionProspectoFV?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

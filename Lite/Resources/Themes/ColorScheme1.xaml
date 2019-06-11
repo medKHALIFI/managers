@@ -1,0 +1,102 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                    xmlns:System="clr-namespace:System;assembly=mscorlib" >
+
+  <!--Colors-->
+  <Color x:Key="Lite.Color.Background.Dark">#FF426191</Color>
+  <Color x:Key="Lite.Color.Background.DarkMid">#FF5B79AB</Color>
+  <Color x:Key="Lite.Color.Background.Header">#FF133A76</Color>
+  <Color x:Key="Lite.Color.Background.Light">#FFEAF0FF</Color>
+  <Color x:Key="Lite.Color.Background.Mid">#FFDEE8FF</Color>
+  <Color x:Key="Lite.Color.Background.Title">#FF061123</Color>
+  <Color x:Key="Lite.Color.Control.Background.Dark">#FF373A3D</Color>
+  <Color x:Key="Lite.Color.Control.Background.Light">#FFFFFFFF</Color>
+  <Color x:Key="Lite.Color.Control.Background.Mid">#FFB9B9B9</Color>
+  <Color x:Key="Lite.Color.Control.Border.Dark">#FF373A3D</Color>
+  <Color x:Key="Lite.Color.Control.Border.Light">#FFFFFFFF</Color>
+  <Color x:Key="Lite.Color.Control.Border.Mid">#FFB9B9B9</Color>
+  <Color x:Key="Lite.Color.Control.Disabled.Dark">#7F373A3D</Color>
+  <Color x:Key="Lite.Color.Control.Disabled.Light">#7FFFFFFF</Color>
+  <Color x:Key="Lite.Color.Control.Foreground.Dark">#FF373A3D</Color>
+  <Color x:Key="Lite.Color.Control.Foreground.Light">#FFFFFFFF</Color>
+  <Color x:Key="Lite.Color.Control.Readonly">#FFF0F0F0</Color>
+  <Color x:Key="Lite.Color.Highlight">#FFFF8800</Color>
+  <Color x:Key="Lite.Color.Logo.Dark">#FF73A9D8</Color>
+  <Color x:Key="Lite.Color.Logo.Light">#FFFFFFFF</Color>
+  <Color x:Key="Lite.Color.Text.Dark">#FF373A3D</Color>
+  <Color x:Key="Lite.Color.Text.Light">#FFFFFFFF</Color>
+  <Color x:Key="Lite.Color.Text.Title.Dark">#FF73A9D8</Color>
+  <Color x:Key="Lite.Color.Text.Title.Light">#FFFFFFFF</Color>
+  <Color x:Key="Lite.Color.Legend.Background">#00FFFFFF</Color>
+  <Color x:Key="Lite.Color.Selection.Line">#96147AFB</Color>
+  <Color x:Key="Lite.Color.Selection.Area">#4B147AFB</Color>
+
+  <!--Brushes-->
+  <SolidColorBrush x:Key="Lite.Brush.Background.Dark" Color="{StaticResource Lite.Color.Background.Dark}" />
+  <SolidColorBrush x:Key="Lite.Brush.Background.DarkMid" Color="{StaticResource Lite.Color.Background.DarkMid}" />
+  <SolidColorBrush x:Key="Lite.Brush.Background.Header" Color="{StaticResource Lite.Color.Background.Header}" />
+  <SolidColorBrush x:Key="Lite.Brush.Background.Light" Color="{StaticResource Lite.Color.Background.Light}" />
+  <SolidColorBrush x:Key="Lite.Brush.Background.Mid" Color="{StaticResource Lite.Color.Background.Mid}" />
+  <SolidColorBrush x:Key="Lite.Brush.Background.Title" Color="{StaticResource Lite.Color.Background.Title}" />
+  <SolidColorBrush x:Key="Lite.Brush.Control.Background.Dark" Color="{StaticResource Lite.Color.Control.Background.Dark}" />
+  <SolidColorBrush x:Key="Lite.Brush.Control.Background.Light" Color="{StaticResource Lite.Color.Control.Background.Light}" />
+  <SolidColorBrush x:Key="Lite.Brush.Control.Background.Mid" Color="{StaticResource Lite.Color.Control.Background.Mid}" />
+  <SolidColorBrush x:Key="Lite.Brush.Control.Border.Dark" Color="{StaticResource Lite.Color.Control.Border.Dark}" />
+  <SolidColorBrush x:Key="Lite.Brush.Control.Border.Light" Color="{StaticResource Lite.Color.Control.Border.Light}" />
+  <SolidColorBrush x:Key="Lite.Brush.Control.Border.Mid" Color="{StaticResource Lite.Color.Control.Border.Mid}" />
+  <SolidColorBrush x:Key="Lite.Brush.Control.Disabled.Dark" Color="{StaticResource Lite.Color.Control.Disabled.Dark}" />
+  <SolidColorBrush x:Key="Lite.Brush.Control.Disabled.Light" Color="{StaticResource Lite.Color.Control.Disabled.Light}" />
+  <SolidColorBrush x:Key="Lite.Brush.Control.Foreground.Dark" Color="{StaticResource Lite.Color.Control.Foreground.Dark}" />
+  <SolidColorBrush x:Key="Lite.Brush.Control.Foreground.Light" Color="{StaticResource Lite.Color.Control.Foreground.Light}" />
+  <SolidColorBrush x:Key="Lite.Brush.Control.Readonly" Color="{StaticResource Lite.Color.Control.Readonly}" />
+  <SolidColorBrush x:Key="Lite.Brush.Highlight" Color="{StaticResource Lite.Color.Highlight}" />
+  <SolidColorBrush x:Key="Lite.Brush.Logo.Dark" Color="{StaticResource Lite.Color.Logo.Dark}" />
+  <SolidColorBrush x:Key="Lite.Brush.Logo.Light" Color="{StaticResource Lite.Color.Logo.Light}" />
+  <SolidColorBrush x:Key="Lite.Brush.Text.Dark" Color="{StaticResource Lite.Color.Text.Dark}" />
+  <SolidColorBrush x:Key="Lite.Brush.Text.Light" Color="{StaticResource Lite.Color.Text.Light}" />
+  <SolidColorBrush x:Key="Lite.Brush.Text.Title.Dark" Color="{StaticResource Lite.Color.Text.Title.Dark}" />
+  <SolidColorBrush x:Key="Lite.Brush.Text.Title.Light" Color="{StaticResource Lite.Color.Text.Title.Light}" />
+
+
+    <!-- FMEJIA: Main Colors FACTIBILIDAD-->
+    <Color x:Key="SchemeColor.Background.1">#FF221E1F</Color>
+    <Color x:Key="SchemeColor.Background.2">#FF061123</Color>
+    <Color x:Key="SchemeColor.Background.3">#FF133A76</Color>
+    <Color x:Key="SchemeColor.Background.4">#FF1B2534</Color>
+    <Color x:Key="SchemeColor.Background.5">#FF6881A7</Color>
+    <Color x:Key="SchemeColor.Background.6">#FF5B79AB</Color>
+    <Color x:Key="SchemeColor.Background.7">#FFDEE8FF</Color>
+    <Color x:Key="SchemeColor.Background.8">#FFEAF0FF</Color>
+
+    <Color x:Key="SchemeColor.Content.Background.1">#FF2B4E84</Color>
+    <Color x:Key="SchemeColor.Content.Background.2">#FF3B5B8D</Color>
+    <Color x:Key="SchemeColor.Content.Foreground.1">#FF8CB9F9</Color>
+    <Color x:Key="SchemeColor.Content.Foreground.2">#FFF8991D</Color>
+
+    <Color x:Key="SchemeColor.Highlight.1">#FFF8991D</Color>
+
+    <Color x:Key="SchemeColor.Text.1">#FFFFFFFF</Color>
+    <Color x:Key="SchemeColor.Text.2">#FF666666</Color>
+
+    <!--Main Brushes-->
+    <SolidColorBrush x:Key="SchemeBrush.Background.1" Color="{StaticResource SchemeColor.Background.1}" />
+    <SolidColorBrush x:Key="SchemeBrush.Background.2" Color="{StaticResource SchemeColor.Background.2}" />
+    <SolidColorBrush x:Key="SchemeBrush.Background.3" Color="{StaticResource SchemeColor.Background.3}" />
+    <SolidColorBrush x:Key="SchemeBrush.Background.4" Color="{StaticResource SchemeColor.Background.4}" />
+    <SolidColorBrush x:Key="SchemeBrush.Background.5" Color="{StaticResource SchemeColor.Background.5}" />
+    <SolidColorBrush x:Key="SchemeBrush.Background.6" Color="{StaticResource SchemeColor.Background.6}" />
+    <SolidColorBrush x:Key="SchemeBrush.Background.7" Color="{StaticResource SchemeColor.Background.7}" />
+    <SolidColorBrush x:Key="SchemeBrush.Background.8" Color="{StaticResource SchemeColor.Background.8}" />
+
+    <SolidColorBrush x:Key="SchemeBrush.Content.Background.1" Color="{StaticResource SchemeColor.Content.Background.1}" />
+    <SolidColorBrush x:Key="SchemeBrush.Content.Background.2" Color="{StaticResource SchemeColor.Content.Background.2}" />
+    <SolidColorBrush x:Key="SchemeBrush.Content.Foreground.1" Color="{StaticResource SchemeColor.Content.Foreground.1}" />
+    <SolidColorBrush x:Key="SchemeBrush.Content.Foreground.2" Color="{StaticResource SchemeColor.Content.Foreground.2}" />
+
+    <SolidColorBrush x:Key="SchemeBrush.Highlight.1" Color="{StaticResource SchemeColor.Highlight.1}" />
+
+    <SolidColorBrush x:Key="SchemeBrush.Text.1" Color="{StaticResource SchemeColor.Text.1}" />
+    <SolidColorBrush x:Key="SchemeBrush.Text.2" Color="{StaticResource SchemeColor.Text.2}" />
+
+</ResourceDictionary>

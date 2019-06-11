@@ -1,0 +1,262 @@
+﻿<configuration>
+  <system.serviceModel>
+    <bindings>
+      <basicHttpBinding>
+        <binding name="XYQueryServiceEndpoint" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None">
+            <transport>
+              <extendedProtectionPolicy policyEnforcement="Never" />
+            </transport>
+          </security>
+        </binding>
+        <binding name="XYGeoLocatorServiceEndpoint" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None">
+            <transport>
+              <extendedProtectionPolicy policyEnforcement="Never" />
+            </transport>
+          </security>
+        </binding>
+        <binding name="XYServerInfoServiceEndpoint" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None">
+            <transport>
+              <extendedProtectionPolicy policyEnforcement="Never" />
+            </transport>
+          </security>
+        </binding>
+        <binding name="XYMapServiceEndpoint" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None">
+            <transport>
+              <extendedProtectionPolicy policyEnforcement="Never" />
+            </transport>
+          </security>
+        </binding>
+        <binding name="XYReportServiceEndpoint" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None">
+            <transport>
+              <extendedProtectionPolicy policyEnforcement="Never" />
+            </transport>
+          </security>
+        </binding>
+        <binding name="XYExportServiceEndpoint" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None">
+            <transport>
+              <extendedProtectionPolicy policyEnforcement="Never" />
+            </transport>
+          </security>
+        </binding>
+        <binding name="XYAuthenticationServiceEndpoint" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None">
+            <transport>
+              <extendedProtectionPolicy policyEnforcement="Never" />
+            </transport>
+          </security>
+        </binding>
+        <binding name="XYGeometryServiceEndpoint" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None">
+            <transport>
+              <extendedProtectionPolicy policyEnforcement="Never" />
+            </transport>
+          </security>
+        </binding>
+        <binding name="EditEnviarLevantamiento-SOAP11Binding" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+        <binding name="WsAlmacenaUbicacionProspectoFV-SOAP11Binding"
+          maxBufferSize="2147483647" maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+        <binding name="WsModificaUbicacionClienteFV-SOAP11Binding" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+        <binding name="WsEliminaUbicacionClienteFV-SOAP11Binding" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+        <binding name="WsEliminaUbicacionProspectoFV-SOAP11Binding" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+        <binding name="WsAlmacenaUbicacionIncidente-SOAP11Binding" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+        <binding name="WsModificaUbicacionIncidente-SOAP11Binding" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+        <binding name="WsEliminaUbicacionIncidente-SOAP11Binding" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+        <binding name="WsGestionaInfoCuentas-SOAP11Binding" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+        <binding name="WsGestionaInfoPuertos-SOAP11Binding" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+        <binding name="WsAlmacenaUbicacionClienteFV-SOAP11Binding" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+        <binding name="WsModificaUbicacionClienteFV-SOAP11Binding1" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+        <binding name="WsCalculaFactibilidad-SOAP11Binding" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+        <binding name="WsOpticalInformation-SOAP11Binding" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+        <binding name="WsCalculaFactibilidad-SOAP11Binding1" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+        <binding name="WsGestionaInfoCuentas-SOAP11Binding1" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+        <binding name="WsFactibilidadResidencial-SOAP11Binding" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+        <binding name="WsFactibilidadEmpresarial-SOAP11Binding" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+      </basicHttpBinding>
+      <customBinding>
+        <binding name="XYCollectionServiceEndpoint">
+          <binaryMessageEncoding />
+          <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647">
+            <extendedProtectionPolicy policyEnforcement="Never" />
+          </httpTransport>
+        </binding>
+      </customBinding>
+    </bindings>
+    <client>
+      <endpoint address="http://localhost:8092/QueryServiceFramework"
+        binding="basicHttpBinding" bindingConfiguration="XYQueryServiceEndpoint"
+        contract="SpatialEye.Framework.ServiceProviders.XY.Proxies.IXYQueryService"
+        name="XYQueryServiceEndpoint" />
+      <endpoint address="http://localhost:8092/GeoLocatorServiceFramework"
+        binding="basicHttpBinding" bindingConfiguration="XYGeoLocatorServiceEndpoint"
+        contract="SpatialEye.Framework.ServiceProviders.XY.Proxies.IXYGeoLocatorService"
+        name="XYGeoLocatorServiceEndpoint" />
+      <endpoint address="http://localhost:8092/ServerInfoServiceFramework"
+        binding="basicHttpBinding" bindingConfiguration="XYServerInfoServiceEndpoint"
+        contract="SpatialEye.Framework.ServiceProviders.XY.Proxies.IXYServerInfoService"
+        name="XYServerInfoServiceEndpoint" />
+      <endpoint address="http://localhost:8092/MapServiceFramework"
+        binding="basicHttpBinding" bindingConfiguration="XYMapServiceEndpoint"
+        contract="SpatialEye.Framework.ServiceProviders.XY.Proxies.IXYMapService"
+        name="XYMapServiceEndpoint" />
+      <endpoint address="http://localhost:8092/CollectionServiceFramework"
+        binding="customBinding" bindingConfiguration="XYCollectionServiceEndpoint"
+        contract="SpatialEye.Framework.ServiceProviders.XY.Proxies.IXYCollectionService"
+        name="XYCollectionServiceEndpoint" />
+      <endpoint address="http://localhost:8092/ReportServiceFramework"
+        binding="basicHttpBinding" bindingConfiguration="XYReportServiceEndpoint"
+        contract="SpatialEye.Framework.ServiceProviders.XY.Proxies.IXYReportService"
+        name="XYReportServiceEndpoint" />
+      <endpoint address="http://localhost:8092/ExportServiceFramework"
+        binding="basicHttpBinding" bindingConfiguration="XYExportServiceEndpoint"
+        contract="SpatialEye.Framework.ServiceProviders.XY.Proxies.IXYExportService"
+        name="XYExportServiceEndpoint" />
+      <endpoint address="http://localhost:8092/GeometryServiceFramework"
+        binding="basicHttpBinding" bindingConfiguration="XYGeometryServiceEndpoint"
+        contract="SpatialEye.Framework.ServiceProviders.XY.Proxies.IXYGeometryService"
+        name="XYGeometryServiceEndpoint" />
+      <endpoint address="http://localhost:8092/AuthenticationServiceFramework"
+        binding="basicHttpBinding" bindingConfiguration="XYAuthenticationServiceEndpoint"
+        contract="SpatialEye.Framework.ServiceProviders.XY.Proxies.IXYAuthenticationService"
+        name="XYAuthenticationServiceEndpoint" />
+      <endpoint address="http://localhost:8080/gss/web/services/WsAlmacenaUbicacionProspectoFV/"
+        binding="basicHttpBinding" bindingConfiguration="WsAlmacenaUbicacionProspectoFV-SOAP11Binding"
+        contract="ServiceAlmacenaProspecto.WsAlmacenaUbicacionProspectoFVPortType"
+        name="WsAlmacenaUbicacionProspectoFV-SOAP11port_http" />
+      <endpoint address="http://localhost:8080/gss/web/services/WsEliminaUbicacionClienteFV/"
+        binding="basicHttpBinding" bindingConfiguration="WsEliminaUbicacionClienteFV-SOAP11Binding"
+        contract="ServiceEliminaCliente.WsEliminaUbicacionClienteFVPortType"
+        name="WsEliminaUbicacionClienteFV-SOAP11port_http" />
+      <endpoint address="http://localhost:8080/gss/web/services/WsEliminaUbicacionProspectoFV/"
+        binding="basicHttpBinding" bindingConfiguration="WsEliminaUbicacionProspectoFV-SOAP11Binding"
+        contract="ServiceEliminaProspecto.WsEliminaUbicacionProspectoFVPortType"
+        name="WsEliminaUbicacionProspectoFV-SOAP11port_http" />
+      <endpoint address="http://localhost:8080/gss/web/services/WsAlmacenaUbicacionIncidente/"
+        binding="basicHttpBinding" bindingConfiguration="WsAlmacenaUbicacionIncidente-SOAP11Binding"
+        contract="ServiceAlmacenaIncidente.WsAlmacenaUbicacionIncidentePortType"
+        name="WsAlmacenaUbicacionIncidente-SOAP11port_http" />
+      <endpoint address="http://localhost:8080/gss/web/services/WsModificaUbicacionIncidente/"
+        binding="basicHttpBinding" bindingConfiguration="WsModificaUbicacionIncidente-SOAP11Binding"
+        contract="ServiceModificaIncidente.WsModificaUbicacionIncidentePortType"
+        name="WsModificaUbicacionIncidente-SOAP11port_http" />
+      <endpoint address="http://localhost:8080/gss/web/services/WsEliminaUbicacionIncidente/"
+        binding="basicHttpBinding" bindingConfiguration="WsEliminaUbicacionIncidente-SOAP11Binding"
+        contract="ServiceEliminaIncidente.WsEliminaUbicacionIncidentePortType"
+        name="WsEliminaUbicacionIncidente-SOAP11port_http" />
+      <endpoint address="http://localhost:8080/gss/web/services/EditEnviarLevantamiento/"
+        binding="basicHttpBinding" bindingConfiguration="EditEnviarLevantamiento-SOAP11Binding"
+        contract="ServiceEditarLevantamiento.EditEnviarLevantamientoPortType"
+        name="EditEnviarLevantamiento-SOAP11port_http" />
+      <endpoint address="http://localhost:8080/gss/web/services/WsGestionaInfoCuentas/"
+        binding="basicHttpBinding" bindingConfiguration="WsGestionaInfoCuentas-SOAP11Binding"
+        contract="ServiceGestionCuentas.WsGestionaInfoCuentasPortType"
+        name="WsGestionaInfoCuentas-SOAP11port_http" />
+      <endpoint address="http://localhost:8080/gss/web/services/WsGestionaInfoPuertos/"
+        binding="basicHttpBinding" bindingConfiguration="WsGestionaInfoPuertos-SOAP11Binding"
+        contract="ServiceGestionPuertos.WsGestionaInfoPuertosPortType"
+        name="WsGestionaInfoPuertos-SOAP11port_http" />
+      <endpoint address="http://localhost:8080/gss/web/services/WsAlmacenaUbicacionClienteFV/"
+        binding="basicHttpBinding" bindingConfiguration="WsAlmacenaUbicacionClienteFV-SOAP11Binding"
+        contract="ServiceAlmacenaCliente.WsAlmacenaUbicacionClienteFVPortType"
+        name="WsAlmacenaUbicacionClienteFV-SOAP11port_http" />
+      <endpoint address="http://localhost:8080/gss/web/services/WsModificaUbicacionClienteFV/"
+        binding="basicHttpBinding" bindingConfiguration="WsModificaUbicacionClienteFV-SOAP11Binding1"
+        contract="ServiceModificaCliente.WsModificaUbicacionClienteFVPortType"
+        name="WsModificaUbicacionClienteFV-SOAP11port_http" />
+      <endpoint address="http://localhost:8080/gss/web/services/WsCalculaFactibilidad/"
+        binding="basicHttpBinding" bindingConfiguration="WsCalculaFactibilidad-SOAP11Binding"
+        contract="ServiceFactibilidad1.WsCalculaFactibilidadPortType"
+        name="WsCalculaFactibilidad-SOAP11port_http" />
+      <endpoint address="http://localhost:8080/gss/web/services/WsOpticalInformation/"
+        binding="basicHttpBinding" bindingConfiguration="WsOpticalInformation-SOAP11Binding"
+        contract="ServiceU2000.WsOpticalInformationPortType" name="WsOpticalInformation-SOAP11port_http" />
+      <endpoint address="http://localhost:8080/gss/web/services/WsCalculaFactibilidad/"
+        binding="basicHttpBinding" bindingConfiguration="WsCalculaFactibilidad-SOAP11Binding1"
+        contract="ServiceFactibilidad.WsCalculaFactibilidadPortType"
+        name="WsCalculaFactibilidad-SOAP11port_http1" />
+      <endpoint address="http://localhost:8080/gss/web/services/WsGestionaInfoCuentas/"
+        binding="basicHttpBinding" bindingConfiguration="WsGestionaInfoCuentas-SOAP11Binding1"
+        contract="ServiceGestionCuentas1.WsGestionaInfoCuentasPortType"
+        name="WsGestionaInfoCuentas-SOAP11port_http1" />
+      <endpoint address="http://localhost:8080/gss/web/services/WsFactibilidadResidencial/"
+        binding="basicHttpBinding" bindingConfiguration="WsFactibilidadResidencial-SOAP11Binding"
+        contract="ServiceFactibilidadResidencial.WsFactibilidadResidencialPortType"
+        name="WsFactibilidadResidencial-SOAP11port_http" />
+      <endpoint address="http://localhost:8080/gss/web/services/WsFactibilidadEmpresarial/"
+        binding="basicHttpBinding" bindingConfiguration="WsFactibilidadEmpresarial-SOAP11Binding"
+        contract="ServiceFactibilidadEmpresarial.WsFactibilidadEmpresarialPortType"
+        name="WsFactibilidadEmpresarial-SOAP11port_http" />
+    </client>
+  </system.serviceModel>
+  
+  <XYServiceProvider>
+    <add key="MapTileServiceUrl" value="http://localhost:8092/Tiles/" />
+    <add key="DocumentServiceUrl" value="http://localhost:8092/Documents/" />
+  </XYServiceProvider>
+</configuration>

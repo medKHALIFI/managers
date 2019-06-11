@@ -1,0 +1,28 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib">
+
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/Lite;component/Resources/Common/Button.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Common/CheckBox.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Common/ComboBox.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Common/ComboBoxItem.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Common/DataGrid.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Common/Label.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Common/ListBox.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Common/ListBoxItem.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Common/ProgressBar.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Common/RadioButton.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Common/ScrollBar.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Common/ScrollViewer.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Common/Slider.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Common/TabControl.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Common/TabItem.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Common/TextBox.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Common/ToolTip.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Common/TreeView.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Common/TreeViewItem.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Common/ValidationToolTip.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

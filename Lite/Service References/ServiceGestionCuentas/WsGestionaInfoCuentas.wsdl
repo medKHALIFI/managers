@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.grr.net.fv/svc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns="http://www.grr.net.fv/gis" targetNamespace="http://www.grr.net.fv/svc" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:import schemaLocation="WsGestionaInfoCuentas?xsd=WsGestionaInfoCuentas-RS.xsd" namespace="http://www.grr.net.fv/gis" />
+      <xs:import schemaLocation="WsGestionaInfoCuentas?xsd=WsGestionaInfoCuentas-RQ.xsd" namespace="http://www.grr.net.fv/gis" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="gestionaCuentaRequest">
+    <wsdl:part name="parameter" element="ns:WsGestionaInfoCuentas-RQ" />
+  </wsdl:message>
+  <wsdl:message name="gestionaCuentaResponse">
+    <wsdl:part name="parameter" element="ns:WsGestionaInfoCuentas-RS" />
+  </wsdl:message>
+  <wsdl:portType name="WsGestionaInfoCuentasPortType">
+    <wsdl:operation name="gestionaCuenta">
+      <wsdl:input name="gestionaCuentaRequest" message="tns:gestionaCuentaRequest" />
+      <wsdl:output name="gestionaCuentaResponse" message="tns:gestionaCuentaResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsGestionaInfoCuentas-SOAP11Binding" type="tns:WsGestionaInfoCuentasPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="gestionaCuenta">
+      <soap:operation soapAction="urn:gestionaCuenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsGestionaInfoCuentas-SOAP12Binding" type="tns:WsGestionaInfoCuentasPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="gestionaCuenta">
+      <soap12:operation soapAction="urn:gestionaCuenta" style="document" soapActionRequired="true" />
+      <wsdl:input name="gestionaCuentaRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="gestionaCuentaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsGestionaInfoCuentas">
+    <wsdl:port name="WsGestionaInfoCuentas-SOAP12port_http" binding="tns:WsGestionaInfoCuentas-SOAP12Binding">
+      <soap12:address location="http://192.168.1.158:8080/gss/web/services/WsGestionaInfoCuentas/" />
+    </wsdl:port>
+    <wsdl:port name="WsGestionaInfoCuentas-SOAP11port_http" binding="tns:WsGestionaInfoCuentas-SOAP11Binding">
+      <soap:address location="http://192.168.1.158:8080/gss/web/services/WsGestionaInfoCuentas/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

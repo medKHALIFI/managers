@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.grr.net.fv/svc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns="http://www.grr.net.fv/gis" targetNamespace="http://www.grr.net.fv/svc" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>WsFactibilidadResidencial</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:import schemaLocation="WsFactibilidadResidencial?xsd=WsFactibilidadResidencial-RS.xsd" namespace="http://www.grr.net.fv/gis" />
+      <xs:import schemaLocation="WsFactibilidadResidencial?xsd=WsFactibilidadResidencial-RQ.xsd" namespace="http://www.grr.net.fv/gis" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getFactibilidadResidencialRequest">
+    <wsdl:part name="parameter" element="ns:wsFactibilidadResidencial-RQ" />
+  </wsdl:message>
+  <wsdl:message name="getFactibilidadResidencialResponse">
+    <wsdl:part name="parameter" element="ns:wsFactibilidadResidencial-RS" />
+  </wsdl:message>
+  <wsdl:portType name="WsFactibilidadResidencialPortType">
+    <wsdl:operation name="getFactibilidadResidencial">
+      <wsdl:input name="getFactibilidadResidencialRequest" message="tns:getFactibilidadResidencialRequest" />
+      <wsdl:output name="getFactibilidadResidencialResponse" message="tns:getFactibilidadResidencialResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsFactibilidadResidencial-SOAP11Binding" type="tns:WsFactibilidadResidencialPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getFactibilidadResidencial">
+      <soap:operation soapAction="urn:getFactibilidadResidencial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsFactibilidadResidencial-SOAP12Binding" type="tns:WsFactibilidadResidencialPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getFactibilidadResidencial">
+      <soap12:operation soapAction="urn:getFactibilidadResidencial" style="document" soapActionRequired="true" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsFactibilidadResidencial">
+    <wsdl:port name="WsFactibilidadResidencial-SOAP11port_http" binding="tns:WsFactibilidadResidencial-SOAP11Binding">
+      <soap:address location="http://192.168.0.147:8080/gss/web/services/WsFactibilidadResidencial/" />
+    </wsdl:port>
+    <wsdl:port name="WsFactibilidadResidencial-SOAP12port_http" binding="tns:WsFactibilidadResidencial-SOAP12Binding">
+      <soap12:address location="http://192.168.0.147:8080/gss/web/services/WsFactibilidadResidencial/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

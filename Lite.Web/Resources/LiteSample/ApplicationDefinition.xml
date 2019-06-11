@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+
+This file is used by the server to allow applications to have access to the server.
+To enable the identification of the application the correct application Id of the connecting application should be put in the
+clientapplication tag.
+
+If your application requires additional application settings these can be added as settingdefinitions.
+Below are the possible settingdefinition combinations that can be used.
+
+<ClientApplication Id="<enter the application id>" Name="Lite" Description="Lite Application" HasWebComponent="True" Version="1.0">
+<SettingDefinitions>
+	<SettingDefinition Id="setting1" DisplayName="My First Setting" Description="This is the first setting" ValueType="String" DefaultValue="One" Category="Cat1"/>
+	<SettingDefinition Id="setting2" DisplayName="My Second Setting" Description="This is the second setting" ValueType="Boolean" DefaultValue="True" Category="Cat1"/>
+	<SettingDefinition Id="setting3" DisplayName="My Third Setting" Description="This is the third setting" ValueType="Integer" DefaultValue="1" Category="Cat1"/>
+	<SettingDefinition Id="setting4" DisplayName="My Fourth Setting" Description="This is the fourth setting" ValueType="Double" DefaultValue="1.1" Category="Cat2"/>
+		<SettingDefinition Id="setting5" DisplayName="My fifth Setting" Description="This is the fifth setting" ValueType="DateTime" DefaultValue="26-7-2013 13:30"/>
+	<SettingDefinition Id="setting6" DisplayName="My sixt Setting" Description="This is the sixt setting" ValueType="Date" DefaultValue="26-7-2013" Category="Cat2">
+		<SettingValueDomain AllowFreeInput="False" MinimumValue="1-1-2013" MaximumValue="31-12-2013"/>
+	</SettingDefinition>
+	<SettingDefinition Id="setting7" DisplayName="My seventh Setting" Description="This is the seventh setting" ValueType="String" DefaultValue="Two" Category="Cat2">
+		<SettingValueDomain AllowFreeInput="False">One;Two;Three;Four</SettingValueDomain>
+	</SettingDefinition>
+</SettingDefinitions>
+</ClientApplication> 
+
+-->
+
+<!--The ClientApplication Id is provided as a sample, generate a new GUID if the application will be used for production purposes -->
+<ClientApplication Id="{DA0696B8-FC44-44E9-A3D4-DC812A73FC6F}" Name="Lite Sample" Description="Lite Sample Application" HasWebComponent="True" Version="1.1">
+
+  <SettingDefinitions>
+
+    <!--Authentication-->
+
+    <SettingDefinition Id="allowautosignin" DisplayName="Remember Credentials"
+                       Description="Rembember the sign-in credentials client side"
+                       Category="Authentication"
+                       ValueType="Boolean"
+                       DefaultValue="False">
+    </SettingDefinition>
+
+    <!--Export -->
+
+    <SettingDefinition Id="allowedexports" DisplayName="Allowed Exports"
+                       Description="The allowed export formats (csv, dgn, dwg, geojson, geopackage, gml, html, kml, mif, shp, tab, xls, xlsx)"
+                       ValueType="String"
+                       DefaultValue="csv, geojson, geopackage, gml, html, kml, shp, xlsx"
+                       Category="Export"/>
+
+    <SettingDefinition Id="allowexportsetcs" DisplayName="Allow Choose CS"
+                       Description="Allow the user to choose the coordinate system for export"
+                       Category="Export"
+                       ValueType="Boolean"
+                       DefaultValue="True">
+    </SettingDefinition>
+
+    <SettingDefinition Id="allowexportsetunits" DisplayName="Allow Choose Units"
+                       Description="Allow the user to choose the units for export"
+                       Category="Export"
+                       ValueType="Boolean"
+                       DefaultValue="True">
+    </SettingDefinition>
+
+    <SettingDefinition Id="maximumexportrecords" DisplayName="Maximum Records"
+               Description="The maximum number of records to export"
+               Category="Export"
+               ValueType="Integer"
+			         DefaultValue="1000">
+
+      <SettingValueDomain MinimumValue="1" MaximumValue="100000"/>
+
+    </SettingDefinition>
+
+    <!--GeoLocators-->
+
+    <SettingDefinition Id="geolocator" DisplayName="GeoLocator"
+                       Description="Use Server's GeoLocator or the Client's OSM GeoLocator"
+                       Category="GeoLocators"
+                       ValueType="String"
+                       DefaultValue="Server">
+      <SettingValueDomain AllowFreeInput="False">Client;Server</SettingValueDomain>
+    </SettingDefinition>
+
+    <SettingDefinition Id="geolocatorpostfix" DisplayName="Search Postfix"
+                       Description="Specify a string to be added to each search (ie Netherlands)"
+                       Category="GeoLocators"
+                       ValueType="String"
+                       DefaultValue="">
+    </SettingDefinition>
+
+    <!--GeoNotes-->
+
+    <SettingDefinition Id="allowgeonoteedits" DisplayName="Allow GeoNote Edits"
+                       Description="Allow the user to create of modify geonotes"
+                       Category="GeoNotes"
+                       ValueType="Boolean"
+			                 DefaultValue="True">
+    </SettingDefinition>
+
+    <SettingDefinition Id="allowedgeonotes" DisplayName="Allowed GeoNotes"
+                       Description="List of GeoNotes allowed, empty means all Geonotes (comma separate multiple values, wildcards allowed)"
+                       Category="GeoNotes"
+                       ValueType="String"
+                       DefaultValue="">
+    </SettingDefinition>
+
+    <!--Maps-->
+
+    <SettingDefinition Id="srid" DisplayName="Map Centre CS"
+               Description="Select the Coordinate System to be used for displaying the centre coordinate with"
+               Category="Maps"
+               ValueType="SRID">
+    </SettingDefinition>
+
+    <SettingDefinition Id="overviewmode" DisplayName="Overview Map"
+           Description="Select the mode for the overview map"
+           Category="Maps"
+           ValueType="String"
+           DefaultValue="Show all layers">
+      <SettingValueDomain AllowFreeInput="False">Show all layers;Show backdrop only</SettingValueDomain>
+    </SettingDefinition>
+
+    <SettingDefinition Id="allowmultiselection" DisplayName="Allow Multi Selection"
+               Description="Allow the user to select multiple geometries in the map"
+               Category="Maps"
+               ValueType="Boolean"
+			   DefaultValue="False">
+    </SettingDefinition>
+
+    <SettingDefinition Id="allowstreetview" DisplayName="Allow Street View"
+           Description="Allow the user to start Google Street View"
+           Category="Maps"
+           ValueType="Boolean"
+		   DefaultValue="True">
+    </SettingDefinition>
+
+    <SettingDefinition Id="allowcustommaps" DisplayName="Allow Custom Maps"
+               Description="Allow the user to create custom maps"
+               Category="Maps"
+               ValueType="Boolean"
+			   DefaultValue="True">
+    </SettingDefinition>
+
+    <SettingDefinition Id="allowprint" DisplayName="Allow Printing"
+           Description="Allow the user to print maps"
+           Category="Maps"
+           ValueType="Boolean"
+		   DefaultValue="True">
+    </SettingDefinition>
+
+    <SettingDefinition Id="printcopyrighttext" DisplayName="Print Copyright"
+           Description="The copyright text to include in prints"
+           Category="Print"
+           ValueType="String">
+    </SettingDefinition>
+
+    <SettingDefinition Id="restrictbyareas" DisplayName="Restrict by Areas"
+                       Description="Restrict the maps by areas?"
+                       Category="Maps"
+                       ValueType="Boolean"
+                       DefaultValue="False">
+    </SettingDefinition>
+
+    <SettingDefinition Id="restrictareas" DisplayName="   Specify Areas"
+           Description="Restrict the Maps by the specified areas"
+           Category="Maps"
+           ValueType="MapAreas">
+    </SettingDefinition>
+
+    <SettingDefinition Id="displayrestrictionareas" DisplayName="   Display Areas"
+                       Description="Display the restriction areas"
+                       Category="Maps"
+                       ValueType="Boolean"
+                       DefaultValue="False">
+    </SettingDefinition>
+
+    <!--Queries-->
+
+    <SettingDefinition Id="allowcustomqueries" DisplayName="Allow Custom Queries"
+               Description="Allow the user to create custom queries"
+               Category="Queries"
+               ValueType="Boolean"
+			   DefaultValue="True">
+    </SettingDefinition>
+
+    <SettingDefinition Id="queriesuserestrictionareas" DisplayName="Use Restriction Areas"
+                   Description="Use the map restriction areas to restrict result"
+                   Category="Queries"
+                   ValueType="Boolean"
+                   DefaultValue="True">
+    </SettingDefinition>
+
+    <!--Result List-->
+    
+    <SettingDefinition Id="resultlistmaxrecords" DisplayName="Result List Records"
+               Description="The maximum number of records for the result list"
+               Category="ResultList"
+               ValueType="Integer"
+			         DefaultValue="200"
+               MinimumValue="100" MaximumValue="10000">
+    </SettingDefinition>
+
+  </SettingDefinitions>
+
+</ClientApplication>

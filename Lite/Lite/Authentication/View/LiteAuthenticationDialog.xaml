@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="Lite.LiteAuthenticationDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+    xmlns:System="clr-namespace:System;assembly=mscorlib" x:Name="userControl" 
+    mc:Ignorable="d" d:DesignWidth="483" Width="Auto" d:DesignHeight="238" Height="Auto" Loaded="AuthenticationDialogLoaded">
+
+  <Grid x:Name="LayoutRoot" Margin="0" Background="#7FEEF1F7">
+    <Grid Width="430" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{StaticResource Lite.Brush.Background.Dark}" Height="191">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="10"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+
+      <Grid Grid.Row="1" Margin="12,0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="auto"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Path Data="{Binding LiteVectorLogo, Source={StaticResource Locator}}" Width="32" Height="32" Margin="0,6,0,0" Fill="{StaticResource Lite.Brush.Logo.Light}" Stretch="Fill" HorizontalAlignment="Left" StrokeThickness="0" UseLayoutRounding="False" VerticalAlignment="Top" />
+        <sdk:Label Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="36" Foreground="{StaticResource Lite.Brush.Text.Light}" Content="{Binding LiteName, Source={StaticResource Locator}}" Margin="8,0,0,0" FontFamily="/Lite;component/Fonts/GEInspMdSC.TTF#GE Inspira Medium SC" />
+        <Path Data="M8,47 L388,47" Height="1" Grid.Row="1" Grid.ColumnSpan="2" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Margin="0,5,0,0" Stroke="{StaticResource Lite.Brush.Text.Light}"/>
+      </Grid>
+
+      <Grid Grid.Row="2" Margin="12">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="auto"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <sdk:Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{Binding Resources.AuthenticationUserNameWithColon, FallbackValue=[Username]:}" FontSize="13.333" Foreground="{StaticResource Lite.Brush.Text.Light}" FontFamily="Arial" Margin="0"/>
+        <TextBox Grid.Column="1" Grid.Row="0" x:Name="UserNameTextBox" TextWrapping="Wrap" Text="{Binding AuthenticationUsername, Mode=TwoWay}"  FontSize="12" VerticalAlignment="Center"  Margin="12,0,0,0" KeyDown="KeyDownPressed"/>
+        <sdk:Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{Binding Resources.AuthenticationPasswordWithColon, FallbackValue=[Password]:}" FontSize="13.333" Foreground="{StaticResource Lite.Brush.Text.Light}" FontFamily="Arial" Margin="0,12,0,0"/>
+        <PasswordBox Grid.Column="1" Grid.Row="1" x:Name="PasswordBox"  VerticalAlignment="Center" FontSize="12" PasswordChanged="PasswordBox_PasswordChanged" Margin="12,12,0,0" KeyDown="KeyDownPressed"/>
+      </Grid>
+
+      <Grid Grid.Row="3" Margin="12">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="ErrorLabel" Grid.Column="0" TextWrapping="Wrap" Text="{Binding AuthenticationErrorMessage}" Foreground="{StaticResource Lite.Brush.Text.Light}" FontSize="13.333" FontStyle="Italic" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontFamily="Arial" Margin="0,-14,8,-11" />
+        <Button x:Name="LoginButton"  Grid.Column="1" Command="{Binding SignInCommand}" Content="{Binding Resources.AuthenticationSignIn, FallbackValue=[Signin]}" HorizontalAlignment="Right" FontSize="13.333" MinWidth="80" VerticalAlignment="Center" FontFamily="Arial" Margin="0"/>
+      </Grid>
+    </Grid>
+
+  </Grid>
+</UserControl>

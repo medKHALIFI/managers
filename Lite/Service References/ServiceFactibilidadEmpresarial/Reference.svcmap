@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="62c0d975-9a5f-4810-91e3-a8708c2b8872" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://swtotalplaydev:8080/gss/web/services/WsFactibilidadEmpresarial?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WsFactibilidadEmpresarial.xsd" MetadataType="Schema" ID="5fee0de9-d130-4265-a120-8c9ab3fbd848" SourceId="1" SourceUrl="http://swtotalplaydev:8080/gss/web/services/WsFactibilidadEmpresarial?xsd=WsFactibilidadEmpresarial-RQ.xsd" />
+    <MetadataFile FileName="WsFactibilidadEmpresarial1.xsd" MetadataType="Schema" ID="4b8acd59-6bc9-4809-b6f0-e9c2586586b5" SourceId="1" SourceUrl="http://swtotalplaydev:8080/gss/web/services/WsFactibilidadEmpresarial?xsd=WsFactibilidadEmpresarial-RS.xsd" />
+    <MetadataFile FileName="WsFactibilidadEmpresarial.wsdl" MetadataType="Wsdl" ID="5401dd71-f3de-481b-81ec-f84e6c6af1de" SourceId="1" SourceUrl="http://swtotalplaydev:8080/gss/web/services/WsFactibilidadEmpresarial?wsdl" />
+    <MetadataFile FileName="WsFactibilidadEmpresarial2.xsd" MetadataType="Schema" ID="45034827-cbae-4fd5-b3a1-b1313249e1df" SourceId="1" SourceUrl="http://swtotalplaydev:8080/gss/web/services/WsFactibilidadEmpresarial?xsd=GisCommonTypeSchema.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

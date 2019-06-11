@@ -1,0 +1,22 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib" 
+                    >
+
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/Lite;component/Resources/Framework/ExpressionBuilderControl.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Framework/FeatureDetailsPropertyGrid.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Framework/MapPanRotateControl.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Framework/MapThemeLayerControl.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Framework/MapThemesControl.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Framework/MapZoomControl.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Framework/MapLayerSelectionControl.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Framework/ParameterValuesPropertyGrid.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Framework/PropertyGridCategoryHeader.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Framework/ResizableContentControl.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Framework/ProgressIndicator.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Framework/ServiceProviderDatumControl.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Framework/TypedValueControl.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  
+</ResourceDictionary>

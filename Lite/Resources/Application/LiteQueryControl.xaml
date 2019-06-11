@@ -1,0 +1,73 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib" 
+                    xmlns:local="clr-namespace:Lite" 
+                    xmlns:sfc="http://schemas.spatialeye.com/clienttoolkit"
+                    >
+
+  <Style TargetType="local:LiteQueryControl">
+    <Setter Property="Background" Value="{StaticResource MapThemesControl.Layer.Background}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="local:LiteQueryControl">
+          <Grid Margin="4">
+            <Grid.Resources>
+              <DataTemplate DataType="local:LiteQueryViewModel">
+                <Grid Margin="0,10,0,10">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                  </Grid.RowDefinitions>
+                  <sfc:ParameterValuesPropertyGrid DataContext="{Binding Parameters}" Margin="0" Foreground="White"/>
+                </Grid>
+              </DataTemplate>
+            </Grid.Resources>
+
+            <Border x:Name="QueryHeader" BorderBrush="{StaticResource MapThemesControl.BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto"/>
+                  <ColumnDefinition/>
+                  <ColumnDefinition Width="28"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="36"/>
+                  <RowDefinition Height="*"/>
+                  <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <CheckBox x:Name="ExpandCollapseCheckBox" Height="16" HorizontalAlignment="Center" VerticalAlignment="Center" Width="16" Margin="8,0,0,0" Style="{StaticResource ExpandCollapseCheckBoxStyle}" IsChecked="{Binding IsExpanded, Mode=TwoWay}"/>
+                <sdk:Label HorizontalAlignment="Left" Margin="6,0,0,0" Content="{Binding ExternalName, FallbackValue=Query Name}" VerticalAlignment="Center" Grid.Column="1" Foreground="White"/>
+                <Path Data="{Binding PathGeometry}" Stretch="Fill" Fill="{StaticResource Lite.Brush.Text.Light}" Grid.Column="2" Opacity="0.5" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4,0,0,0" Width="14" Height="14" />
+                <Border x:Name="ElementControl" Grid.ColumnSpan="3" Grid.Row="1" Background="{StaticResource MapThemesControl.Layer.ElementBackground}">
+                  <Grid  Margin="33,0,33,0">
+                    <ItemsControl ItemsSource="{Binding ConfigurationItems}"/>
+                  </Grid>
+                </Border>
+
+                <Border x:Name="MenuControl" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Row="2" Height="36" Grid.ColumnSpan="3" Background="{StaticResource MapThemesControl.Layer.MenuBackground}">
+                  <Grid Height="36">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="Auto"/>
+                      <ColumnDefinition Width="Auto"/>
+                      <ColumnDefinition Width="Auto"/>
+                      <ColumnDefinition Width="*"/>
+                      <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Command="{Binding RunCommand}" Grid.Column="0" Height="24" VerticalAlignment="Center" Width="24" Margin="33,0,16,0"  Style="{StaticResource MetroButtonStyleLight}" ToolTipService.ToolTip="{Binding Resources.RunQuery}" Content="{StaticResource MetroIcon.Content.Play}"  />
+                    <ComboBox Style="{StaticResource LiteMenuComboBoxStyle}" Width="24" Margin="0,0,8,0" Height="24" VerticalAlignment="Center"  ToolTipService.ToolTip="{Binding Resources.ReportQueryResults}"  Grid.Column="1" Tag="{StaticResource MetroIcon.Content.Report}" ItemTemplate="{StaticResource LiteReportMenuComboBoxDataTemplate}" ItemsSource="{Binding Reports.Reports}" Visibility="{Binding ReportsVisibility}" IsEnabled="{Binding CanRun}" sfc:ComboBoxEx.SelectionCommand="{Binding RunReportCommand}" />
+                    <ComboBox Style="{StaticResource LiteExportMenuComboBoxStyle}" Width="24" Margin="0,0,16,0" Height="24" VerticalAlignment="Center" ToolTipService.ToolTip="{Binding Resources.ExportQueryResults}"  Grid.Column="2" Tag ="{StaticResource MetroIcon.Content.Export}" ItemTemplate="{StaticResource LiteExportMenuComboBoxDataTemplate}" ItemsSource="{Binding Exports.Exports}" Visibility="{Binding ExportsVisibility}" IsEnabled="{Binding CanRun}" sfc:ComboBoxEx.SelectionCommand="{Binding RunExportCommand}" />
+                    <Button Command="{Binding RemoveCommand}" Visibility="{Binding RemoveVisibility}" Grid.Column="4" Height="24" VerticalAlignment="Center" Width="24" Margin="0,0,10,0" Style="{StaticResource MetroButtonStyleLight}" ToolTipService.ToolTip="{Binding Resources.RemoveQuery}" Content="{StaticResource MetroIcon.Content.Delete}"/>
+                  </Grid>
+                </Border>
+                <sfc:ProgressIndicator Grid.ColumnSpan="3" Grid.RowSpan="4" Visibility="{Binding IsRunningVisibility}" InProgress="{Binding IsRunning}" Content="{Binding RunningStateDescription}"/>
+              </Grid>
+            </Border>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+</ResourceDictionary>

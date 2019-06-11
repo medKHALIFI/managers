@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="32bcfa09-4383-4899-aac2-3ecf31961786" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>true</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/gss/web/services/WsCalculaFactibilidad?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WsCalculaFactibilidad.wsdl" MetadataType="Wsdl" ID="36cb0f06-df0c-48ef-bf9a-dba4649198e0" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsCalculaFactibilidad?wsdl" />
+    <MetadataFile FileName="WsCalculaFactibilidad.xsd" MetadataType="Schema" ID="129e54fc-b38c-4cc0-a33e-310a1cff3e1c" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsCalculaFactibilidad?xsd=GisCommonTypeSchema.xsd" />
+    <MetadataFile FileName="WsCalculaFactibilidad1.xsd" MetadataType="Schema" ID="a6751849-09cd-4613-9ecb-4254e4916ccd" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsCalculaFactibilidad?xsd=WsCalculaFactibilidad-RQ.xsd" />
+    <MetadataFile FileName="WsCalculaFactibilidad2.xsd" MetadataType="Schema" ID="31caa6e4-ac82-46c1-98db-5de4848c9c92" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsCalculaFactibilidad?xsd=WsCalculaFactibilidad-RS.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

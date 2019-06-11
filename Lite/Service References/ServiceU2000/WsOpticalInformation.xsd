@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nca:schema xmlns:tns="http://www.grr.net.fv/gis" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.grr.net.fv/gis" xmlns:nca="http://www.w3.org/2001/XMLSchema">
+  <nca:complexType name="process">
+    <nca:sequence>
+      <nca:element name="No_Account" type="nca:string" />
+    </nca:sequence>
+  </nca:complexType>
+  <nca:element name="WsOpticalInformation-RQ" type="tns:process" />
+</nca:schema>

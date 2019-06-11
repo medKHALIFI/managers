@@ -1,0 +1,22 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	  xmlns:sfc="http://schemas.spatialeye.com/clienttoolkit"
+
+  x:Class="Lite.LitePrintA4Template3MainPageView"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400" Width="500" Height="400" Margin="0,0,0,0">
+  <UserControl.Resources>
+    <sfc:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+  </UserControl.Resources>
+  <Grid x:Name="LayoutRoot" Background="White">
+    <TextBlock x:Name="TitleTextBlock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding PrintContext.Title}" VerticalAlignment="Top" Margin="11,5,0,0" FontSize="13.333" RenderTransformOrigin="0.492,0"/>
+
+    <Border x:Name="LegendBorder" BorderBrush="Black" BorderThickness="1,1,1,1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="11,24,11,11" Background="#3BFFFFFF">
+      <sfc:PrintMapLegendControl x:Name="LegendControl" Margin="6" Wrap="True"/>
+    </Border>
+    <TextBlock x:Name="Copyright" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding PrintContext.CopyrightText}" VerticalAlignment="Bottom" Margin="0,0,11,0" FontSize="8" FontFamily="Times New Roman" FontStyle="Italic"/>
+  </Grid>
+</UserControl>

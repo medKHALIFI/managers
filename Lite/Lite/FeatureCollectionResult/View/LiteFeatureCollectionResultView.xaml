@@ -1,0 +1,73 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sfc="http://schemas.spatialeye.com/clienttoolkit"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" x:Class="Lite.LiteFeatureCollectionResultView" 
+
+    mc:Ignorable="d"
+    d:DesignHeight="412" d:DesignWidth="1284">
+
+  <Grid x:Name="LayoutRoot" Background="White">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="40"/>
+      <RowDefinition/>
+    </Grid.RowDefinitions>
+
+    <Border BorderThickness="0" Background="{StaticResource Lite.Brush.Background.Header}" Margin="0">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <sfc:HistorySelectorButton x:Name="GoToPreviousButton" HistoryMode="Previous" Style="{StaticResource PreviousButtonComboBoxStyleLight}" DataContext="{Binding History}" Width="24" Height="24" HorizontalAlignment="Left" Margin="10,0,4,0" VerticalAlignment="Center"/>
+        <sfc:HistorySelectorButton x:Name="GoToNextButton" HistoryMode="Next" Style="{StaticResource NextButtonComboBoxStyleLight}" DataContext="{Binding History}" Width="24" Height="24" HorizontalAlignment="Left" Margin="4,0" VerticalAlignment="Center" Grid.Column="1" />
+
+        <sdk:Label x:Name="DescriptionLabel" Height="19" Margin="4,10,8,0" VerticalAlignment="Top" Content="{Binding ResultDescription}" Foreground="White" FontSize="13.333" Grid.Column="2" HorizontalAlignment="Left" MinWidth="425" MaxWidth="450"/>
+        <ComboBox Height="24" HorizontalAlignment="Right" VerticalAlignment="Center" Width="125" Margin="4,0,4,0" Grid.Column="3"  
+                  ItemsSource="{Binding SubCollections}"
+                  SelectedItem="{Binding SelectedSubCollection, Mode=TwoWay}"
+                  Visibility="{Binding SubCollectionsVisibility}"/>
+
+        <sdk:Label x:Name="ResultRecordsLabel" Height="19" Margin="10,10,10,0" VerticalAlignment="Top" Content="{Binding NumberOfRecordsDescription}" Foreground="White" FontSize="13.333" 
+                   Grid.Column="4" HorizontalAlignment="Right" MinWidth="70" MaxWidth="90"/>
+
+        <sfc:FeatureCollectionGridGroupingView x:Name="GroupingView" Grid.Column="5" Margin="4,0" VerticalAlignment="Center" DataContext="{Binding GroupingViewModel}" HorizontalAlignment="Center"/>
+
+        <CheckBox Height="24" HorizontalAlignment="Center" VerticalAlignment="Center" Width="24" Margin="16,0,4,0"
+        	Style="{StaticResource MetroCheckBoxStyleLight}" Content="{StaticResource MetroIcon.Content.Details}"
+        	ToolTipService.ToolTip="{Binding Resources.TrackSelectionInDetails}" Foreground="{StaticResource Lite.Brush.Text.Light}"
+        	IsChecked="{Binding Properties.TrackSelectionInFeatureDetails, Mode=TwoWay}" Grid.Column="6"/>
+
+        <CheckBox Height="24" HorizontalAlignment="Center" VerticalAlignment="Center" Width="24" Grid.Column="7"
+        	Style="{StaticResource MetroCheckBoxStyleLight}" Content="{StaticResource MetroIcon.Content.World}"
+        	ToolTipService.ToolTip="{Binding Resources.TrackSelectionInMap}" Foreground="{StaticResource Lite.Brush.Text.Light}"
+        	IsChecked="{Binding Properties.TrackSelectionInMap, Mode=TwoWay}" Margin="4,0,4,0"/>
+
+        <CheckBox Height="24" HorizontalAlignment="Center" VerticalAlignment="Center" Width="24" Grid.Column="8"
+        	Style="{StaticResource MetroCheckBoxStyleLight}" Content="{StaticResource MetroIcon.Content.Marker}"
+        	ToolTipService.ToolTip="{Binding Resources.HighlightSelectionInMap}" Foreground="{StaticResource Lite.Brush.Text.Light}"
+        	IsChecked="{Binding Properties.HighlightSelectionInMap, Mode=TwoWay}" Margin="4,0,10,0"/>
+
+        <ComboBox x:Name="ReportsComboBox" Style="{StaticResource LiteMenuComboBoxStyle}" Width="24" Margin="8,0,4,0" Height="24" VerticalAlignment="Center" ToolTipService.ToolTip="Report"  Grid.Column="9" Tag="{StaticResource MetroIcon.Content.Report}" IsEnabled="{Binding ReportsEnabled}" ItemsSource="{Binding Reports.Reports}" ItemTemplate="{StaticResource LiteReportMenuComboBoxDataTemplate}" sfc:ComboBoxEx.SelectionCommand="{Binding RunReportCommand}" />
+        <ComboBox x:Name="ExportsCombBox" Style="{StaticResource LiteExportMenuComboBoxStyle}" Width="24" Margin="4,0,8,0" Height="24" VerticalAlignment="Center" ToolTipService.ToolTip="Export"  Grid.Column="10" Tag="{StaticResource MetroIcon.Content.Export}" IsEnabled="{Binding ExportsEnabled}" ItemsSource="{Binding Exports.Exports}" ItemTemplate="{StaticResource LiteExportMenuComboBoxDataTemplate}"  sfc:ComboBoxEx.SelectionCommand="{Binding RunExportCommand}" />
+
+      </Grid>
+    </Border>
+
+    <sfc:FeatureCollectionGridView x:Name="GridView" Grid.Row="1" DataContext="{Binding GridViewModel}"	VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Margin="0" Grid.ColumnSpan="2" />
+
+  </Grid>
+</UserControl>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.grr.net.fv/svc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns="http://www.grr.net.fv/gis" targetNamespace="http://www.grr.net.fv/svc" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:import schemaLocation="WsEliminaUbicacionProspectoFV?xsd=WsEliminaUbicacionProspectoFV-RS.xsd" namespace="http://www.grr.net.fv/gis" />
+      <xs:import schemaLocation="WsEliminaUbicacionProspectoFV?xsd=WsEliminaUbicacionProspectoFV-RQ.xsd" namespace="http://www.grr.net.fv/gis" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="eliminaUbicacionProspectoFVRequest">
+    <wsdl:part name="parameter" element="ns:wsEliminaUbicacionProspectoFV-RQ" />
+  </wsdl:message>
+  <wsdl:message name="eliminaUbicacionProspectoFVResponse">
+    <wsdl:part name="parameter" element="ns:wsEliminaUbicacionProspectoFV-RS" />
+  </wsdl:message>
+  <wsdl:portType name="WsEliminaUbicacionProspectoFVPortType">
+    <wsdl:operation name="eliminaUbicacionProspectoFV">
+      <wsdl:input name="eliminaUbicacionProspectoFVRequest" message="tns:eliminaUbicacionProspectoFVRequest" />
+      <wsdl:output name="eliminaUbicacionProspectoFVResponse" message="tns:eliminaUbicacionProspectoFVResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsEliminaUbicacionProspectoFV-SOAP11Binding" type="tns:WsEliminaUbicacionProspectoFVPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="eliminaUbicacionProspectoFV">
+      <soap:operation soapAction="urn:eliminaUbicacionProspectoFV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsEliminaUbicacionProspectoFV-SOAP12Binding" type="tns:WsEliminaUbicacionProspectoFVPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="eliminaUbicacionProspectoFV">
+      <soap12:operation soapAction="urn:eliminaUbicacionProspectoFV" style="document" soapActionRequired="true" />
+      <wsdl:input name="eliminaUbicacionProspectoFVRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="eliminaUbicacionProspectoFVResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsEliminaUbicacionProspectoFV">
+    <wsdl:port name="WsEliminaUbicacionProspectoFV-SOAP11port_http" binding="tns:WsEliminaUbicacionProspectoFV-SOAP11Binding">
+      <soap:address location="http://192.168.43.231:8080/gss/web/services/WsEliminaUbicacionProspectoFV/" />
+    </wsdl:port>
+    <wsdl:port name="WsEliminaUbicacionProspectoFV-SOAP12port_http" binding="tns:WsEliminaUbicacionProspectoFV-SOAP12Binding">
+      <soap12:address location="http://192.168.43.231:8080/gss/web/services/WsEliminaUbicacionProspectoFV/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

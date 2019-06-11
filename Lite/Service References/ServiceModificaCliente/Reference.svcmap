@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="53ca9ebf-e0bb-4c28-9ada-308dcfc807a5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>true</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/gss/web/services/WsModificaUbicacionClienteFV?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WsModificaUbicacionClienteFV.xsd" MetadataType="Schema" ID="9b52285c-4d73-41dc-9008-7a3d42ab8b30" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsModificaUbicacionClienteFV?xsd=GisCommonTypeSchema.xsd" />
+    <MetadataFile FileName="WsModificaUbicacionClienteFV1.xsd" MetadataType="Schema" ID="5afeef57-96f7-478e-8595-89f068238fda" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsModificaUbicacionClienteFV?xsd=WsModificaUbicacionClienteFV-RS.xsd" />
+    <MetadataFile FileName="WsModificaUbicacionClienteFV.wsdl" MetadataType="Wsdl" ID="3a0d8080-9348-4234-81c1-0f6062e166b9" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsModificaUbicacionClienteFV?wsdl" />
+    <MetadataFile FileName="WsModificaUbicacionClienteFV2.xsd" MetadataType="Schema" ID="f78f6d34-a9cf-4963-bc09-ebc3ac90757b" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsModificaUbicacionClienteFV?xsd=WsModificaUbicacionClienteFV-RQ.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

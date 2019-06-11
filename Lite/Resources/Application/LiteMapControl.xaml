@@ -1,0 +1,78 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib" 
+                    xmlns:local="clr-namespace:Lite" 
+                    xmlns:sfc="http://schemas.spatialeye.com/clienttoolkit"
+                    >
+
+  <Style TargetType="local:LiteMapControl">
+    <Setter Property="Background" Value="{StaticResource MapThemesControl.Layer.Background}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="local:LiteMapControl">
+          <Grid Margin="0">
+            <Grid.Resources>
+              <DataTemplate DataType="local:LiteMapViewModel">
+                <Grid Margin="0,10,0,10">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                  </Grid.RowDefinitions>
+                  <sfc:ParameterValuesPropertyGrid DataContext="{Binding Parameters}" Margin="0" Foreground="White"/>
+                </Grid>
+              </DataTemplate>
+            </Grid.Resources>
+
+            <Border x:Name="MapHeader" BorderBrush="{StaticResource MapThemesControl.BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto"/>
+                  <ColumnDefinition Width="Auto"/>
+                  <ColumnDefinition/>
+                  <ColumnDefinition Width="Auto"/>
+                  <ColumnDefinition Width="Auto"/>
+                  <ColumnDefinition Width="28"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="36"/>
+                  <RowDefinition Height="*"/>
+                  <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <sdk:Label Content="" Width="{Binding HeadingIndent}" Grid.Column="0"/>
+                <CheckBox x:Name="ExpandCollapseCheckBox" Grid.Column="1" Visibility="{Binding ExpandOptionVisibility}" Height="16" HorizontalAlignment="Center" VerticalAlignment="Center" Width="16" Margin="0" Style="{StaticResource ExpandCollapseCheckBoxStyle}" IsChecked="{Binding IsExpanded, Mode=TwoWay}"/>
+                <sdk:Label HorizontalAlignment="Left" Margin="6,0,0,0" Content="{Binding ExternalName, FallbackValue=Query Name}" VerticalAlignment="Center" Grid.Column="2" Foreground="White"/>
+                <Ellipse Visibility="{Binding ErrorVisibility}" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,4,0" VerticalAlignment="Center" Width="6" Height="6" Fill="#AAFF0000" ToolTipService.ToolTip="{Binding ErrorMessage}"/>
+                <Ellipse Visibility="{Binding BusyVisibility}" Grid.Column="4" HorizontalAlignment="Right" Margin="0,0,4,0" VerticalAlignment="Center" Width="6" Height="6" Fill="#33CBC9EA"/>
+                <Path Data="{Binding PathGeometry}" Stretch="Fill" Fill="{StaticResource Lite.Brush.Text.Light}" Grid.Column="5" Opacity="0.5" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4,0,0,0" Width="14" Height="14" />
+                
+                <!--<Border x:Name="ElementControl" Grid.ColumnSpan="4" Grid.Row="1" Background="{StaticResource MapThemesControl.Layer.ElementBackground}">
+                  <Grid  Margin="33,0,33,0">
+                    <ItemsControl ItemsSource="{Binding ConfigurationItems}"/>
+                  </Grid>
+                </Border>-->
+
+                <Border x:Name="MenuControl" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Row="2" Height="36" Grid.ColumnSpan="6" Background="{StaticResource MapThemesControl.Layer.MenuBackground}">
+                  <Grid Height="36">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="Auto"/>
+                      <ColumnDefinition Width="Auto"/>
+                      <ColumnDefinition Width="Auto"/>
+                      <ColumnDefinition Width="*"/>
+                      <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                   
+                    <Button Command="{Binding RemoveCommand}" Visibility="{Binding RemoveVisibility}" Grid.Column="5" Height="24" VerticalAlignment="Center" Width="24" Margin="0,0,10,0" Style="{StaticResource MetroButtonStyleLight}" Content="{StaticResource MetroIcon.Content.Delete}"/>
+                  </Grid>
+                </Border>
+               
+              </Grid>
+            </Border>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nca:schema xmlns:tns="http://www.grr.net.fv/gis" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.grr.net.fv/gis" xmlns:nca="http://www.w3.org/2001/XMLSchema">
+  <nca:complexType name="wsCalculaFactibilidad-RQ-Type">
+    <nca:sequence>
+      <nca:element name="longitud" nillable="true" type="nca:string" />
+      <nca:element name="latitud" nillable="true" type="nca:string" />
+    </nca:sequence>
+  </nca:complexType>
+  <nca:element name="wsCalculaFactibilidad-RQ" type="tns:wsCalculaFactibilidad-RQ-Type" />
+</nca:schema>

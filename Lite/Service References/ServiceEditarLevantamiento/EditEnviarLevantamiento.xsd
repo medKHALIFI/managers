@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fs:schema xmlns:tns="http://www.is.net.edit/gis" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.is.net.edit/gis" xmlns:fs="http://www.w3.org/2001/XMLSchema">
+  <fs:simpleType name="boundedString14">
+    <fs:restriction base="fs:string">
+      <fs:maxLength value="14" fixed="true" />
+    </fs:restriction>
+  </fs:simpleType>
+  <fs:complexType name="UTCDate">
+    <fs:sequence>
+      <fs:element name="date" nillable="true" type="tns:boundedString14" />
+    </fs:sequence>
+  </fs:complexType>
+  <fs:simpleType name="char">
+    <fs:restriction base="fs:string">
+      <fs:length value="1" fixed="true" />
+    </fs:restriction>
+  </fs:simpleType>
+  <fs:complexType name="MSVDate">
+    <fs:sequence>
+      <fs:element name="date" nillable="true" type="tns:boundedString14" />
+    </fs:sequence>
+  </fs:complexType>
+  <fs:complexType name="listaatributostype">
+    <fs:sequence>
+      <fs:element maxOccurs="unbounded" name="Atributo" type="tns:atributotype" />
+    </fs:sequence>
+  </fs:complexType>
+  <fs:complexType name="atributotype">
+    <fs:sequence>
+      <fs:element name="IdAtributo" type="fs:string" />
+      <fs:element name="IdAtributoPadre" type="fs:string" />
+      <fs:element name="NombreAtributo" type="fs:string" />
+      <fs:element name="ValorAtributo" type="fs:string" />
+    </fs:sequence>
+  </fs:complexType>
+  <fs:complexType name="GisRespuestaGeneralType">
+    <fs:sequence>
+      <fs:element name="FechaRespuesta" type="tns:UTCDate">
+        <fs:annotation>
+          <fs:documentation>Fecha en que se realiza la respuesta.</fs:documentation>
+        </fs:annotation>
+      </fs:element>
+      <fs:element name="CodigoRespuesta" type="fs:string">
+        <fs:annotation>
+          <fs:documentation>Campo que indicara si la operación solicitada resulto exitosa (OK) o fallida (KO).</fs:documentation>
+        </fs:annotation>
+      </fs:element>
+      <fs:element minOccurs="0" name="CodigoError" type="fs:string">
+        <fs:annotation>
+          <fs:documentation>Numero de error (tipificacion) ocurrido en la transaccion.</fs:documentation>
+        </fs:annotation>
+      </fs:element>
+      <fs:element minOccurs="0" name="DescripcionError" type="fs:string">
+        <fs:annotation>
+          <fs:documentation>Descripcion del error arrojado por el sistema.</fs:documentation>
+        </fs:annotation>
+      </fs:element>
+      <fs:element minOccurs="0" name="MensajeError" type="fs:string">
+        <fs:annotation>
+          <fs:documentation>Mensaje del error arrojado por Jboss.</fs:documentation>
+        </fs:annotation>
+      </fs:element>
+    </fs:sequence>
+  </fs:complexType>
+</fs:schema>

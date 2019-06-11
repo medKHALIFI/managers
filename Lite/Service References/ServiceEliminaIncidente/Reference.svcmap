@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c1b5cc6a-3f1f-408e-99ef-931c92342aa5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>true</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/gss/web/services/WsEliminaUbicacionIncidente?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WsEliminaUbicacionIncidente.xsd" MetadataType="Schema" ID="2d1c709e-5857-4949-90a7-c670fd885441" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsEliminaUbicacionIncidente?xsd=WsEliminaUbicacionIncidente-RS.xsd" />
+    <MetadataFile FileName="WsEliminaUbicacionIncidente1.xsd" MetadataType="Schema" ID="093cc446-a772-49cd-b8db-c09a289a978b" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsEliminaUbicacionIncidente?xsd=GisCommonTypeSchema.xsd" />
+    <MetadataFile FileName="WsEliminaUbicacionIncidente.wsdl" MetadataType="Wsdl" ID="04a122a8-049d-4709-9193-df075f0177b9" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsEliminaUbicacionIncidente?wsdl" />
+    <MetadataFile FileName="WsEliminaUbicacionIncidente2.xsd" MetadataType="Schema" ID="d54d1c71-7a68-4f95-8f21-d2efc7767297" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsEliminaUbicacionIncidente?xsd=WsEliminaUbicacionIncidente-RQ.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

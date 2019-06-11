@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nca:schema xmlns:tns="http://www.grr.net.fv/gis" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.grr.net.fv/gis" xmlns:nca="http://www.w3.org/2001/XMLSchema">
+  <nca:simpleType name="boundedString14">
+    <nca:restriction base="nca:string">
+      <nca:maxLength value="14" fixed="true" />
+    </nca:restriction>
+  </nca:simpleType>
+  <nca:complexType name="UTCDate">
+    <nca:sequence>
+      <nca:element name="date" nillable="true" type="tns:boundedString14" />
+    </nca:sequence>
+  </nca:complexType>
+  <nca:simpleType name="char">
+    <nca:restriction base="nca:string">
+      <nca:length value="1" fixed="true" />
+    </nca:restriction>
+  </nca:simpleType>
+  <nca:complexType name="MSVDate">
+    <nca:sequence>
+      <nca:element name="date" nillable="true" type="tns:boundedString14" />
+    </nca:sequence>
+  </nca:complexType>
+  <nca:complexType name="detalleRespuestaType">
+    <nca:sequence>
+      <nca:element name="MensajeTransaccion" type="nca:string" />
+      <nca:element name="CodigoError" type="nca:string" />
+      <nca:element name="DescripcionError" type="nca:string" />
+      <nca:element name="MensajeError" type="nca:string" />
+    </nca:sequence>
+  </nca:complexType>
+</nca:schema>

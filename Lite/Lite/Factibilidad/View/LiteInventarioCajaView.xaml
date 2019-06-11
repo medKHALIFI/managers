@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="Lite.LiteInventarioCajaView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:local="clr-namespace:Lite" 
+    xmlns:sfc="http://schemas.spatialeye.com/clienttoolkit"       
+    mc:Ignorable="d" Height="245" Width="315">
+
+    <Grid x:Name="LayoutRoot" Margin="0,0,10,-26" Background="{StaticResource SchemeBrush.Background.5}" Visibility="{Binding InventarioCajaViewModel.Visibilidad, Mode=TwoWay, BindsDirectlyToSource=True}">
+        <sdk:Label x:Name="lblCuenta" HorizontalAlignment="Left" Height="23" Margin="5,172,0,0" VerticalAlignment="Top" Width="120" Content="CUENTA:" Foreground="#FFF9F5F5"/>
+        <Button x:Name="cmdActualizaPuertos" Content="ACTUALIZAR" HorizontalAlignment="Left" Margin="130,113,0,0" VerticalAlignment="Top" Width="165" Click="cmdActualizaPuertos_Click" Foreground="#FF76B0EA" Opacity="0.75" FontWeight="Bold" UseLayoutRounding="False"/>
+        <sdk:Label x:Name="lblInventario" HorizontalAlignment="Left" Height="18" VerticalAlignment="Top" Width="129" Content="INVENTARIO DE CAJA" Foreground="#FFFBF7F7"/>
+        <TextBox x:Name="txtPuertosTotales" HorizontalAlignment="Left" Height="23" Margin="130,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Opacity="0.75" Foreground="#FF07315B" MaxLength="3" KeyDown="txtPuertosTotales_KeyDown"/>
+        <sdk:Label x:Name="lblPuertosTotales" HorizontalAlignment="Left" Height="23" Margin="5,60,0,0" VerticalAlignment="Top" Width="120" Content="*PUERTOS TOTALES:" Foreground="#FFFBF7F7"/>
+        <Button x:Name="cmdAgregarCuenta" Content="ASOCIAR +" HorizontalAlignment="Left" Margin="5,240,0,0" VerticalAlignment="Top" Width="109" Click="cmdAgregarCuenta_Click" Foreground="#FF76B0EA" Opacity="0.75" Height="21" FontWeight="Bold" UseLayoutRounding="False"/>
+        <Button x:Name="cmdDesagregarCuenta" Content="DESASOCIAR -" HorizontalAlignment="Left" Margin="176,240,0,0" VerticalAlignment="Top" Width="119" Click="cmdDesagregarCuenta_Click" Foreground="#FF76B0EA" Opacity="0.75" Height="21" FontWeight="Bold" UseLayoutRounding="False"/>
+        <sfc:ProgressIndicator x:Name="Indicador" Grid.Row="0" Visibility="Visible" InProgress="False" Content="Ejecutando" d:IsHidden="True"/>
+        <sdk:Label x:Name="lblPuertosOcupados" HorizontalAlignment="Left" Height="23" Margin="5,86,0,0" VerticalAlignment="Top" Width="120" Content="*PUERTOS OCUPADOS:" Foreground="#FFFBF7F7"/>
+        <TextBox x:Name="txtPuertosOcupados" HorizontalAlignment="Left" Height="23" Margin="130,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Opacity="0.75" Foreground="#FF07315B" MaxLength="3" KeyDown="txtPuertosOcupados_KeyDown" />
+        <TextBox x:Name="txtCuenta" HorizontalAlignment="Left" Height="23" Margin="130,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Opacity="0.75" Foreground="#FF07315B" MaxLength="10" />
+        <!-- <sdk:Label x:Name="lblCaja" HorizontalAlignment="Left" Height="18" Margin="134,0,0,0" VerticalAlignment="Top" Width="111" Opacity="0.75" Foreground="#FF07315B"
+                 Content="{Binding InventarioCajaViewModel.IdCaja, Mode=TwoWay, BindsDirectlyToSource=True}" FontWeight="Bold" TextInputUpdate="IdCajaCambio"/> -->
+        <TextBox x:Name="lblCaja" HorizontalAlignment="Left" Height="23" Margin="130,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Opacity="0.3" 
+                 Foreground="#FF07315B" MaxLength="10" BorderThickness="0" IsReadOnly="True" 
+                 TextChanged="lblCaja_TextChanged" FontWeight="Bold" 
+                 Text="{Binding InventarioCajaViewModel.IdCaja, Mode=TwoWay, BindsDirectlyToSource=True}" />
+        <TextBox x:Name="txtNombreCaja" HorizontalAlignment="Left" Height="23" Margin="130,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Opacity="0.75" Foreground="#FF07315B" MaxLength="25"
+                 Text="{Binding InventarioCajaViewModel.NombreCaja, Mode=TwoWay, BindsDirectlyToSource=True}"/>
+        <sdk:Label x:Name="lblNombreCaja" HorizontalAlignment="Left" Height="23" Margin="5,34,0,0" VerticalAlignment="Top" Width="120" Content="NOMBRE:" Foreground="#FFFBF7F7"/>
+        <sdk:Label x:Name="lblnumeroPuerto" HorizontalAlignment="Left" Height="23" Margin="5,200,0,0" VerticalAlignment="Top" Width="120" Content="NÚMERO DE PUERTO:" Foreground="#FFF9F5F5"/>
+        <TextBox x:Name="txtNumeroPuerto" HorizontalAlignment="Left" Height="23" Margin="130,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Opacity="0.75" Foreground="#FF07315B" MaxLength="10" KeyDown="txtPuertosOcupados_KeyDown" />
+    </Grid>
+</UserControl>

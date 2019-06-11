@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="Lite.LiteMapPopupMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Lite"
+    xmlns:sfc="http://schemas.spatialeye.com/clienttoolkit"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+  <Grid x:Name="LayoutRoot">
+
+    <Grid.Resources>
+      <sfc:StaticResourceConverter x:Name="StaticResourceConverter"/>
+    </Grid.Resources>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="{Binding PopupMenuIndentY}"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="{Binding PopupMenuIndentX}" />
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+
+    <Grid  Grid.Row="1" Grid.Column="1" Background="Transparent">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="10"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="10"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="10" />
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="10" />
+      </Grid.ColumnDefinitions>
+
+      <Border Grid.Row="1" Grid.Column="1">
+        <Border.Effect>
+          <DropShadowEffect Opacity="0.6"/>
+        </Border.Effect>
+        <Grid MinWidth="150">
+          <ItemsControl ItemsSource="{Binding MenuItems}">
+            <ItemsControl.ItemsPanel>
+              <ItemsPanelTemplate>
+                <StackPanel Orientation="Vertical" />
+              </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <Grid Margin="0">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+                  <Rectangle Fill="{StaticResource Lite.Brush.Background.Light}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Width="28"/>
+                  <Rectangle Fill="{StaticResource Lite.Brush.Background.Mid}" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"/>
+                  <Rectangle Fill="{StaticResource Lite.Brush.Control.Background.Mid}" Visibility="{Binding BorderVisibility}" VerticalAlignment="Center" Margin="3,0" Grid.Row="0" Grid.Column="1" Height="1"/>
+                  <ItemsControl ItemsSource="{Binding Items}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" >
+                    <ItemsControl.ItemsPanel>
+                      <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical" />
+                      </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                      <DataTemplate>
+                        <Grid Visibility="{Binding Visibility}">
+                          <Button Style="{StaticResource LitePopupMenuButtonStyle}" Content="{Binding IconResource, Converter={StaticResource StaticResourceConverter}}" Command="{Binding Command}" local:ButtonExtensions.Text="{Binding Title}"/>
+                        </Grid>
+                      </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                  </ItemsControl>
+                </Grid>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </Grid>
+      </Border>
+
+    </Grid>
+  </Grid>
+</UserControl>

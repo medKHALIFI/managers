@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nca:schema xmlns:tns="http://www.grr.net.fv/gis" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.grr.net.fv/gis" xmlns:nca="http://www.w3.org/2001/XMLSchema">
+  <nca:include schemaLocation="WsFactibilidadResidencial?xsd=GisCommonTypeSchema.xsd" />
+  <nca:complexType name="wsFactibilidadResidencial-RS-Type">
+    <nca:sequence>
+      <nca:element name="factibilidad" type="nca:string" />
+      <nca:element name="comentario" type="nca:string" />
+      <nca:element name="domicilio" type="nca:string" />
+      <nca:element name="cluster_totalplay" type="nca:string" />
+      <nca:element name="region_totalplay" type="nca:string" />
+      <nca:element name="ciudad_totalplay" type="nca:string" />
+      <nca:element name="distrito_totalplay" type="nca:string" />
+      <nca:element name="zona_totalplay" type="nca:string" />
+      <nca:element name="detalleRespuesta" type="tns:detalleRespuestaType" />
+    </nca:sequence>
+  </nca:complexType>
+  <nca:element name="wsFactibilidadResidencial-RS" type="tns:wsFactibilidadResidencial-RS-Type" />
+</nca:schema>

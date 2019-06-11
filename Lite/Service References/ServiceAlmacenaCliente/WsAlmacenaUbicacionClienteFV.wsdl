@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.grr.net.fv/svc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns="http://www.grr.net.fv/gis" targetNamespace="http://www.grr.net.fv/svc" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:import schemaLocation="WsAlmacenaUbicacionClienteFV?xsd=WsAlmacenaUbicacionClienteFV-RS.xsd" namespace="http://www.grr.net.fv/gis" />
+      <xs:import schemaLocation="WsAlmacenaUbicacionClienteFV?xsd=WsAlmacenaUbicacionClienteFV-RQ.xsd" namespace="http://www.grr.net.fv/gis" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="almacenaUbicacionClienteFVResponse">
+    <wsdl:part name="parameter" element="ns:wsAlmacenaUbicacionClienteFV-RS" />
+  </wsdl:message>
+  <wsdl:message name="almacenaUbicacionClienteFVRequest">
+    <wsdl:part name="parameter" element="ns:wsAlmacenaUbicacionClienteFV-RQ" />
+  </wsdl:message>
+  <wsdl:portType name="WsAlmacenaUbicacionClienteFVPortType">
+    <wsdl:operation name="almacenaUbicacionClienteFV">
+      <wsdl:input name="almacenaUbicacionClienteFVRequest" message="tns:almacenaUbicacionClienteFVRequest" />
+      <wsdl:output name="almacenaUbicacionClienteFVResponse" message="tns:almacenaUbicacionClienteFVResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsAlmacenaUbicacionClienteFV-SOAP11Binding" type="tns:WsAlmacenaUbicacionClienteFVPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="almacenaUbicacionClienteFV">
+      <soap:operation soapAction="urn:almacenaUbicacionClienteFV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsAlmacenaUbicacionClienteFV-SOAP12Binding" type="tns:WsAlmacenaUbicacionClienteFVPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="almacenaUbicacionClienteFV">
+      <soap12:operation soapAction="urn:almacenaUbicacionClienteFV" style="document" soapActionRequired="true" />
+      <wsdl:input name="almacenaUbicacionClienteFVRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="almacenaUbicacionClienteFVResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsAlmacenaUbicacionClienteFV">
+    <wsdl:port name="WsAlmacenaUbicacionClienteFV-SOAP12port_http" binding="tns:WsAlmacenaUbicacionClienteFV-SOAP12Binding">
+      <soap12:address location="http://192.168.1.86:8080/gss/web/services/WsAlmacenaUbicacionClienteFV/" />
+    </wsdl:port>
+    <wsdl:port name="WsAlmacenaUbicacionClienteFV-SOAP11port_http" binding="tns:WsAlmacenaUbicacionClienteFV-SOAP11Binding">
+      <soap:address location="http://192.168.1.86:8080/gss/web/services/WsAlmacenaUbicacionClienteFV/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

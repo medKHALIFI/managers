@@ -1,0 +1,62 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+                    xmlns:sfc="http://schemas.spatialeye.com/clienttoolkit" 
+                    >
+
+  <Style x:Name="ParameterValuesPropertyGridStyle" TargetType="sfc:PropertyGrid">
+    <Setter Property="AllowCategoryExpandCollapse" Value="False" />
+    <Setter Property="AllowColumnResize" Value="False" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+    <Setter Property="LabelMargin" Value="0,2,2,2" />
+    <Setter Property="LabelHorizontalAlignment" Value="Left" />
+    <Setter Property="LabelVerticalAlignment" Value="Center" />
+    <Setter Property="ShowCategories" Value="False" />
+    <Setter Property="ShowCategoryRowIndicators" Value="False"/>
+    <Setter Property="ShowHorizontalGridLines" Value="False" />
+    <Setter Property="ShowVerticalGridLines" Value="False" />
+    <Setter Property="ShowLabels" Value="True" />
+    <Setter Property="ValueMargin" Value="6,2,0,2" />
+    <Setter Property="ValueHorizontalAlignment" Value="Left" />
+    <Setter Property="ValueVerticalAlignment" Value="Center" />
+    <Setter Property="VerticalAlignment" Value="Stretch" />
+    <Setter Property="VerticalContentAlignment" Value="Stretch" />
+    <Setter Property="CategoryBackground" Value="{StaticResource ParameterValuesPropertyGrid.GridBrush}" />
+    <Setter Property="GridBrush" Value="{StaticResource ParameterValuesPropertyGrid.GridBrush}" />
+    <Setter Property="LabelBackground" Value="{StaticResource ParameterValuesPropertyGrid.LabelBackground}" />
+    <Setter Property="ValueBackground" Value="{StaticResource ParameterValuesPropertyGrid.ValueBackground}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="sfc:PropertyGrid">
+          <Grid x:Name="GridView" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="16"/>
+              <ColumnDefinition Width="Auto" />
+              <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  
+  <Style TargetType="sfc:ParameterValuesPropertyGrid">
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+    <Setter Property="VerticalAlignment" Value="Stretch" />
+    <Setter Property="VerticalContentAlignment" Value="Stretch" />
+    <Setter Property="Background" Value="{StaticResource ParameterValuesPropertyGrid.Background}"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="sfc:ParameterValuesPropertyGrid">
+          <Grid Margin="{TemplateBinding Padding}">
+            <sfc:PropertyGrid x:Name="PropertyGrid" Style="{StaticResource ParameterValuesPropertyGridStyle}"/>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="956e192e-e063-49d0-8410-610d03a811e3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>true</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/gss/web/services/WsAlmacenaUbicacionIncidente?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WsAlmacenaUbicacionIncidente.xsd" MetadataType="Schema" ID="c61b1250-5f1f-402c-bfdc-61538dabc719" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsAlmacenaUbicacionIncidente?xsd=WsAlmacenaUbicacionIncidente-RS.xsd" />
+    <MetadataFile FileName="WsAlmacenaUbicacionIncidente1.xsd" MetadataType="Schema" ID="0257a827-4d97-416b-bd88-c4831c74d42d" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsAlmacenaUbicacionIncidente?xsd=WsAlmacenaUbicacionIncidente-RQ.xsd" />
+    <MetadataFile FileName="WsAlmacenaUbicacionIncidente.wsdl" MetadataType="Wsdl" ID="cb269997-fc26-4866-8211-1a0249f8e1d6" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsAlmacenaUbicacionIncidente?wsdl" />
+    <MetadataFile FileName="WsAlmacenaUbicacionIncidente2.xsd" MetadataType="Schema" ID="78629735-51ea-42a1-8fb6-4b1bdafa6e81" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsAlmacenaUbicacionIncidente?xsd=GisCommonTypeSchema.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

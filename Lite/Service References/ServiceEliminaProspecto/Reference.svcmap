@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f1f69c9b-0e63-47e9-89de-09ebe210252a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>true</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/gss/web/services/WsEliminaUbicacionProspectoFV?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WsEliminaUbicacionProspectoFV3.xsd" MetadataType="Schema" ID="f950e86b-1fcb-4f2b-bc71-deb62b94d603" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsEliminaUbicacionProspectoFV?xsd=GisCommonTypeSchema.xsd" />
+    <MetadataFile FileName="WsEliminaUbicacionProspectoFV1.wsdl" MetadataType="Wsdl" ID="aa839d24-192e-49d0-9d61-28b51ae2ca59" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsEliminaUbicacionProspectoFV?wsdl" />
+    <MetadataFile FileName="WsEliminaUbicacionProspectoFV31.xsd" MetadataType="Schema" ID="047afa71-00bc-4bf7-b87e-39d0a20e08fb" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsEliminaUbicacionProspectoFV?xsd=WsEliminaUbicacionProspectoFV-RS.xsd" />
+    <MetadataFile FileName="WsEliminaUbicacionProspectoFV32.xsd" MetadataType="Schema" ID="d8e4ff85-c372-4238-ba64-ba46d70641e8" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsEliminaUbicacionProspectoFV?xsd=WsEliminaUbicacionProspectoFV-RQ.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

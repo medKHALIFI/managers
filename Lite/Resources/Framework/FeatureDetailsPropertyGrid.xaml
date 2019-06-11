@@ -1,0 +1,80 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+                    xmlns:sfc="http://schemas.spatialeye.com/clienttoolkit" 
+                    >
+
+  <Style x:Name="FeatureDetailsPropertyGridStyle" TargetType="sfc:PropertyGrid">
+    <Setter Property="AllowCategoryExpandCollapse" Value="True" />
+    <Setter Property="AllowColumnResize" Value="True" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+    <Setter Property="LabelMargin" Value="4,2,4,2" />
+    <Setter Property="LabelHorizontalAlignment" Value="Left" />
+    <Setter Property="LabelVerticalAlignment" Value="Top" />
+    <Setter Property="ShowCategories" Value="True" />
+    <Setter Property="ShowCategoryRowIndicators" Value="false"/>
+    <Setter Property="ShowHorizontalGridLines" Value="False" />
+    <Setter Property="ShowVerticalGridLines" Value="True" />
+    <Setter Property="ShowLabels" Value="True" />
+    <Setter Property="ValueMargin" Value="4,2,4,2" />
+    <Setter Property="ValueHorizontalAlignment" Value="Left" />
+    <Setter Property="ValueVerticalAlignment" Value="Top" />
+    <Setter Property="VerticalAlignment" Value="Stretch" />
+    <Setter Property="VerticalContentAlignment" Value="Stretch" />
+    <Setter Property="CategoryBackground" Value="{StaticResource FeatureDetailsPropertyGrid.GridBrush}" />
+    <Setter Property="GridBrush" Value="{StaticResource FeatureDetailsPropertyGrid.GridBrush}" />
+    <Setter Property="LabelBackground" Value="{StaticResource FeatureDetailsPropertyGrid.LabelBackground}" />
+    <Setter Property="ValueBackground" Value="{StaticResource FeatureDetailsPropertyGrid.ValueBackground}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="sfc:PropertyGrid">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="22*"/>
+              <RowDefinition Height="88*"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="EmptyGridViewElement">
+              <TextBlock Text="{Binding Resources.FeatureDetailsSelectFeatureFromMap}"  TextWrapping="Wrap" Foreground="{StaticResource FeatureDetailsPropertyGrid.EmptyElement.Foreground}" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+            </Grid>
+            <Grid x:Name="GridView" VerticalAlignment="Top" Grid.RowSpan="2">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="16"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions>
+            </Grid>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style TargetType="sfc:FeatureDetailsPropertyGrid">
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+    <Setter Property="VerticalAlignment" Value="Stretch" />
+    <Setter Property="VerticalContentAlignment" Value="Stretch" />
+    <Setter Property="Background" Value="{StaticResource PropertyGrid.Background}"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="sfc:FeatureDetailsPropertyGrid">
+          <ScrollViewer x:Name="LayoutRoot"
+									Margin="0"
+									Padding="0"
+									HorizontalAlignment="Stretch"
+									VerticalAlignment="Stretch"
+									HorizontalContentAlignment="Stretch"
+									VerticalContentAlignment="Stretch"
+									HorizontalScrollBarVisibility="Disabled"
+									VerticalScrollBarVisibility="Auto"
+                 >
+            <sfc:PropertyGrid x:Name="PropertyGrid" Style="{StaticResource FeatureDetailsPropertyGridStyle}"/>
+          </ScrollViewer>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+</ResourceDictionary>

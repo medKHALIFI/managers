@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Lite.LiteCreateMission"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             
+                       
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:local="clr-namespace:Lite"
+    xmlns:sfc="http://schemas.spatialeye.com/clienttoolkit" 
+             
+    mc:Ignorable="d" Height="589.571" Width="300"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+
+    <Grid x:Name="LayoutRoot" Background="{StaticResource SchemeBrush.Background.5}">
+        <sdk:Label x:Name="label" Height="21" Margin="95,19,87,0" VerticalAlignment="Top" Content="Create Mission" FontWeight="Bold" FontSize="14"/>
+        <sdk:Label x:Name="label1" HorizontalAlignment="Left" Height="28" Margin="30,70,0,0" VerticalAlignment="Top" Width="93" Content="Laboratory" FontWeight="Bold"/>
+        <sdk:Label x:Name="label2" HorizontalAlignment="Left" Height="20" Margin="30,98,0,0" VerticalAlignment="Top" Width="93" Content="Lab assistant" FontWeight="Bold"/>
+        <sdk:Label x:Name="label1_Copy" HorizontalAlignment="Left" Height="21" Margin="30,123,0,0" VerticalAlignment="Top" Width="104" Content="parameter type" FontWeight="Bold"/>
+        <sdk:Label x:Name="label1_Copy1" HorizontalAlignment="Left" Height="21" Margin="30,153,0,0" VerticalAlignment="Top" Width="93" Content="Note" FontWeight="Bold"/>
+        <ComboBox x:Name="comboBox_laboratory" Height="20" Margin="148,70,19,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBox_param_type" Height="20" Margin="148,120,19,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBox_Labasstant" Height="20" Margin="148,95,19,0" VerticalAlignment="Top"/>
+        <Button x:Name="button_" Content="save mission" Height="20" Margin="148,231,19,0" VerticalAlignment="Top" d:LayoutOverrides="LeftPosition, RightPosition" Click="button__Click"/>
+        <TextBox x:Name="textBox_note" HorizontalAlignment="Left" Height="49" Margin="148,153,0,0" TextWrapping="Wrap" Text="note" VerticalAlignment="Top" Width="133"/>
+
+    </Grid>
+</UserControl>

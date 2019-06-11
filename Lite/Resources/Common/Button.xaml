@@ -1,0 +1,581 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:local="clr-namespace:Lite"
+                    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Style x:Key="ButtonThemeKey_ButtonControlStyle" TargetType="ButtonBase">
+    <Setter Property="Foreground" Value="{StaticResource Button.Foreground}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Padding" Value="10,1,10,1" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ButtonBase">
+          <Grid x:Name="Root">
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal">
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DefaultState" Duration="0" To="1" />
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="MouseOver">
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="HoverState" Duration="0" To="1" />
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Pressed">
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PressedState" Duration="0" To="1" />
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Disabled">
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Root" Duration="0" To="0.5" />
+                  </Storyboard>
+                </VisualState>
+              </VisualStateGroup>
+              <VisualStateGroup x:Name="FocusedStates">
+                <VisualState x:Name="Focused">
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusState" Duration="0" To="1" />
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Unfocused" />
+              </VisualStateGroup>
+              <VisualStateGroup x:Name="CheckedStates">
+                <VisualState x:Name="Checked">
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="CheckedState" Duration="0" To="1" />
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Unchecked" />
+              </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Grid>
+              <Grid x:Name="DefaultState">
+                <Border Background="{StaticResource Button.DefaultState.Border1}" Padding="1">
+                  <Border Background="{StaticResource Button.DefaultState.Border2}" />
+                </Border>
+              </Grid>
+              <Grid x:Name="HoverState" Opacity="0">
+                <Border Background="{StaticResource Button.HoverState.Border1}" Padding="1">
+                  <Border Background="{StaticResource Button.HoverState.Border2}" />
+                </Border>
+              </Grid>
+              <Grid x:Name="FocusState" Opacity="0">
+                <Border Style="{StaticResource FocusTemplate}" />
+              </Grid>
+              <Grid x:Name="PressedState" Opacity="0">
+                <Border Background="{StaticResource Button.PressedState.Border1}" Padding="1">
+                  <Border Background="{StaticResource Button.PressedState.Border2}" Padding="1" />
+                </Border>
+              </Grid>
+              <Grid x:Name="CheckedState" Opacity="0">
+                <Border Background="{StaticResource Button.CheckedState.Border1}" Padding="1">
+                  <Border Background="{StaticResource Button.CheckedState.Border2}" />
+                </Border>
+              </Grid>
+              <Grid Margin="2">
+                <ContentPresenter x:Name="Content" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+              </Grid>
+            </Grid>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style TargetType="Button" BasedOn="{StaticResource ButtonThemeKey_ButtonControlStyle}" />
+  <Style TargetType="ToggleButton" BasedOn="{StaticResource ButtonThemeKey_ButtonControlStyle}" />
+  <Style TargetType="RepeatButton" BasedOn="{StaticResource ButtonThemeKey_ButtonControlStyle}" />
+
+
+  <Style x:Key="ButtonStyleFlatLight" TargetType="ButtonBase">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ButtonBase">
+          <Grid>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal"/>
+                <VisualState x:Name="MouseOver">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="BorderBrush">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.HoverState.Foreground.Light}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Pressed">
+                  <Storyboard>
+                    <Storyboard>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="fill" Storyboard.TargetProperty="Fill">
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.SelectedState.Background.Light}" />
+                      </ObjectAnimationUsingKeyFrames>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="BorderBrush">
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.SelectedState.Foreground.Light}" />
+                      </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Disabled">
+                  <Storyboard>
+                    <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetName="fill" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.DisabledState.Background.Light}" />
+                    </ObjectAnimationUsingKeyFrames>-->
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="BorderBrush">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.DisabledState.Foreground.Light}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+              </VisualStateGroup>
+
+            </VisualStateManager.VisualStateGroups>
+            <Border BorderThickness="0" Background="#00000000" />
+            <Grid x:Name="backgroundGrid" Visibility="Visible" >
+              <Rectangle Fill="{StaticResource MetroIcon.DefaultState.Foreground.Dark}" Name="fill" Visibility="Visible" />
+            </Grid>
+            <Border x:Name="inner" BorderBrush="{Binding Content.BorderBrush}">
+              <ContentPresenter Content="{TemplateBinding Content}"/>
+            </Border>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="ButtonStyleFlatDark" TargetType="ButtonBase">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ButtonBase">
+          <Grid>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal"/>
+                <VisualState x:Name="MouseOver">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="BorderBrush">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.HoverState.Foreground.Dark}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Pressed">
+                  <Storyboard>
+                    <Storyboard>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="fill" Storyboard.TargetProperty="Fill">
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.SelectedState.Background.Dark}" />
+                      </ObjectAnimationUsingKeyFrames>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="BorderBrush">
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.SelectedState.Foreground.Dark}" />
+                      </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Disabled">
+                  <Storyboard>
+                    <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetName="fill" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.DisabledState.Background.Light}" />
+                    </ObjectAnimationUsingKeyFrames>-->
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="BorderBrush">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.DisabledState.Foreground.Light}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+              </VisualStateGroup>
+
+            </VisualStateManager.VisualStateGroups>
+            <Border BorderThickness="0" Background="#00000000" />
+            <Grid x:Name="backgroundGrid" Visibility="Visible" >
+              <Rectangle Fill="{StaticResource MetroIcon.DefaultState.Foreground.Light}" Name="fill" Visibility="Visible" />
+            </Grid>
+            <Border x:Name="inner" BorderBrush="{StaticResource Lite.Brush.Background.DarkMid}">
+              <ContentPresenter Content="{TemplateBinding Content}"/>
+            </Border>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+
+  <Style x:Key="MetroButtonStyleDark" TargetType="ButtonBase">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ButtonBase">
+          <Grid>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal"/>
+                <VisualState x:Name="MouseOver">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="outer" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.HoverState.Foreground.Dark}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Pressed">
+                  <Storyboard>
+                    <Storyboard>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="outer" Storyboard.TargetProperty="Fill">
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.SelectedState.Foreground.Dark}" />
+                      </ObjectAnimationUsingKeyFrames>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="Fill">
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.SelectedState.Foreground.Dark}" />
+                      </ObjectAnimationUsingKeyFrames>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="fill" Storyboard.TargetProperty="Fill">
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.SelectedState.Background.Dark}" />
+                      </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Disabled">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="outer" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.DisabledState.Foreground.Dark}" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.DisabledState.Foreground.Dark}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+              </VisualStateGroup>
+
+            </VisualStateManager.VisualStateGroups>
+            <Border BorderThickness="0" Background="#00000000" />
+            <Grid x:Name="backgroundGrid" Visibility="Visible" Width="24" Height="24">
+              <Path x:Name="outer" Data="{StaticResource MetroIcon.Content.Outline}" Stretch="Fill" Fill="{StaticResource MetroIcon.DefaultState.Foreground.Dark}"  Visibility="Visible" />
+              <Path x:Name="fill" Data="{StaticResource MetroIcon.Content.Fill}" Stretch="Fill" Fill="{StaticResource MetroIcon.DefaultState.Background.Dark}" Visibility="Visible"/>
+            </Grid>
+            <Path x:Name="inner" Data="{TemplateBinding Content}" Stretch="Uniform" Fill="{StaticResource MetroIcon.DefaultState.Foreground.Dark}" Width="12" Height="12" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5"/>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="WinButtonStyleLight" TargetType="ButtonBase">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ButtonBase">
+          <Grid>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal"/>
+                <VisualState x:Name="MouseOver">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="outer" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource Button.Hoverstate.Background}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Pressed">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.HoverState.Foreground.Light}" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="outer" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource Button.Hoverstate.Background}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Disabled">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.DisabledState.Foreground.Light}" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="text" Storyboard.TargetProperty="Foreground">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.DisabledState.Foreground.Light}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+              </VisualStateGroup>
+
+            </VisualStateManager.VisualStateGroups>
+            <Rectangle Fill="#00FFFFFF" />
+            <Rectangle Name="outer"/>
+            <Grid Margin="4">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+              </Grid.RowDefinitions>
+              <Path x:Name="inner" Grid.Row="0" Data="{TemplateBinding Content}" Stretch="Uniform" Fill="{StaticResource MetroIcon.DefaultState.Foreground.Light}" Width="20" Height="20" Margin="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+              <TextBlock x:Name="text" VerticalAlignment="Top" TextTrimming="WordEllipsis" MaxHeight="40"  Grid.Row="1" Text="{TemplateBinding local:ButtonExtensions.Text}" Margin="0,4,0,0" TextAlignment="Center" TextWrapping="Wrap" Foreground="{StaticResource Lite.Brush.Text.Light}" />
+            </Grid>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="ZoomButtonStyle" TargetType="ButtonBase">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ButtonBase">
+          <Grid>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal"/>
+                <VisualState x:Name="MouseOver">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.HoverState.Foreground.Light}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Pressed">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.HoverState.Foreground.Light}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Disabled">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="Gray" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+              </VisualStateGroup>
+
+            </VisualStateManager.VisualStateGroups>
+            <Border BorderThickness="0" Background="#00000000" />
+            <Grid x:Name="backgroundGrid" >
+              <Ellipse x:Name="OuterCircle" Fill="#40FFFFFF" Stroke="#80E1E1E1" />
+              <Ellipse x:Name="InnerCircle" Fill="White" Stroke="#7F665C5C"  Margin="4"/>
+              <Ellipse x:Name="ActionCircle" IsHitTestVisible="False" Stroke="#7F5C6266"  Margin="4"/>
+            </Grid>
+            <Path x:Name="inner" Data="{TemplateBinding Content}" Stretch="Uniform" Fill="{StaticResource MetroIcon.DefaultState.Foreground.Dark}"  Margin="8" RenderTransformOrigin="0.5,0.5"/>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="MapLayerButtonStyle" TargetType="ButtonBase">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ButtonBase">
+          <Grid>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal"/>
+                <VisualState x:Name="MouseOver">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InnerCircle" Storyboard.TargetProperty="Stroke">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.HoverState.Foreground.Light}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Pressed">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InnerCircle" Storyboard.TargetProperty="Stroke">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.HoverState.Foreground.Light}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Disabled"/>
+              </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+            <Border BorderThickness="0" Background="#00000000" />
+            <Grid x:Name="backgroundGrid" >
+              <Ellipse x:Name="OuterCircle" Fill="#40FFFFFF" Stroke="#80E1E1E1" />
+              <Ellipse x:Name="InnerCircle" Stroke="#7F665C5C" Margin="4">
+                <Ellipse.Fill>
+                  <ImageBrush AlignmentX="Center" AlignmentY="Center" ImageSource="{Binding SelectedGroup.SelectedItem.Images.Image32}" Stretch="UniformToFill"   />
+                </Ellipse.Fill>
+              </Ellipse>
+            </Grid>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="TraceLoggerButtonStyle" TargetType="ButtonBase">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ButtonBase">
+          <Grid>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal">
+                  <Storyboard>
+                    <DoubleAnimationUsingKeyFrames RepeatBehavior="Forever" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="inner">
+                      <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                      <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.5"/>
+                      <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+              </VisualStateGroup>
+
+            </VisualStateManager.VisualStateGroups>
+            <Border BorderThickness="0" Background="#00000000" />
+            <Path x:Name="inner" Data="{StaticResource MetroIcon.Content.TraceLogger}" Stretch="Uniform" Fill="{StaticResource Lite.Brush.Text.Title.Dark}" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5"/>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="MetroButtonStyleLight" TargetType="ButtonBase">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ButtonBase">
+          <Grid>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal"/>
+                <VisualState x:Name="MouseOver">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="outer" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.HoverState.Foreground.Light}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Pressed">
+                  <Storyboard>
+                    <Storyboard>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="outer" Storyboard.TargetProperty="Fill">
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.SelectedState.Foreground.Light}" />
+                      </ObjectAnimationUsingKeyFrames>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="Fill">
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.SelectedState.Foreground.Light}" />
+                      </ObjectAnimationUsingKeyFrames>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="fill" Storyboard.TargetProperty="Fill">
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.SelectedState.Background.Light}" />
+                      </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Disabled">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="outer" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.DisabledState.Foreground.Light}" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.DisabledState.Foreground.Light}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+              </VisualStateGroup>
+
+            </VisualStateManager.VisualStateGroups>
+            <Border BorderThickness="0" Background="#00000000" />
+            <Grid x:Name="backgroundGrid" Visibility="Visible" Width="24" Height="24">
+              <Path x:Name="outer" Data="{StaticResource MetroIcon.Content.Outline}" Stretch="Fill" Fill="{StaticResource MetroIcon.DefaultState.Foreground.Light}"  Visibility="Visible" />
+              <Path x:Name="fill" Data="{StaticResource MetroIcon.Content.Fill}" Stretch="Fill" Fill="{StaticResource MetroIcon.DefaultState.Background.Light}" Visibility="Visible"/>
+            </Grid>
+            <Path x:Name="inner" Data="{TemplateBinding Content}" Stretch="Uniform" Fill="{StaticResource MetroIcon.DefaultState.Foreground.Light}" Width="12" Height="12" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5"/>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="MetroButtonStyleFlatLight" TargetType="ButtonBase">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ButtonBase">
+          <Grid>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal"/>
+                <VisualState x:Name="MouseOver">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.HoverState.Foreground.Light}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Pressed">
+                  <Storyboard>
+                    <Storyboard>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="fill" Storyboard.TargetProperty="Fill">
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.SelectedState.Background.Light}" />
+                      </ObjectAnimationUsingKeyFrames>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="Fill">
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.SelectedState.Foreground.Light}" />
+                      </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Disabled">
+                  <Storyboard>
+                    <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetName="fill" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.DisabledState.Background.Light}" />
+                    </ObjectAnimationUsingKeyFrames>-->
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.DisabledState.Foreground.Light}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+              </VisualStateGroup>
+
+            </VisualStateManager.VisualStateGroups>
+            <Border BorderThickness="0" Background="#00000000" />
+            <Grid x:Name="backgroundGrid" Visibility="Visible" >
+              <Rectangle Fill="{StaticResource MetroIcon.DefaultState.Foreground.Dark}" Name="fill" Visibility="Visible" />
+            </Grid>
+            <Path x:Name="inner" Data="{TemplateBinding Content}" Stretch="Uniform" Fill="{StaticResource MetroIcon.DefaultState.Foreground.Light}"  Margin="4"/>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="MetroButtonStyleFlatDark" TargetType="ButtonBase">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ButtonBase">
+          <Grid>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal"/>
+                <VisualState x:Name="MouseOver">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.HoverState.Foreground.Dark}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Pressed">
+                  <Storyboard>
+                    <Storyboard>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="fill" Storyboard.TargetProperty="Fill">
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.SelectedState.Background.Dark}" />
+                      </ObjectAnimationUsingKeyFrames>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="Fill">
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.SelectedState.Foreground.Dark}" />
+                      </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Disabled">
+                  <Storyboard>
+                    <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetName="fill" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.DisabledState.Background.Light}" />
+                    </ObjectAnimationUsingKeyFrames>-->
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="inner" Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource MetroIcon.DisabledState.Foreground.Light}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+              </VisualStateGroup>
+
+            </VisualStateManager.VisualStateGroups>
+            <Border BorderThickness="0" Background="#00000000" />
+            <Grid x:Name="backgroundGrid" Visibility="Visible" >
+              <Rectangle Fill="{StaticResource MetroIcon.DefaultState.Foreground.Light}" Name="fill" Visibility="Visible" />
+            </Grid>
+            <Path x:Name="inner" Data="{TemplateBinding Content}" Stretch="Uniform" Fill="{StaticResource MetroIcon.DefaultState.Foreground.Dark}"  Margin="4"/>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+</ResourceDictionary>

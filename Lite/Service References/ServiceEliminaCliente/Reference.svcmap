@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="39d91686-a9c4-429a-ac19-426b24883558" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>true</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/gss/web/services/WsEliminaUbicacionClienteFV?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WsEliminaUbicacionClienteFV3.xsd" MetadataType="Schema" ID="c2c07d78-7f2e-4c65-9f67-1baa9c98f052" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsEliminaUbicacionClienteFV?xsd=WsEliminaUbicacionClienteFV-RQ.xsd" />
+    <MetadataFile FileName="WsEliminaUbicacionClienteFV1.wsdl" MetadataType="Wsdl" ID="1b455ac4-33e2-4000-9635-95e981de6e8c" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsEliminaUbicacionClienteFV?wsdl" />
+    <MetadataFile FileName="WsEliminaUbicacionClienteFV31.xsd" MetadataType="Schema" ID="7c162b06-b5db-4931-ba1f-91a2ccd89f3a" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsEliminaUbicacionClienteFV?xsd=WsEliminaUbicacionClienteFV-RS.xsd" />
+    <MetadataFile FileName="WsEliminaUbicacionClienteFV32.xsd" MetadataType="Schema" ID="0ab88873-ebcd-486b-85fc-96c152260513" SourceId="1" SourceUrl="http://localhost:8080/gss/web/services/WsEliminaUbicacionClienteFV?xsd=GisCommonTypeSchema.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

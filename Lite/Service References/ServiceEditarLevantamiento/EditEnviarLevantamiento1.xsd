@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fs:schema xmlns:tns="http://www.is.net.edit/gis" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.is.net.edit/gis" xmlns:fs="http://www.w3.org/2001/XMLSchema">
+  <fs:include schemaLocation="EditEnviarLevantamiento?xsd=GisCommonTypeSchema.xsd" />
+  <fs:complexType name="EditEnviarLevantamiento-RS-Type">
+    <fs:annotation>
+      <fs:documentation>Elemento type que agrupa los parametros de salida</fs:documentation>
+    </fs:annotation>
+    <fs:sequence>
+      <fs:element name="GisRespuestaProceso" type="tns:GisRespuestaGeneralType">
+        <fs:annotation>
+          <fs:documentation>
+						Estructura del XML para indicar el resultado del proceso
+					</fs:documentation>
+        </fs:annotation>
+      </fs:element>
+    </fs:sequence>
+  </fs:complexType>
+  <fs:element name="EditEnviarLevantamiento-RS" type="tns:EditEnviarLevantamiento-RS-Type">
+    <fs:annotation>
+      <fs:documentation>Elemento agrupador para los parametros de salida</fs:documentation>
+    </fs:annotation>
+  </fs:element>
+</fs:schema>

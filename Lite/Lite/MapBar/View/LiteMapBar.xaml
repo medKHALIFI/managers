@@ -1,0 +1,246 @@
+﻿<UserControl 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Lite" x:Class="Lite.LiteMapBar"
+    xmlns:sfc="http://schemas.spatialeye.com/clienttoolkit"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    mc:Ignorable="d" d:DesignWidth="800">
+
+  <UserControl.Resources>
+    <sfc:StaticResourceConverter x:Name="StaticResourceConverter"/>
+    <DataTemplate DataType="local:LiteMenuCategoryViewModel">
+      <Grid Margin="8,0,8,8">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border BorderThickness="0" Background="{StaticResource Lite.Brush.Background.Header}" Margin="-8,0" >
+          <sdk:Label Content="{Binding Title}" Grid.Row="0" Foreground="{StaticResource Lite.Brush.Text.Light}" Margin="8,2"/>
+        </Border>
+        <ItemsControl ItemsSource="{Binding Items}" Grid.Row="1" Margin="0,4,0,0">
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <sfc:WrapPanel Orientation="Horizontal" />
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+        </ItemsControl>
+      </Grid>
+    </DataTemplate>
+    <DataTemplate DataType="local:LiteMenuItemViewModel">
+      <Grid Margin="4,0,4,4">
+        <Button MaxHeight="70" HorizontalAlignment="Center" Width="70" Margin="0" VerticalAlignment="Top" 
+              Style="{StaticResource WinButtonStyleLight}" Content="{Binding IconResource, Converter={StaticResource StaticResourceConverter}}"
+              Command="{Binding Command}"
+              local:ButtonExtensions.Text ="{Binding Title}"
+              Foreground="{StaticResource Lite.Brush.Text.Light}" Grid.Row="0"/>
+      </Grid>
+    </DataTemplate>
+    <Style x:Name="CallOutStyle" TargetType="sfc:CallOut">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="sfc:CallOut">
+            <Grid>
+              <Path x:Name="PathElement" Fill="{TemplateBinding Fill}" Stroke="{TemplateBinding Stroke}" StrokeThickness="{TemplateBinding StrokeThickness}" StrokeDashArray="{TemplateBinding StrokeDashArray}" StrokeDashCap="{TemplateBinding StrokeDashCap}" StrokeDashOffset="{TemplateBinding StrokeDashOffset}" StrokeLineJoin="{TemplateBinding StrokeLineJoin}" StrokeMiterLimit="{TemplateBinding StrokeMiterLimit}" StrokeStartLineCap="{TemplateBinding StrokeStartLineCap}" StrokeEndLineCap="{TemplateBinding StrokeEndLineCap}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill" UseLayoutRounding="False" />
+              <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}" />
+            </Grid>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Name="SubMapBarStyle" TargetType="local:LiteSubMapBar">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="local:LiteSubMapBar">
+            <Grid x:Name="RootElement">
+              <Grid.Resources>
+                <Storyboard x:Key="ActivationAnimation">
+                  <DoubleAnimation Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="Opacity" Duration="0:0:0.2" To="1" />
+                </Storyboard>
+                <Storyboard x:Key="DeactivationAnimation">
+                  <DoubleAnimation Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="Opacity" Duration="0:0:0.2" To="0" />
+                  <ObjectAnimationUsingKeyFrames BeginTime="00:00:02" Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="(UIElement.IsHitTestVisible)">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                      <DiscreteObjectKeyFrame.Value>False</DiscreteObjectKeyFrame.Value>
+                    </DiscreteObjectKeyFrame>
+                  </ObjectAnimationUsingKeyFrames>
+                </Storyboard>
+              </Grid.Resources>
+              <Canvas>
+                <sfc:CallOut x:Name="ContentElement" Style="{StaticResource CallOutStyle}" Stroke="White" CornerRadius="5" StrokeThickness="1" AnchorSize="20,10" AnchorPoint="{TemplateBinding ActivatorControlCenterPosition}"  Content="{TemplateBinding Content}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Fill="{StaticResource Lite.Brush.Background.Dark}"/>
+              </Canvas>
+            </Grid>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </UserControl.Resources>
+
+  <Grid x:Name="LayoutRoot">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition/>
+      <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions >
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <Rectangle Fill="{StaticResource Lite.Brush.Background.Dark}" Grid.ColumnSpan="3" Height="40"/>
+    <local:LiteMapPlaceFinderControl Grid.RowSpan="2" Width="280" DataContext="{Binding PlaceFinderViewModel, Source={StaticResource Locator}}" HorizontalAlignment="Left" Margin="8,8,0,0" VerticalAlignment="Top" MinWidth="200" MinHeight="150" MaxHeight="500"/>
+
+    <Grid x:Name="CenterGrid" HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Column="1" Grid.Row="0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+
+      <!--Home-->
+      <Button Height="24" HorizontalAlignment="Center" VerticalAlignment="Top" Width="24" Margin="0,0,8,0"
+              Style="{StaticResource MetroButtonStyleLight}" Content="{StaticResource MetroIcon.Content.Home}"
+              Command="{Binding MapsViewModel.GoToHomeViewCommand, Source={StaticResource Locator}}" ToolTipService.ToolTip="{Binding Resources.GotoHomeView}" Foreground="{StaticResource Lite.Brush.Text.Light}"/>
+
+      <!--Zoom To Selection-->
+      <Button Height="24" HorizontalAlignment="Center" VerticalAlignment="Top" Width="24" Margin="8,0,4,0"
+              Style="{StaticResource MetroButtonStyleLight}" Content="{StaticResource MetroIcon.Content.GotoSelection}"
+              Command="{Binding MapsViewModel.GoToSelectionCommand, Source={StaticResource Locator}}" ToolTipService.ToolTip="{Binding Resources.GotoSelection}" Foreground="{StaticResource Lite.Brush.Text.Light}" Grid.Column="1"/>
+
+      <!--Clear Selection-->
+      <Button Height="24" HorizontalAlignment="Left" VerticalAlignment="Top" Width="24" Margin="4,0,12,0"
+              Style="{StaticResource MetroButtonStyleLight}" Content="{StaticResource MetroIcon.Content.ClearSelection}"
+              Command="{Binding MapsViewModel.ClearSelectionCommand, Source={StaticResource Locator}}" ToolTipService.ToolTip="{Binding Resources.ClearSelection}" Foreground="{StaticResource Lite.Brush.Text.Light}" Grid.Column="2"/>
+
+      <!--Measuring: Default, Free, Dimensioning-->
+      <CheckBox Height="24" HorizontalAlignment="Center" VerticalAlignment="Center" Width="24" Margin="4,0,4,0"
+        	Style="{StaticResource MetroCheckBoxStyleLight}" Content="{StaticResource MetroIcon.Content.CursorArrowOutline}"
+        	ToolTipService.ToolTip="{Binding Resources.MapDefaultMode}" Foreground="{StaticResource Lite.Brush.Text.Light}"
+                Visibility="{Binding MapMeasureViewModel.DefaultModeVisibility, Source={StaticResource Locator}}" 
+        	IsChecked="{Binding MapMeasureViewModel.DefaultIsActive, Mode=TwoWay, Source={StaticResource Locator}}" Grid.Column="3"/>
+
+      <CheckBox x:Name="Measurer"  Height="24" HorizontalAlignment="Center" VerticalAlignment="Center" Width="24" Margin="4,0,4,0"
+        	Style="{StaticResource MetroCheckBoxStyleLight}" Content="{StaticResource MetroIcon.Content.Measurer}"
+        	ToolTipService.ToolTip="{Binding Resources.MapMeasurer}" Foreground="{StaticResource Lite.Brush.Text.Light}"
+        	IsChecked="{Binding MapMeasureViewModel.SubMenuIsActive, Mode=TwoWay, Source={StaticResource Locator}}" Grid.Column="5"/>
+
+      <!--Trail-->
+      <CheckBox x:Name="Trail"  Height="24" HorizontalAlignment="Center" VerticalAlignment="Center" Width="24" Margin="4,0,4,0"
+        	Style="{StaticResource MetroCheckBoxStyleLight}" Content="{StaticResource MetroIcon.Content.Trail}"
+        	ToolTipService.ToolTip="{Binding Resources.MapTrail}" Foreground="{StaticResource Lite.Brush.Text.Light}"
+        	IsChecked="{Binding MapTrailViewModel.SubMenuIsActive, Mode=TwoWay, Source={StaticResource Locator}}" Grid.Column="6"/>
+
+      <!--Insert-->
+      <CheckBox x:Name="Insert"  Height="24" HorizontalAlignment="Center" VerticalAlignment="Center" Width="24" Margin="4,0,12,0"
+        	Style="{StaticResource MetroCheckBoxStyleLight}" Content="{StaticResource MetroIcon.Content.GeoNotes}"
+        	ToolTipService.ToolTip="{Binding Resources.GeoNoteInsert}" Foreground="{StaticResource Lite.Brush.Text.Light}"
+          Visibility="{Binding FeatureInsertViewModel.ViewVisibility, Source={StaticResource Locator}}"  
+          IsEnabled="{Binding FeatureInsertViewModel.ViewIsEnabled, Source={StaticResource Locator}}"
+        	IsChecked="{Binding FeatureInsertViewModel.ViewIsActive, Mode=TwoWay, Source={StaticResource Locator}}" Grid.Column="7"/>
+
+      <!--StreetView-->
+      <CheckBox Height="24" HorizontalAlignment="Center" VerticalAlignment="Center" Width="24" Margin="4,0,4,0"
+        	Style="{StaticResource MetroCheckBoxStyleLight}" Content="{StaticResource MetroIcon.Content.StreetView}"
+        	ToolTipService.ToolTip="{Binding Resources.StreetView}" Foreground="{StaticResource Lite.Brush.Text.Light}"
+        	IsChecked="{Binding StreetViewViewModel.StreetViewInteractionIsActive, Mode=TwoWay, Source={StaticResource Locator}}" 
+          Visibility="{Binding StreetViewViewModel.ViewVisibility, Source={StaticResource Locator}}" 
+          IsEnabled="{Binding StreetViewViewModel.ViewIsEnabled, Source={StaticResource Locator}}" Grid.Column="8"/>
+
+      <!--Previous World-->
+      <Button Height="24" HorizontalAlignment="Left"  Width="24" Margin="8,0,0,0" VerticalAlignment="Top" 
+              Style="{StaticResource MetroButtonStyleLight}" Content="{StaticResource MetroIcon.Content.Undo}"
+              Command="{Binding MapsViewModel.GoToPreviousWorldMapCommand, Source={StaticResource Locator}}" 
+              Visibility="{Binding MapsViewModel.PreviousWorldMapVisibility, Source={StaticResource Locator}}" 
+              ToolTipService.ToolTip="{Binding Resources.MapGoToPreviousWorld}" 
+              Foreground="{StaticResource Lite.Brush.Text.Light}" Grid.Column="9"/>
+    </Grid>
+
+    <Grid x:Name="RightGrid" VerticalAlignment="Center" Grid.Column="2" HorizontalAlignment="Right" Grid.Row="0" Margin="0,0,8,0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+
+      <ComboBox x:Name="ExportsCombBox" Style="{StaticResource LiteExportMenuComboBoxStyle}"  
+                Width="24" Margin="4,0,4,0" Height="24" VerticalAlignment="Center" ToolTipService.ToolTip="Export"  
+                Grid.Column="0" Tag="{StaticResource MetroIcon.Content.Export}" 
+                DataContext="{Binding MapsViewModel.CurrentMap, Source={StaticResource Locator}}"
+                IsEnabled="{Binding ExportsEnabled}" 
+                ItemsSource="{Binding Exports.Exports}" 
+                ItemTemplate="{StaticResource LiteExportMenuComboBoxDataTemplate}" 
+                sfc:ComboBoxEx.SelectionCommand="{Binding RunExportCommand}" />
+
+      <Button Height="24" HorizontalAlignment="Center" VerticalAlignment="Top" Width="24" 
+              Style="{StaticResource MetroButtonStyleLight}" Content="{StaticResource MetroIcon.Content.Print}"
+              Command="{Binding PrintViewModel.OpenPrintViewCommand, Source={StaticResource Locator}}"
+              Visibility="{Binding PrintVisibility}"
+				ToolTipService.ToolTip="{Binding Resources.Print}" Foreground="{StaticResource Lite.Brush.Text.Light}" Grid.Column="1" Margin="4,0,0,0"/>
+
+      <Button Height="24" HorizontalAlignment="Center" VerticalAlignment="Top" Width="24" Grid.Column="2" Margin="8,0,0,0"
+              Style="{StaticResource MetroButtonStyleLight}" Content="{StaticResource MetroIcon.Content.ArrowBottomRight}"
+              Command="{Binding OverviewMapViewModel.ShowOverviewMapCommand, Source={StaticResource Locator}}"
+              Visibility="{Binding OverviewMapViewModel.ShowOverviewMapVisibility, Source={StaticResource Locator}}"
+				      ToolTipService.ToolTip="{Binding Resources.OverviewMapShow}" Foreground="{StaticResource Lite.Brush.Text.Light}" RenderTransformOrigin="0.5,0.5">
+        <Button.RenderTransform>
+          <TransformGroup>
+            <TransformGroup.Children>
+              <RotateTransform Angle="0" />
+              <ScaleTransform ScaleX="-1" ScaleY="1" />
+            </TransformGroup.Children>
+          </TransformGroup>
+        </Button.RenderTransform>
+      </Button>
+
+      <Button Height="24" HorizontalAlignment="Center" VerticalAlignment="Top" Width="24" Grid.Column="2" Margin="8,0,0,0"
+              Style="{StaticResource MetroButtonStyleLight}" Content="{StaticResource MetroIcon.Content.ArrowTopLeft}"
+              Command="{Binding OverviewMapViewModel.HideOverviewMapCommand, Source={StaticResource Locator}}"
+              Visibility="{Binding OverviewMapViewModel.HideOverviewMapVisibility, Source={StaticResource Locator}}"
+				      ToolTipService.ToolTip="{Binding Resources.OverviewMapHide}" Foreground="{StaticResource Lite.Brush.Text.Light}" RenderTransformOrigin="0.5,0.5">
+        <Button.RenderTransform>
+          <TransformGroup>
+            <TransformGroup.Children>
+              <RotateTransform Angle="0" />
+              <ScaleTransform ScaleX="-1" ScaleY="1" />
+            </TransformGroup.Children>
+          </TransformGroup>
+        </Button.RenderTransform>
+      </Button>
+    </Grid>
+
+    <local:LiteSubMapBar VerticalAlignment="Top" Margin="0,10,10,10"  HitTestMargin="10,15,10,10" Grid.Row="1" Grid.RowSpan="3" IsActive="{Binding MapMeasureViewModel.SubMenuIsActive, Mode=TwoWay, Source={StaticResource Locator}}" Style="{StaticResource SubMapBarStyle}" ActivatorControlName="Measurer"  >
+      <Grid VerticalAlignment="Bottom" >
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" MaxHeight="180" MaxWidth="300" Margin="4"  Style="{StaticResource SimpleScrollViewer}">
+          <ItemsControl ItemsSource="{Binding MapMeasureViewModel.MenuItems, Source={StaticResource Locator}}" Margin="0,8,0,0"/>
+        </ScrollViewer>
+      </Grid>
+    </local:LiteSubMapBar>
+
+    <local:LiteSubMapBar VerticalAlignment="Top" Margin="0,10,10,10" HitTestMargin="10,15,10,10" Grid.Row="1" Grid.RowSpan="3" IsActive="{Binding MapTrailViewModel.SubMenuIsActive, Mode=TwoWay, Source={StaticResource Locator}}" Style="{StaticResource SubMapBarStyle}" ActivatorControlName="Trail">
+      <Grid VerticalAlignment="Bottom" >
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" MaxHeight="300" MaxWidth="300" Margin="4"  Style="{StaticResource SimpleScrollViewer}">
+          <ItemsControl ItemsSource="{Binding MapTrailViewModel.MenuItems, Source={StaticResource Locator}}" Margin="0,8,0,0"/>
+        </ScrollViewer>
+      </Grid>
+    </local:LiteSubMapBar>
+
+    <local:LiteSubMapBar VerticalAlignment="Top" Margin="0,10,10,10"  HitTestMargin="10,15,10,10" Grid.Row="1" Grid.RowSpan="3" IsActive="{Binding FeatureInsertViewModel.ViewIsActive, Mode=TwoWay, Source={StaticResource Locator}}" Style="{StaticResource SubMapBarStyle}" ActivatorControlName="Insert">
+      <Grid VerticalAlignment="Bottom" >
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" MaxHeight="180" MaxWidth="300" Margin="4" Style="{StaticResource SimpleScrollViewer}" >
+          <ItemsControl ItemsSource="{Binding FeatureInsertViewModel.MenuItems, Source={StaticResource Locator}}" Margin="0,8,0,0"/>
+        </ScrollViewer>
+      </Grid>
+    </local:LiteSubMapBar>
+  </Grid>
+</UserControl>

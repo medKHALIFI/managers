@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nca:schema xmlns:tns="http://www.grr.net.fv/gis" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.grr.net.fv/gis" xmlns:nca="http://www.w3.org/2001/XMLSchema">
+  <nca:include schemaLocation="WsAlmacenaUbicacionProspectoFV?xsd=GisCommonTypeSchema.xsd" />
+  <nca:complexType name="InfoProspecto">
+    <nca:sequence>
+      <nca:element minOccurs="0" name="idSw" type="nca:string" />
+      <nca:element minOccurs="0" name="estado" type="nca:string" />
+      <nca:element name="Detalle_Respuesta" type="tns:detallerespuestatype" />
+    </nca:sequence>
+  </nca:complexType>
+  <nca:element name="wsAlmacenaUbicacionProspectoFV-RS" type="tns:InfoProspecto" />
+</nca:schema>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.grr.net.fv/svc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns="http://www.grr.net.fv/gis" targetNamespace="http://www.grr.net.fv/svc" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:import schemaLocation="WsOpticalInformation?xsd=WsOpticalInformation-RS.xsd" namespace="http://www.grr.net.fv/gis" />
+      <xs:import schemaLocation="WsOpticalInformation?xsd=WsOpticalInformation-RQ.xsd" namespace="http://www.grr.net.fv/gis" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="opticalInformationResponse">
+    <wsdl:part name="parameter" element="ns:WsOpticalInformation-RS" />
+  </wsdl:message>
+  <wsdl:message name="opticalInformationRequest">
+    <wsdl:part name="parameter" element="ns:WsOpticalInformation-RQ" />
+  </wsdl:message>
+  <wsdl:portType name="WsOpticalInformationPortType">
+    <wsdl:operation name="opticalInformation">
+      <wsdl:input name="opticalInformationRequest" message="tns:opticalInformationRequest" />
+      <wsdl:output name="opticalInformationResponse" message="tns:opticalInformationResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsOpticalInformation-SOAP11Binding" type="tns:WsOpticalInformationPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="opticalInformation">
+      <soap:operation soapAction="urn:opticalInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsOpticalInformation-SOAP12Binding" type="tns:WsOpticalInformationPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="opticalInformation">
+      <soap12:operation soapAction="urn:opticalInformation" style="document" soapActionRequired="true" />
+      <wsdl:input name="opticalInformationRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="opticalInformationResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsOpticalInformation">
+    <wsdl:port name="WsOpticalInformation-SOAP12port_http" binding="tns:WsOpticalInformation-SOAP12Binding">
+      <soap12:address location="http://10.213.8.88:8080/gss/web/services/WsOpticalInformation/" />
+    </wsdl:port>
+    <wsdl:port name="WsOpticalInformation-SOAP11port_http" binding="tns:WsOpticalInformation-SOAP11Binding">
+      <soap:address location="http://10.213.8.88:8080/gss/web/services/WsOpticalInformation/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nca:schema xmlns:tns="http://www.grr.net.fv/gis" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.grr.net.fv/gis" xmlns:nca="http://www.w3.org/2001/XMLSchema">
+  <nca:complexType name="wsAlmacenaUbicacionProspectoFV-RQ-Type">
+    <nca:sequence>
+      <nca:element name="nombre" nillable="true" type="nca:string" />
+      <nca:element name="direccion" nillable="true" type="nca:string" />
+      <nca:element name="telefono" nillable="true" type="nca:string" />
+      <nca:element name="tipo" nillable="true" type="nca:string" />
+      <nca:element name="paquete" nillable="true" type="nca:string" />
+      <nca:element name="fecha" nillable="true" type="nca:string" />
+      <nca:element name="longitud" nillable="true" type="nca:string" />
+      <nca:element name="latitud" nillable="true" type="nca:string" />
+    </nca:sequence>
+  </nca:complexType>
+  <nca:element name="wsAlmacenaUbicacionProspectoFV-RQ" type="tns:wsAlmacenaUbicacionProspectoFV-RQ-Type" />
+</nca:schema>

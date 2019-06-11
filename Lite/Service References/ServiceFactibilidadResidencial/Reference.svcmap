@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="36bbee2c-0f8d-4870-aeb5-a6cb661b27f2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://swtotalplaydev:8080/gss/web/services/WsFactibilidadResidencial?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WsFactibilidadResidencial.wsdl" MetadataType="Wsdl" ID="8ab45d61-5c0c-4a77-93c4-742e638934d6" SourceId="1" SourceUrl="http://swtotalplaydev:8080/gss/web/services/WsFactibilidadResidencial?wsdl" />
+    <MetadataFile FileName="WsFactibilidadResidencial.xsd" MetadataType="Schema" ID="2adc622e-be52-4e0e-8ee6-b8e0e8d7a046" SourceId="1" SourceUrl="http://swtotalplaydev:8080/gss/web/services/WsFactibilidadResidencial?xsd=GisCommonTypeSchema.xsd" />
+    <MetadataFile FileName="WsFactibilidadResidencial1.xsd" MetadataType="Schema" ID="440cda39-c0e1-4abc-9d70-5d2886badb75" SourceId="1" SourceUrl="http://swtotalplaydev:8080/gss/web/services/WsFactibilidadResidencial?xsd=WsFactibilidadResidencial-RQ.xsd" />
+    <MetadataFile FileName="WsFactibilidadResidencial2.xsd" MetadataType="Schema" ID="7ed8e44d-1a4e-4884-83ad-a0041381ef28" SourceId="1" SourceUrl="http://swtotalplaydev:8080/gss/web/services/WsFactibilidadResidencial?xsd=WsFactibilidadResidencial-RS.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

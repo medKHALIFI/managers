@@ -1,0 +1,154 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:core="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxeh="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal">
+
+  <!--BEGIN WPF-->
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="ValidationToolTip.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <!--END WPF-->
+
+  <Style x:Key="RadioButtonBaseStyle" TargetType="RadioButton">
+    <!--<Setter Property="core:BackgroundPanel.PatchForeground" Value="True" />-->
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="Padding" Value="4,0,0,0" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="VerticalContentAlignment" Value="Top" />
+    <!--<Setter Property="dxeh:ControlHelper.ShowFocusedState" Value="{Binding IsFocused, RelativeSource={RelativeSource Self}}" />-->
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="RadioButton">
+          <Grid x:Name="Root">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="14" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal">
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="DefaultState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="MouseOver">
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Pressed">
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Disabled">
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                  </Storyboard>
+                </VisualState>
+              </VisualStateGroup>
+              <VisualStateGroup x:Name="CheckStates">
+                <VisualState x:Name="Checked">
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="RadioButtonIcon" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Unchecked" />
+                <VisualState x:Name="Indeterminate" />
+              </VisualStateGroup>
+              <VisualStateGroup x:Name="ValidationStates">
+                <VisualState x:Name="Valid" />
+                <VisualState x:Name="InvalidUnfocused">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ValidationErrorElement" Storyboard.TargetProperty="Visibility">
+                      <DiscreteObjectKeyFrame KeyTime="0">
+                        <DiscreteObjectKeyFrame.Value>
+                          <Visibility>Visible</Visibility>
+                        </DiscreteObjectKeyFrame.Value>
+                      </DiscreteObjectKeyFrame>
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="InvalidFocused">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ValidationErrorElement" Storyboard.TargetProperty="Visibility">
+                      <DiscreteObjectKeyFrame KeyTime="0">
+                        <DiscreteObjectKeyFrame.Value>
+                          <Visibility>Visible</Visibility>
+                        </DiscreteObjectKeyFrame.Value>
+                      </DiscreteObjectKeyFrame>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="validationTooltip" Storyboard.TargetProperty="IsOpen">
+                      <DiscreteObjectKeyFrame KeyTime="0">
+                        <DiscreteObjectKeyFrame.Value>
+                          <sys:Boolean>True</sys:Boolean>
+                        </DiscreteObjectKeyFrame.Value>
+                      </DiscreteObjectKeyFrame>
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+              </VisualStateGroup>
+              <VisualStateGroup x:Name="InternalFocusStates">
+                <VisualState x:Name="InternalFocused">
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="FocusedState" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="InternalUnfocused" />
+              </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Grid Width="13" Height="13" Grid.Column="0" Grid.ColumnSpan="1">
+              <Grid x:Name="DefaultState">
+                <Border Background="{StaticResource RadioButton.DefaultState.Border1}" CornerRadius="64">
+                  <Border Background="{StaticResource RadioButton.DefaultState.Border2}" Margin="1" CornerRadius="64" />
+                </Border>
+              </Grid>
+              <Grid x:Name="HoverState" Opacity="0">
+                <Border Background="{StaticResource RadioButton.HoverState.Border1}" CornerRadius="64">
+                  <Border Background="{StaticResource RadioButton.HoverState.Border2}" Margin="1" CornerRadius="64" />
+                </Border>
+              </Grid>
+              <Grid x:Name="PressedState" Opacity="0">
+                <Border Background="{StaticResource RadioButton.PressedState.Border1}" CornerRadius="64">
+                  <Border Background="{StaticResource RadioButton.PressedState.Border2}" Margin="1" CornerRadius="64" />
+                </Border>
+              </Grid>
+              <Grid x:Name="DisabledState" Opacity="0">
+                <Border Background="{StaticResource RadioButton.DisabledState.Border1}" CornerRadius="64">
+                  <Border Background="{StaticResource RadioButton.DisabledState.Border2}" Margin="1" CornerRadius="64" />
+                </Border>
+              </Grid>
+              <Grid x:Name="FocusedState" Opacity="0">
+                <Border CornerRadius="64" Style="{StaticResource FocusTemplate}" />
+              </Grid>
+              <Grid x:Name="RadioButtonIcon" Margin="3" Opacity="0">
+                <Border Background="{StaticResource RadioButton.Icon.Background}" CornerRadius="64" />
+              </Grid>
+            </Grid>
+            <ContentControl x:Name="ValidationErrorElement" Template="{StaticResource ValidationErrorTemplate.RadioButton}" Visibility="Collapsed">
+              <ToolTipService.ToolTip>
+                <ToolTip x:Name="validationTooltip" Placement="Right" DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}" PlacementTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}" Template="{StaticResource ValidationToolTipTemplate}">
+                  <ToolTip.Triggers>
+                    <EventTrigger RoutedEvent="Canvas.Loaded">
+                      <BeginStoryboard>
+                        <Storyboard>
+                          <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="IsHitTestVisible" Storyboard.TargetName="validationTooltip">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                              <DiscreteObjectKeyFrame.Value>
+                                <sys:Boolean>True</sys:Boolean>
+                              </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                          </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                      </BeginStoryboard>
+                    </EventTrigger>
+                  </ToolTip.Triggers>
+                </ToolTip>
+              </ToolTipService.ToolTip>
+            </ContentControl>
+            <ContentPresenter x:Name="contentPresenter" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Grid.Column="1" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style BasedOn="{StaticResource RadioButtonBaseStyle}" TargetType="RadioButton" />
+
+</ResourceDictionary>

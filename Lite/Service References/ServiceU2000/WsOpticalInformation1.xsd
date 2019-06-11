@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nca:schema xmlns:tns="http://www.grr.net.fv/gis" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.grr.net.fv/gis" xmlns:nca="http://www.w3.org/2001/XMLSchema">
+  <nca:complexType name="processResponse">
+    <nca:sequence>
+      <nca:element maxOccurs="unbounded" name="ONTS">
+        <nca:complexType>
+          <nca:sequence>
+            <nca:element name="SN" type="nca:string" />
+            <nca:element name="TXPower" type="nca:string" />
+            <nca:element name="RXPower" type="nca:string" />
+            <nca:element name="TXTEMPERATURE" type="nca:string" />
+            <nca:element name="TXVOL" type="nca:string" />
+            <nca:element name="BIASCURRENT" type="nca:string" />
+            <nca:element name="OLT" type="nca:string" />
+            <nca:element name="FRAME" type="nca:string" />
+            <nca:element name="SLOT" type="nca:string" />
+            <nca:element name="PORT" type="nca:string" />
+          </nca:sequence>
+        </nca:complexType>
+      </nca:element>
+      <nca:element name="arrResult">
+        <nca:complexType>
+          <nca:sequence>
+            <nca:element name="IdResult" type="nca:long" />
+            <nca:element name="Result" type="nca:int" />
+            <nca:element name="ResultDescription" type="nca:string" />
+          </nca:sequence>
+        </nca:complexType>
+      </nca:element>
+    </nca:sequence>
+  </nca:complexType>
+  <nca:element name="WsOpticalInformation-RS" type="tns:processResponse" />
+</nca:schema>

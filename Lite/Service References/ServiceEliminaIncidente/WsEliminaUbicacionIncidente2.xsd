@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nca:schema xmlns:tns="http://www.grr.net.fv/gis" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.grr.net.fv/gis" xmlns:nca="http://www.w3.org/2001/XMLSchema">
+  <nca:complexType name="wsEliminaUbicacionIncidente-RQ-Type">
+    <nca:sequence>
+      <nca:element name="folio" nillable="true" type="nca:string" />
+    </nca:sequence>
+  </nca:complexType>
+  <nca:element name="wsEliminaUbicacionIncidente-RQ" type="tns:wsEliminaUbicacionIncidente-RQ-Type" />
+</nca:schema>

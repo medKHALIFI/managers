@@ -1,0 +1,616 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddLayer" xml:space="preserve">
+    <value>Přidat Vrstvu</value>
+    <comment>Add Layer</comment>
+  </data>
+  <data name="AddQuery" xml:space="preserve">
+    <value>Přidat Dotaz</value>
+    <comment>Add Query</comment>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Zrušit</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>Změnit jazyk</value>
+    <comment>Change language</comment>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>Zrušit Zvýraznění a Výběr</value>
+    <comment>Clear Selection</comment>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Exportovat</value>
+    <comment>Export</comment>
+  </data>
+  <data name="ExportQueryResults" xml:space="preserve">
+    <value>Exportovat Výsledky Dotazu</value>
+    <comment>Export Query Results</comment>
+  </data>
+  <data name="ExpressionAddLine" xml:space="preserve">
+    <value>Přidat Linii</value>
+    <comment>Add Line</comment>
+  </data>
+  <data name="ExpressionRemoveLine" xml:space="preserve">
+    <value>Odstranit Linii</value>
+    <comment>Remove Line</comment>
+  </data>
+  <data name="FeatureDetails" xml:space="preserve">
+    <value>Detaily</value>
+    <comment>Details</comment>
+  </data>
+  <data name="FeatureDetailsGettingFeature" xml:space="preserve">
+    <value>Získávám Položku</value>
+    <comment>Getting Feature</comment>
+  </data>
+  <data name="FeatureDetailsMultipleFeatures" xml:space="preserve">
+    <value>Více Položek</value>
+    <comment>Multiple Features</comment>
+  </data>
+  <data name="FeatureDetailsMultipleFeaturesArea" xml:space="preserve">
+    <value>Celková Plocha</value>
+    <comment>Total Area</comment>
+  </data>
+  <data name="FeatureDetailsMultipleFeaturesLength" xml:space="preserve">
+    <value>Celková Délka</value>
+    <comment>Total Length</comment>
+  </data>
+  <data name="FeatureDetailsMultipleFeaturesNumberOfElements" xml:space="preserve">
+    <value>Prvky</value>
+    <comment>Elements</comment>
+  </data>
+  <data name="FeatureDetailsSelectFeatureFromMap" xml:space="preserve">
+    <value>Vybrat Prvek z Mapy</value>
+    <comment>Select a Feature from the Map</comment>
+  </data>
+  <data name="FeatureResultListRetrievingCollection" xml:space="preserve">
+    <value>Získávám Sbírku</value>
+    <comment>Retrieving Collection</comment>
+  </data>
+  <data name="GeoLocatorEmptyRequest" xml:space="preserve">
+    <value>Prázdné Místo</value>
+    <comment>Empty Place</comment>
+  </data>
+  <data name="GotoHomeView" xml:space="preserve">
+    <value>Jdi na Domovský Pohled</value>
+    <comment>Go To Home View</comment>
+  </data>
+  <data name="GotoSelection" xml:space="preserve">
+    <value>Jdi na Výběr</value>
+    <comment>Go To Selection</comment>
+  </data>
+  <data name="HeterogeneousMainCollectionDescription" xml:space="preserve">
+    <value>Vše</value>
+    <comment>All</comment>
+  </data>
+  <data name="HeterogeneousSubCollectionDescription" xml:space="preserve">
+    <value>{0}</value>
+    <comment>{0}</comment>
+  </data>
+  <data name="HighlightSelectionInMap" xml:space="preserve">
+    <value>Zvýraznit Výběr na Mapě</value>
+    <comment>Highlight Selection in Map</comment>
+  </data>
+  <data name="Layers" xml:space="preserve">
+    <value>Vrstvy</value>
+    <comment>Layers</comment>
+  </data>
+  <data name="LayersNewLayerServiceProvider" xml:space="preserve">
+    <value>Poskytovatel</value>
+    <comment>Provider</comment>
+  </data>
+  <data name="LayersNewLayerServiceProviderGroupType" xml:space="preserve">
+    <value>Typ</value>
+    <comment>Type</comment>
+  </data>
+  <data name="LayersNewLayerServiceProviderLayer" xml:space="preserve">
+    <value>Vrstva</value>
+    <comment>Layer</comment>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Mapa</value>
+    <comment>Map</comment>
+  </data>
+  <data name="MapDefaultMode" xml:space="preserve">
+    <value>Režim Výběru</value>
+    <comment>Select Mode</comment>
+  </data>
+  <data name="MapGoToPreviousWorld" xml:space="preserve">
+    <value>Zpět na Geografickou Mapu</value>
+    <comment>Return to Geographic Map</comment>
+  </data>
+  <data name="MapLayersDescriptionFormat" xml:space="preserve">
+    <value>{0} - Vrstev</value>
+    <comment>{0} - Layers</comment>
+  </data>
+  <data name="MapMeasureDimMode" xml:space="preserve">
+    <value>Ortogonální Měření</value>
+    <comment>Orthogonal</comment>
+  </data>
+  <data name="MapMeasurer" xml:space="preserve">
+    <value>Měřidlo</value>
+    <comment>Measurer</comment>
+  </data>
+  <data name="MapMeasureFreeMode" xml:space="preserve">
+    <value>Změřit</value>
+    <comment>Measure</comment>
+  </data>
+  <data name="MapRemoveStringFormat" xml:space="preserve">
+    <value>Skutečně chcete odstranit Mapu '{0}'?</value>
+    <comment>Are you sure you want to remove the Map '{0}'?</comment>
+  </data>
+  <data name="MapRemoveTitle" xml:space="preserve">
+    <value>Odstranit Mapu?</value>
+    <comment>Remove Map?</comment>
+  </data>
+  <data name="Maps" xml:space="preserve">
+    <value>Mapy</value>
+    <comment>Maps</comment>
+  </data>
+  <data name="MapsAddMap" xml:space="preserve">
+    <value>Přidat Mapu</value>
+    <comment>Add a Map</comment>
+  </data>
+  <data name="MapsNewMapServiceProvider" xml:space="preserve">
+    <value>Poskytovatel</value>
+    <comment>Provider</comment>
+  </data>
+  <data name="MapsNewMapServiceProviderGroupType" xml:space="preserve">
+    <value>Typ</value>
+    <comment>Type</comment>
+  </data>
+  <data name="MapsNewMapServiceProviderMap" xml:space="preserve">
+    <value>Založeno na</value>
+    <comment>Base On</comment>
+  </data>
+  <data name="MessageBoxCancel" xml:space="preserve">
+    <value>Zrušit</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="MessageBoxOK" xml:space="preserve">
+    <value>OK</value>
+    <comment>OK</comment>
+  </data>
+  <data name="NoServerAddressInHtmlPage" xml:space="preserve">
+    <value>Na HTML stránce aplikace nebyla zadána žádná adresa serveru</value>
+    <comment>No server address has been specified in the html page of the application</comment>
+  </data>
+  <data name="NoServerAddressInHtmlPageTitle" xml:space="preserve">
+    <value>Nebyla nalezena žádná adresa serveru</value>
+    <comment>No Server Address Found</comment>
+  </data>
+  <data name="OverviewMapHide" xml:space="preserve">
+    <value>Skrýt mini mapu</value>
+    <comment>Hide the mini map</comment>
+  </data>
+  <data name="OverviewMapShow" xml:space="preserve">
+    <value>Zobrazit mini mapu</value>
+    <comment>See the mini map</comment>
+  </data>
+  <data name="PlaceFinderSnapShot" xml:space="preserve">
+    <value>Snapshot</value>
+    <comment>Snapshot</comment>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Tisk</value>
+    <comment>Print</comment>
+  </data>
+  <data name="Queries" xml:space="preserve">
+    <value>Dotazy</value>
+    <comment>Queries</comment>
+  </data>
+  <data name="QueriesNewQueryTableServiceProvider" xml:space="preserve">
+    <value>Poskytovatel</value>
+    <comment>Provider</comment>
+  </data>
+  <data name="QueriesNewQueryTableServiceProviderGroupType" xml:space="preserve">
+    <value>Z</value>
+    <comment>From</comment>
+  </data>
+  <data name="QueriesNewQueryTableServiceProviderTable" xml:space="preserve">
+    <value>Tabulka</value>
+    <comment>Table</comment>
+  </data>
+  <data name="Query" xml:space="preserve">
+    <value>Dotaz</value>
+    <comment>Query</comment>
+  </data>
+  <data name="QueryCreatingExport" xml:space="preserve">
+    <value>Vytvářím Export</value>
+    <comment>Creating Export</comment>
+  </data>
+  <data name="QueryCreatingReport" xml:space="preserve">
+    <value>Vytvářím Report</value>
+    <comment>Creating Report</comment>
+  </data>
+  <data name="QueryRemoveStringFormat" xml:space="preserve">
+    <value>Skutečně chcete odstranit Dotaz '{0}'?</value>
+    <comment>Are you sure you want to remove the Query '{0}'?</comment>
+  </data>
+  <data name="QueryRemoveTitle" xml:space="preserve">
+    <value>Odstranit Dotaz?</value>
+    <comment>Remove Query?</comment>
+  </data>
+  <data name="QuerySelectCurveFromMap" xml:space="preserve">
+    <value>Vybrat křivku na mapě</value>
+    <comment>Select a curve from the map</comment>
+  </data>
+  <data name="QuerySelectGeometryFromMap" xml:space="preserve">
+    <value>Vybrat geometrii na mapě</value>
+    <comment>Select a geometry from the map</comment>
+  </data>
+  <data name="QuerySelectPointFromMap" xml:space="preserve">
+    <value>Vybrat bod na mapě</value>
+    <comment>Select a point from the map</comment>
+  </data>
+  <data name="QuerySelectPolygonFromMap" xml:space="preserve">
+    <value>Vybrat polygon na mapě</value>
+    <comment>Select a polygon from the map</comment>
+  </data>
+  <data name="QueryViaExpressionBuilder" xml:space="preserve">
+    <value>Tvůrce</value>
+    <comment>Builder</comment>
+  </data>
+  <data name="RemoveQuery" xml:space="preserve">
+    <value>Odstranit Dotaz</value>
+    <comment>Remove Query</comment>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Vytvořit Report</value>
+    <comment>Report</comment>
+  </data>
+  <data name="ReportQueryResults" xml:space="preserve">
+    <value>Vytvořit Repor s Výsledky Dotazu</value>
+    <comment>Report Query Results</comment>
+  </data>
+  <data name="RunQuery" xml:space="preserve">
+    <value>Spustit Dotaz</value>
+    <comment>Run Query</comment>
+  </data>
+  <data name="SaveQuery" xml:space="preserve">
+    <value>Uložit Dotaz</value>
+    <comment>Save Query</comment>
+  </data>
+  <data name="ShowFavorites" xml:space="preserve">
+    <value>Zobrazit Oblíbené</value>
+    <comment>Show Favorites</comment>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Odhlásit</value>
+    <comment>Sign Out</comment>
+  </data>
+  <data name="SwitchScaleBar" xml:space="preserve">
+    <value>Změnit Měřítko</value>
+    <comment>Switch Scalebar</comment>
+  </data>
+  <data name="SwitchUnits" xml:space="preserve">
+    <value>Změnit Jednotky</value>
+    <comment>Switch Units</comment>
+  </data>
+  <data name="TrackSelectionInDetails" xml:space="preserve">
+    <value>Sledovat Výběr v Detailech</value>
+    <comment>Track Selection in Details</comment>
+  </data>
+  <data name="TrackSelectionInMap" xml:space="preserve">
+    <value>Sledovat Výběr v Mapě</value>
+    <comment>Track Selection in Map</comment>
+  </data>
+  <data name="ValueActivationCancel" xml:space="preserve">
+    <value>Zrušit</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="ValueActivationSelectValue" xml:space="preserve">
+    <value>Přejít na</value>
+    <comment>Jump to</comment>
+  </data>
+  <data name="TrailPoint" xml:space="preserve">
+    <value>Bod</value>
+    <comment>Point</comment>
+  </data>
+  <data name="TrailCurve" xml:space="preserve">
+    <value>Křivku</value>
+    <comment>Curve</comment>
+  </data>
+  <data name="TrailCircle" xml:space="preserve">
+    <value>Kruh</value>
+    <comment>Circle</comment>
+  </data>
+  <data name="TrailPolygon" xml:space="preserve">
+    <value>Polygon</value>
+    <comment>Polygon</comment>
+  </data>
+  <data name="TrailRectangle" xml:space="preserve">
+    <value>Obdélník</value>
+    <comment>Rectangle</comment>
+  </data>
+  <data name="MapTrail" xml:space="preserve">
+    <value>Pomocná Čára</value>
+    <comment>Trail</comment>
+  </data>
+  <data name="ExpressionBuilderFieldColumn" xml:space="preserve">
+    <value>Pole</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ExpressionBuilderOperatorColumn" xml:space="preserve">
+    <value>Operátor</value>
+    <comment>Operator</comment>
+  </data>
+  <data name="ExpressionBuilderValueColumn" xml:space="preserve">
+    <value>Hodnota</value>
+    <comment>Value</comment>
+  </data>
+  <data name="CopyToClipboardCancel" xml:space="preserve">
+    <value>Zrušit</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="CopyToClipboardOK" xml:space="preserve">
+    <value>OK</value>
+    <comment>OK</comment>
+  </data>
+  <data name="ExportSettings" xml:space="preserve">
+    <value>Exportovat nastavení</value>
+    <comment>Export Settings</comment>
+  </data>
+  <data name="StreetView" xml:space="preserve">
+    <value>Street View</value>
+    <comment>Street View</comment>
+  </data>
+  <data name="FeatureEditInsertCategoryHeader" xml:space="preserve">
+    <value>Vložit GeoNote</value>
+    <comment>Insert GeoNote</comment>
+  </data>
+  <data name="MapMeasurerModeCategoryHeader" xml:space="preserve">
+    <value>Mód měření</value>
+    <comment>Measure Mode</comment>
+  </data>
+  <data name="MapTrailCreateCategoryHeader" xml:space="preserve">
+    <value>Vytvořit pomocnou čáru</value>
+    <comment>Create Trail</comment>
+  </data>
+  <data name="MapTrailActionsCategoryHeader" xml:space="preserve">
+    <value>Akce pomocné čáry</value>
+    <comment>Trail Actions</comment>
+  </data>
+  <data name="ClearTrail" xml:space="preserve">
+    <value>Smazat pomocnou čáru</value>
+    <comment>Clear Trail</comment>
+  </data>
+  <data name="MapTrailClearAll" xml:space="preserve">
+    <value>Smazat vše</value>
+    <comment>Clear All</comment>
+  </data>
+  <data name="TransactionDeleteFailedCaption" xml:space="preserve">
+    <value>Smazání se nepodařilo</value>
+    <comment>Delete Failed</comment>
+  </data>
+  <data name="TransactionDeleteFailedMessage" xml:space="preserve">
+    <value>Smazání prvku se nepodařilo</value>
+    <comment>Deleting the feature failed</comment>
+  </data>
+  <data name="TransactionInsertFailedCaption" xml:space="preserve">
+    <value>Vložení se nepodařilo</value>
+    <comment>Insert Failed</comment>
+  </data>
+  <data name="TransactionInsertFailedMessage" xml:space="preserve">
+    <value>Vložení prvku se nepodařilo</value>
+    <comment>Inserting the feature failed</comment>
+  </data>
+  <data name="TransactionUpdateFailedCaption" xml:space="preserve">
+    <value>Aktualizace se nepodařila</value>
+    <comment>Update Failed</comment>
+  </data>
+  <data name="TransactionUpdateFailedMessage" xml:space="preserve">
+    <value>Aktualizace prvku se nepodařila</value>
+    <comment>Updating the feature failed</comment>
+  </data>
+  <data name="TransactionDeleteQuestionCaption" xml:space="preserve">
+    <value>Smazat prvek</value>
+    <comment>Delete Feature</comment>
+  </data>
+  <data name="TransactionDeleteQuestionMessage" xml:space="preserve">
+    <value>Opravdu si přejete smazat prvek?</value>
+    <comment>Are you sure you want to delete the feature?</comment>
+  </data>
+  <data name="GeoNoteInsert" xml:space="preserve">
+    <value>Vložit GeoNote</value>
+    <comment>Insert GeoNote</comment>
+  </data>
+  <data name="FeatureDetailsAttachNewItem" xml:space="preserve">
+    <value>Připojeno {0} nových</value>
+    <comment>Attach new {0}</comment>
+  </data>
+  <data name="TypedValueGeometryControlClearToolTip" xml:space="preserve">
+    <value>Smazat geometrii</value>
+    <comment>Clear geometry</comment>
+  </data>
+  <data name="TypedValueGeometryControlCopyToolTip" xml:space="preserve">
+    <value>Nastavit výběr</value>
+    <comment>Set from selection</comment>
+  </data>
+  <data name="TypedValueGeometryControlEditToolTip" xml:space="preserve">
+    <value>Upravit geometrii</value>
+    <comment>Edit geometry</comment>
+  </data>
+  <data name="TypedValueJoinControlClearToolTip" xml:space="preserve">
+    <value>Smazat vazbu</value>
+    <comment>Clear join</comment>
+  </data>
+  <data name="TypedValueJoinControlCopyToolTip" xml:space="preserve">
+    <value>Nastavit podle výběru</value>
+    <comment>Set from selection</comment>
+  </data>
+  <data name="MapPopupCopyCoordinateToClipboard" xml:space="preserve">
+    <value>Zkopírovat souřadnici</value>
+    <comment>Copy Coordinate</comment>
+  </data>
+  <data name="MapPopupGotoSelection" xml:space="preserve">
+    <value>Jít na vybrané prvky</value>
+    <comment>To Selected Features</comment>
+  </data>
+  <data name="MapPopupClearSelection" xml:space="preserve">
+    <value>Smazat výběr</value>
+    <comment>Clear Selection</comment>
+  </data>
+  <data name="MapPopupEditGeometrySelection" xml:space="preserve">
+    <value>Upravit vybranou geometrii</value>
+    <comment>Edit Selected Geometry</comment>
+  </data>
+  <data name="MapPopupCreateTrailFromSelection" xml:space="preserve">
+    <value>Vytvořit pomocnou čáru z výběru</value>
+    <comment>Create Trail from Selection</comment>
+  </data>
+  <data name="MapPopupRemoveTrail" xml:space="preserve">
+    <value>Smazat pomocnou čáru</value>
+    <comment>Remove Trail</comment>
+  </data>
+  <data name="MapPopupObjectProperties" xml:space="preserve">
+    <value>Vlastnosti objektu</value>
+    <comment>Object Properties</comment>
+  </data>
+  <data name="PrintTemplateDefault" xml:space="preserve">
+    <value>{0} Výchozí šablona</value>
+    <comment>{0} Default Template</comment>
+  </data>
+  <data name="PrintTemplateDefaultWithLegend" xml:space="preserve">
+    <value>{0} Šablona legendy</value>
+    <comment>{0} Legend Template</comment>
+  </data>
+  <data name="PrintTemplateDefaultDescription" xml:space="preserve">
+    <value>Tisk výchozí šablony</value>
+    <comment>Default print template</comment>
+  </data>
+  <data name="PrintTemplateDefaultWithLegendDescription" xml:space="preserve">
+    <value>Šablona s legendou</value>
+    <comment>Template with legend</comment>
+  </data>
+  <data name="QueriesNewQueryTableServiceProviderGroup" xml:space="preserve">
+    <value>Skupina</value>
+    <comment>Group</comment>
+  </data>
+  <data name="MapMeasureDimModeDescription">
+    <value>Měření (ortogonální) pomocí WGS84 souřadnicového systému</value>
+    <comment>Measuring (Orthogonal) using WGS84 coordinate system</comment>
+  </data>
+  <data name="MapMeasureFreeModeDescription">
+    <value>Měření pomocí WGS84 souřadnicového systému</value>
+    <comment>Measuring using WGS84 coordinate system</comment>
+  </data>
+</root>

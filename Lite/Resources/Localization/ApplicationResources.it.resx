@@ -1,0 +1,613 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddLayer" xml:space="preserve">
+    <value>Aggiungi livello</value>
+    <comment>Add Layer</comment>
+  </data>
+  <data name="AddQuery" xml:space="preserve">
+    <value>Aggiungi Query</value>
+    <comment>Add Query</comment>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annulla</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>Cambia lingua</value>
+    <comment>Change language</comment>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>Annulla la selezione</value>
+    <comment>Clear Selection</comment>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Esporta</value>
+    <comment>Export</comment>
+  </data>
+  <data name="ExportQueryResults" xml:space="preserve">
+    <value>Esporta i risultati della query</value>
+    <comment>Export Query Results</comment>
+  </data>
+  <data name="ExpressionAddLine" xml:space="preserve">
+    <value>Aggiunge la riga</value>
+    <comment>Add Line</comment>
+  </data>
+  <data name="ExpressionRemoveLine" xml:space="preserve">
+    <value>Elimina la riga</value>
+    <comment>Remove Line</comment>
+  </data>
+  <data name="FeatureDetails" xml:space="preserve">
+    <value>Dettagli</value>
+    <comment>Details</comment>
+  </data>
+  <data name="FeatureDetailsGettingFeature" xml:space="preserve">
+    <value>Ricezione dei dettagli</value>
+    <comment>Getting Feature</comment>
+  </data>
+  <data name="FeatureDetailsMultipleFeatures" xml:space="preserve">
+    <value>Multiple Features</value>
+    <comment>Multiple Features</comment>
+  </data>
+  <data name="FeatureDetailsMultipleFeaturesArea" xml:space="preserve">
+    <value>Area totale</value>
+    <comment>Total Area</comment>
+  </data>
+  <data name="FeatureDetailsMultipleFeaturesLength" xml:space="preserve">
+    <value>Lunghezza totale</value>
+    <comment>Total Length</comment>
+  </data>
+  <data name="FeatureDetailsMultipleFeaturesNumberOfElements" xml:space="preserve">
+    <value>Elementi</value>
+    <comment>Elements</comment>
+  </data>
+  <data name="FeatureDetailsSelectFeatureFromMap" xml:space="preserve">
+    <value>Seleziona oggetti sulla mappa</value>
+    <comment>Select a Feature from the Map</comment>
+  </data>
+  <data name="FeatureResultListRetrievingCollection" xml:space="preserve">
+    <value>Recupero della collezione</value>
+    <comment>Retrieving Collection</comment>
+  </data>
+  <data name="GeoLocatorEmptyRequest" xml:space="preserve">
+    <value>Richiesta vuota</value>
+    <comment>Empty Place</comment>
+  </data>
+  <data name="GotoHomeView" xml:space="preserve">
+    <value>Vai alla pagina iniziale</value>
+    <comment>Go To Home View</comment>
+  </data>
+  <data name="GotoSelection" xml:space="preserve">
+    <value>Vai alla selezione</value>
+    <comment>Go To Selection</comment>
+  </data>
+  <data name="HighlightSelectionInMap" xml:space="preserve">
+    <value>Evidenza la selezione sulla mappa</value>
+    <comment>Highlight Selection in Map</comment>
+  </data>
+  <data name="Layers" xml:space="preserve">
+    <value>Livelli</value>
+    <comment>Layers</comment>
+  </data>
+  <data name="LayersNewLayerServiceProvider" xml:space="preserve">
+    <value>Provider</value>
+    <comment>Provider</comment>
+  </data>
+  <data name="LayersNewLayerServiceProviderGroupType" xml:space="preserve">
+    <value>Tipo</value>
+    <comment>Type</comment>
+  </data>
+  <data name="LayersNewLayerServiceProviderLayer" xml:space="preserve">
+    <value>Livello</value>
+    <comment>Layer</comment>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Mappa</value>
+    <comment>Map</comment>
+  </data>
+  <data name="MapDefaultMode" xml:space="preserve">
+    <value>Modalità di selezione</value>
+    <comment>Select Mode</comment>
+  </data>
+  <data name="MapGoToPreviousWorld" xml:space="preserve">
+    <value>Torna alla mappa geografica</value>
+    <comment>Return to Geographic Map</comment>
+  </data>
+  <data name="MapLayersDescriptionFormat" xml:space="preserve">
+    <value>{0} - Livelli</value>
+    <comment>{0} - Layers</comment>
+  </data>
+  <data name="MapMeasureDimMode" xml:space="preserve">
+    <value>Misura ortogonale</value>
+    <comment>Orthogonal</comment>
+  </data>
+  <data name="MapMeasureFreeMode" xml:space="preserve">
+    <value>Misura</value>
+    <comment>Measure</comment>
+  </data>
+  <data name="MapRemoveStringFormat" xml:space="preserve">
+    <value>Siete sicuri di voler rimuovere la mappa '{0}'?</value>
+    <comment>Are you sure you want to remove the Map '{0}'?</comment>
+  </data>
+  <data name="MapRemoveTitle" xml:space="preserve">
+    <value>Rimuovere la mappa?</value>
+    <comment>Remove Map?</comment>
+  </data>
+  <data name="Maps" xml:space="preserve">
+    <value>Mappe</value>
+    <comment>Maps</comment>
+  </data>
+  <data name="MapsAddMap" xml:space="preserve">
+    <value>Aggiungi mappa</value>
+    <comment>Add a Map</comment>
+  </data>
+  <data name="MapsNewMapServiceProvider" xml:space="preserve">
+    <value>Provider</value>
+    <comment>Provider</comment>
+  </data>
+  <data name="MapsNewMapServiceProviderGroupType" xml:space="preserve">
+    <value>Tipo</value>
+    <comment>Type</comment>
+  </data>
+  <data name="MapsNewMapServiceProviderMap" xml:space="preserve">
+    <value>Accendi Base</value>
+    <comment>Base On</comment>
+  </data>
+  <data name="MessageBoxCancel" xml:space="preserve">
+    <value>Annulla</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="MessageBoxOK" xml:space="preserve">
+    <value>OK</value>
+    <comment>OK</comment>
+  </data>
+  <data name="NoServerAddressInHtmlPage" xml:space="preserve">
+    <value>Indirizzo del server non � specificato sulla pagina HTTL dell'applicazione</value>
+    <comment>No server address has been specified in the html page of the application</comment>
+  </data>
+  <data name="NoServerAddressInHtmlPageTitle" xml:space="preserve">
+    <value>Indirizzo del Server non trovato</value>
+    <comment>No Server Address Found</comment>
+  </data>
+  <data name="OverviewMapHide" xml:space="preserve">
+    <value>Nascondi mini mappa</value>
+    <comment>Hide the mini map</comment>
+  </data>
+  <data name="OverviewMapShow" xml:space="preserve">
+    <value>Visualizza mini mappa</value>
+    <comment>See the mini map</comment>
+  </data>
+  <data name="PlaceFinderSnapShot" xml:space="preserve">
+    <value>Istantanea</value>
+    <comment>Snapshot</comment>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Stampa</value>
+    <comment>Print</comment>
+  </data>
+  <data name="Queries" xml:space="preserve">
+    <value>Query</value>
+    <comment>Queries</comment>
+  </data>
+  <data name="QueriesNewQueryTableServiceProvider" xml:space="preserve">
+    <value>Provider</value>
+    <comment>Provider</comment>
+  </data>
+  <data name="QueriesNewQueryTableServiceProviderGroupType" xml:space="preserve">
+    <value>Dal</value>
+    <comment>From</comment>
+  </data>
+  <data name="QueriesNewQueryTableServiceProviderTable" xml:space="preserve">
+    <value>Tabella</value>
+    <comment>Table</comment>
+  </data>
+  <data name="Query" xml:space="preserve">
+    <value>Query</value>
+    <comment>Query</comment>
+  </data>
+  <data name="QueryCreatingExport" xml:space="preserve">
+    <value>Export in corso</value>
+    <comment>Creating Export</comment>
+  </data>
+  <data name="QueryCreatingReport" xml:space="preserve">
+    <value>Creazione Report in corso</value>
+    <comment>Creating Report</comment>
+  </data>
+  <data name="QueryRemoveStringFormat" xml:space="preserve">
+    <value>Siete sicuri di voler rimuovere la Query '{0}'?</value>
+    <comment>Are you sure you want to remove the Query '{0}'?</comment>
+  </data>
+  <data name="QueryRemoveTitle" xml:space="preserve">
+    <value>Rimuovere Query?</value>
+    <comment>Remove Query?</comment>
+  </data>
+  <data name="QuerySelectCurveFromMap" xml:space="preserve">
+    <value>Selezionare una curva sulla mappa</value>
+    <comment>Select a curve from the map</comment>
+  </data>
+  <data name="QuerySelectGeometryFromMap" xml:space="preserve">
+    <value>Selezionare una geometria sulla mappa</value>
+    <comment>Select a geometry from the map</comment>
+  </data>
+  <data name="QuerySelectPointFromMap" xml:space="preserve">
+    <value>Selezionare un punto sulla mappa</value>
+    <comment>Select a point from the map</comment>
+  </data>
+  <data name="QuerySelectPolygonFromMap" xml:space="preserve">
+    <value>Selezionare un poligono sulla mappa</value>
+    <comment>Select a polygon from the map</comment>
+  </data>
+  <data name="QueryViaExpressionBuilder" xml:space="preserve">
+    <value>Costruttore</value>
+    <comment>Builder</comment>
+  </data>
+  <data name="RemoveQuery" xml:space="preserve">
+    <value>Rimuovere query</value>
+    <comment>Remove Query</comment>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Report</value>
+    <comment>Report</comment>
+  </data>
+  <data name="ReportQueryResults" xml:space="preserve">
+    <value>Visualizza risultati della query</value>
+    <comment>Report Query Results</comment>
+  </data>
+  <data name="RunQuery" xml:space="preserve">
+    <value>Esegui query</value>
+    <comment>Run Query</comment>
+  </data>
+  <data name="SaveQuery" xml:space="preserve">
+    <value>Salva query</value>
+    <comment>Save Query</comment>
+  </data>
+  <data name="ShowFavorites" xml:space="preserve">
+    <value>Visualizza preferiti</value>
+    <comment>Show Favorites</comment>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Esci</value>
+    <comment>Sign Out</comment>
+  </data>
+  <data name="SwitchScaleBar" xml:space="preserve">
+    <value>Cambiare la barra della scala</value>
+    <comment>Switch Scalebar</comment>
+  </data>
+  <data name="SwitchUnits" xml:space="preserve">
+    <value>Cambiare unit� di misura</value>
+    <comment>Switch Units</comment>
+  </data>
+  <data name="TrackSelectionInDetails" xml:space="preserve">
+    <value>Visualizza i dettagli della selezione</value>
+    <comment>Track Selection in Details</comment>
+  </data>
+  <data name="TrackSelectionInMap" xml:space="preserve">
+    <value>Visualizza la selezione sulla mappa</value>
+    <comment>Track Selection in Map</comment>
+  </data>
+  <data name="ValueActivationCancel" xml:space="preserve">
+    <value>Annulla</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="ValueActivationSelectValue" xml:space="preserve">
+    <value>Salta a</value>
+    <comment>Jump to</comment>
+  </data>
+  <data name="HeterogeneousMainCollectionDescription" xml:space="preserve">
+    <value>Tutto</value>
+    <comment>All</comment>
+  </data>
+  <data name="HeterogeneousSubCollectionDescription" xml:space="preserve">
+    <value>{0}</value>
+    <comment>{0}</comment>
+  </data>
+  <data name="MapMeasurer" xml:space="preserve">
+    <value>Misuratore</value>
+    <comment>Measurer</comment>
+  </data>
+  <data name="TrailPoint" xml:space="preserve">
+    <value>Punto</value>
+    <comment>Point</comment>
+  </data>
+  <data name="TrailCurve" xml:space="preserve">
+    <value>Curva</value>
+    <comment>Curve</comment>
+  </data>
+  <data name="TrailCircle" xml:space="preserve">
+    <value>Circonferenza</value>
+    <comment>Circle</comment>
+  </data>
+  <data name="TrailPolygon" xml:space="preserve">
+    <value>Poligono</value>
+    <comment>Polygon</comment>
+  </data>
+  <data name="TrailRectangle" xml:space="preserve">
+    <value>Rettangolo</value>
+    <comment>Rectangle</comment>
+  </data>
+  <data name="MapTrail" xml:space="preserve">
+    <value>Percorso</value>
+    <comment>Trail</comment>
+  </data>
+  <data name="ExpressionBuilderFieldColumn" xml:space="preserve">
+    <value>Campo</value><comment>Field</comment>
+  </data>
+  <data name="ExpressionBuilderOperatorColumn" xml:space="preserve">
+    <value>Operatore</value><comment>Operator</comment>
+  </data>
+  <data name="ExpressionBuilderValueColumn" xml:space="preserve">
+    <value>Valore</value><comment>Value</comment>
+  </data>
+  <data name="CopyToClipboardCancel">
+    <value>Annulla copia</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="CopyToClipboardOK">
+    <value>Copia OK</value>
+    <comment>OK</comment>
+  </data>
+  <data name="ExportSettings">
+    <value>Esporta impostazioni</value>
+    <comment>Export Settings</comment>
+  </data>
+  <data name="StreetView">
+    <value>Street View</value>
+    <comment>Street View</comment>
+  </data>
+  <data name="FeatureEditInsertCategoryHeader">
+    <value>Inserisci GeoNote</value>
+    <comment>Insert GeoNote</comment>
+  </data>
+  <data name="MapMeasurerModeCategoryHeader">
+    <value>Modalit� di misura</value>
+    <comment>Measure Mode</comment>
+  </data>
+  <data name="MapTrailCreateCategoryHeader">
+    <value>Crea percorso</value>
+    <comment>Create Trail</comment>
+  </data>
+  <data name="MapTrailActionsCategoryHeader">
+    <value>Azioni sul percorso</value>
+    <comment>Trail Actions</comment>
+  </data>
+  <data name="ClearTrail">
+    <value>Annulla percorso</value>
+    <comment>Clear Trail</comment>
+  </data>
+  <data name="MapTrailClearAll">
+    <value>Annulla tutto</value>
+    <comment>Clear All</comment>
+  </data>
+  <data name="TransactionDeleteFailedCaption">
+    <value>Cancellazione non riuscita</value>
+    <comment>Delete Failed</comment>
+  </data>
+  <data name="TransactionDeleteFailedMessage">
+    <value>Cancellazione non riuscita</value>
+    <comment>Deleting the feature failed</comment>
+  </data>
+  <data name="TransactionInsertFailedCaption">
+    <value>Inserimento non riuscito</value>
+    <comment>Insert Failed</comment>
+  </data>
+  <data name="TransactionInsertFailedMessage">
+    <value>Inserimento non riuscito</value>
+    <comment>Inserting the feature failed</comment>
+  </data>
+  <data name="TransactionUpdateFailedCaption">
+    <value>Aggiornamento non riuscito</value>
+    <comment>Update Failed</comment>
+  </data>
+  <data name="TransactionUpdateFailedMessage">
+    <value>Aggiornamento non riuscito</value>
+    <comment>Updating the feature failed</comment>
+  </data>
+  <data name="TransactionDeleteQuestionCaption">
+    <value>Cancella caratteristica</value>
+    <comment>Delete Feature</comment>
+  </data>
+  <data name="TransactionDeleteQuestionMessage">
+    <value>Sei sicuro di voler cancellare la caratteristica?</value>
+    <comment>Are you sure you want to delete the feature?</comment>
+  </data>
+  <data name="GeoNoteInsert">
+    <value>Inserisci GeoNote</value>
+    <comment>Insert GeoNote</comment>
+  </data>
+  <data name="FeatureDetailsAttachNewItem">
+    <value>Allega nuovo {0}</value>
+    <comment>Attach new {0}</comment>
+  </data>
+  <data name="TypedValueGeometryControlClearToolTip">
+    <value>Cancella geometria</value>
+    <comment>Clear geometry</comment>
+  </data>
+  <data name="TypedValueGeometryControlCopyToolTip">
+    <value>Imposta dalla selezione</value>
+    <comment>Set from selection</comment>
+  </data>
+  <data name="TypedValueGeometryControlEditToolTip">
+    <value>Modifica la geometria</value>
+    <comment>Edit geometry</comment>
+  </data>
+  <data name="TypedValueJoinControlClearToolTip">
+    <value>Annulla la join</value>
+    <comment>Clear join</comment>
+  </data>
+  <data name="TypedValueJoinControlCopyToolTip">
+    <value>Imposta dalla selezione</value>
+    <comment>Set from selection</comment>
+  </data>
+  <data name="MapPopupCopyCoordinateToClipboard">
+    <value>Copia coordinate</value>
+    <comment>Copy Coordinate</comment>
+  </data>
+  <data name="MapPopupGotoSelection">
+    <value>Vai alle caratterisitche selezionate</value>
+    <comment>To Selected Features</comment>
+  </data>
+  <data name="MapPopupClearSelection">
+    <value>Annulla selezione</value>
+    <comment>Clear Selection</comment>
+  </data>
+  <data name="MapPopupEditGeometrySelection">
+    <value>Modifica la geometria selezionata</value>
+    <comment>Edit Selected Geometry</comment>
+  </data>
+  <data name="MapPopupCreateTrailFromSelection">
+    <value>Crea percorso dalla selezione</value>
+    <comment>Create Trail from Selection</comment>
+  </data>
+  <data name="MapPopupRemoveTrail">
+    <value>Rimuovi percorso</value>
+    <comment>Remove Trail</comment>
+  </data>
+  <data name="MapPopupObjectProperties">
+    <value>Propriet� oggetto</value>
+    <comment>Object Properties</comment>
+  </data>
+  <data name="PrintTemplateDefault">
+    <value>{0} Modello standard</value>
+    <comment>{0} Default Template</comment>
+  </data>
+  <data name="PrintTemplateDefaultWithLegend">
+    <value>{0} Legenda del modello</value>
+    <comment>{0} Legend Template</comment>
+  </data>
+  <data name="PrintTemplateDefaultDescription">
+    <value>Stampa modello predefinito</value>
+    <comment>Default print template</comment>
+  </data>
+  <data name="PrintTemplateDefaultWithLegendDescription">
+    <value>Modello con leggenda</value>
+    <comment>Template with legend</comment>
+  </data>
+  <data name="QueriesNewQueryTableServiceProviderGroup">
+    <value>Gruppo</value>
+    <comment>Group</comment>
+  </data>
+  <data name="MapMeasureDimModeDescription">
+    <value>Misurazione (Ortogonale) utilizzando il sistema di coordinate WGS84</value>
+    <comment>Measuring (Orthogonal) using WGS84 coordinate system</comment>
+  </data>
+  <data name="MapMeasureFreeModeDescription">
+    <value>Misurazione utilizzando il sistema di coordinate WGS84</value>
+    <comment>Measuring using WGS84 coordinate system</comment>
+  </data>
+</root>

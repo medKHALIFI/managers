@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="150e8c92-6f72-4bc9-9cf7-04103b700332" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://swtotalplaydev:8080/gss/web/services/WsGestionaInfoCuentas?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WsGestionaInfoCuentas.xsd" MetadataType="Schema" ID="62bfe39b-dffb-45b5-b037-c09584b57a15" SourceId="1" SourceUrl="http://swtotalplaydev:8080/gss/web/services/WsGestionaInfoCuentas?xsd=WsGestionaInfoCuentas-RQ.xsd" />
+    <MetadataFile FileName="WsGestionaInfoCuentas1.xsd" MetadataType="Schema" ID="b2a88c3c-8436-48d1-9bdf-6d4deb8b472a" SourceId="1" SourceUrl="http://swtotalplaydev:8080/gss/web/services/WsGestionaInfoCuentas?xsd=GisCommonTypeSchema.xsd" />
+    <MetadataFile FileName="WsGestionaInfoCuentas2.xsd" MetadataType="Schema" ID="9513c0f3-03cc-4adf-9d0c-610bc98c42a9" SourceId="1" SourceUrl="http://swtotalplaydev:8080/gss/web/services/WsGestionaInfoCuentas?xsd=WsGestionaInfoCuentas-RS.xsd" />
+    <MetadataFile FileName="WsGestionaInfoCuentas.wsdl" MetadataType="Wsdl" ID="edbb9489-4fb5-4ddd-9a2a-e578f4a37b0c" SourceId="1" SourceUrl="http://swtotalplaydev:8080/gss/web/services/WsGestionaInfoCuentas?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

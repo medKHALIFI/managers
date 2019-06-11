@@ -1,0 +1,1 @@
+﻿function setStreetviewStatus(panoData, status) { if (seApplicationHost) { if (status != google.maps.StreetViewStatus.OK) { seApplicationHost.Content.SeAPI.JSStreetViewStatusChanged(false); } else { seApplicationHost.Content.SeAPI.JSStreetViewStatusChanged(true); } } }

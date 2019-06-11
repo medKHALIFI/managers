@@ -1,0 +1,7 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:core="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:System_Windows_Controls_Primitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" >
+
+  <!--Label-->
+  <Style TargetType="sdk:Label">
+    <!--<Setter Property="core:BackgroundPanel.PatchForeground" Value="True" />-->
+  </Style>
+</ResourceDictionary>

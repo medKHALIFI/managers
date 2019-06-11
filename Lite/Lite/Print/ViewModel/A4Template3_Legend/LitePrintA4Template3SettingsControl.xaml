@@ -1,0 +1,21 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" x:Class="Lite.LitePrintA4Template3SettingsControl"
+    mc:Ignorable="d" Height="106" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+    
+    <Grid x:Name="LayoutRoot" VerticalAlignment="Center">
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition Width="Auto"/>
+    		<ColumnDefinition Width="300"/>
+    		<ColumnDefinition Width="Auto"/>
+    	</Grid.ColumnDefinitions>
+
+    	<sdk:Label x:Name="TitleLabel" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Title:" HorizontalContentAlignment="Left" Margin="0,7,0,0"/>
+    	<TextBox x:Name="TitleTextBox" Text="{Binding Title, Mode=TwoWay}" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1" Background="Transparent" Margin="3,3,2,3" MaxWidth="300" HorizontalScrollBarVisibility="Auto"/>
+    	<Button x:Name="ResetTitleButton" Content="Reset" Margin="2,4,0,0" d:LayoutOverrides="Height" Grid.Column="2" VerticalAlignment="Top" Command="{Binding ResetTitleCommand}"/>
+
+    </Grid>
+</UserControl>

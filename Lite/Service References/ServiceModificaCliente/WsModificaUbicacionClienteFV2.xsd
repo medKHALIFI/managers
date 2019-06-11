@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nca:schema xmlns:tns="http://www.grr.net.fv/gis" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.grr.net.fv/gis" xmlns:nca="http://www.w3.org/2001/XMLSchema">
+  <nca:complexType name="wsModificaUbicacionClienteFV-RQ-Type">
+    <nca:sequence>
+      <nca:element name="numero_cuenta" type="nca:string" />
+      <nca:element name="etiqueta" nillable="true" type="nca:string" />
+      <nca:element name="tipo" nillable="true" type="nca:string" />
+      <nca:element name="originador" nillable="true" type="nca:string" />
+      <nca:element name="estado" nillable="true" type="nca:string" />
+      <nca:element name="longitud" nillable="true" type="nca:string" />
+      <nca:element name="latitud" nillable="true" type="nca:string" />
+    </nca:sequence>
+  </nca:complexType>
+  <nca:element name="wsModificaUbicacionClienteFV-RQ" type="tns:wsModificaUbicacionClienteFV-RQ-Type" />
+</nca:schema>

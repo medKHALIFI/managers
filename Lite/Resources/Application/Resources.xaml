@@ -1,0 +1,16 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib" 
+                    >
+
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/Lite;component/Resources/Application/LitePopupMenu.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Application/LiteComboBox.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Application/LiteTabControl.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Application/LiteTabItem.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Application/LiteSlider.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Application/LiteQueryControl.xaml" />
+    <ResourceDictionary Source="/Lite;component/Resources/Application/LiteMapControl.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

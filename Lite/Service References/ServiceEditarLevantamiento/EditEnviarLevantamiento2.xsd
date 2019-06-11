@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fs:schema xmlns:tns="http://www.is.net.edit/gis" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.is.net.edit/gis" xmlns:fs="http://www.w3.org/2001/XMLSchema">
+  <fs:complexType name="EditEnviarLevantamiento-RQ-Type">
+    <fs:annotation>
+      <fs:documentation>Elemento type que agrupa los parametros de entrada</fs:documentation>
+    </fs:annotation>
+    <fs:sequence>
+      <fs:element name="InformacionElementos" type="fs:string">
+        <fs:annotation>
+          <fs:documentation>Informaci??n de los elementos de red codificados en formato Json levantados en campo</fs:documentation>
+        </fs:annotation>
+      </fs:element>
+    </fs:sequence>
+  </fs:complexType>
+  <fs:element name="EditEnviarLevantamiento-RQ" type="tns:EditEnviarLevantamiento-RQ-Type">
+    <fs:annotation>
+      <fs:documentation>Elemento agrupador para los parametros de entrada</fs:documentation>
+    </fs:annotation>
+  </fs:element>
+</fs:schema>

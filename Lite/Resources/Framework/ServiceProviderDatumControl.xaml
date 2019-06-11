@@ -1,0 +1,62 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:sfc="http://schemas.spatialeye.com/clienttoolkit" 
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Style x:Name="ServiceProviderDatumControlStyle" TargetType="sfc:ServiceProviderDatumControl">
+    
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+            <StackPanel Orientation="Vertical">
+
+              <Grid Visibility="{Binding ServiceProviderProperties.Visibility}" Margin="2,2,0,2">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto"/>
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <sdk:Label Content="{Binding ServiceProviderProperties.Name}" Grid.Column="0" MinWidth="50"/>
+                <ComboBox x:Name="ServiceProviderComboBox" VerticalAlignment="Center" ItemsSource="{Binding ServiceProviders}" SelectedItem="{Binding SelectedServiceProvider, Mode=TwoWay}"  Margin="4,2,0,2" Grid.Column="1"/>
+              </Grid>
+
+              <Grid Visibility="{Binding ServiceProviderGroupTypeProperties.Visibility}" Margin="2,2,0,2">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto"/>
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <sdk:Label Content="{Binding ServiceProviderGroupTypeProperties.Name}" Grid.Column="0"  MinWidth="50"/>
+                <ComboBox x:Name="ServiceProviderGroupTypeComboBox" VerticalAlignment="Center" ItemsSource="{Binding ServiceProviderGroupTypeNames}" SelectedItem="{Binding SelectedServiceProviderGroupTypeName, Mode=TwoWay}" Margin="4,2,0,2"  Grid.Column="1"/>
+              </Grid>
+
+              <Grid Visibility="{Binding ServiceProviderGroupProperties.Visibility}" Margin="2">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto"/>
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <sdk:Label Content="{Binding ServiceProviderGroupProperties.Name}" Grid.Column="0"  MinWidth="50"/>
+                <ComboBox x:Name="ServiceProviderGroupComboBox" VerticalAlignment="Center" ItemsSource="{Binding ServiceProviderGroups}" DisplayMemberPath="ExternalName" SelectedItem="{Binding SelectedServiceProviderGroup, Mode=TwoWay}"  Margin="4,2,0,2"  Grid.Column="1"/>
+              </Grid>
+
+              <Grid Visibility="{Binding DatumProperties.Visibility}" Margin="2,2,0,2">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto"/>
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <sdk:Label Content="{Binding DatumProperties.Name}" Grid.Column="0"  MinWidth="50"/>
+                <ComboBox x:Name="ItemComboBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" ItemsSource="{Binding Nodes}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedNode, Mode=TwoWay}" Visibility="Visible"  Margin="4,2,0,2"  Grid.Column="1"/>
+              </Grid>
+
+            </StackPanel>
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style TargetType="sfc:FeatureTableComboBoxView" BasedOn="{StaticResource ServiceProviderDatumControlStyle}"/>
+  <Style TargetType="sfc:MapDefinitionComboBoxView" BasedOn="{StaticResource ServiceProviderDatumControlStyle}"/>
+  <Style TargetType="sfc:MapLayerDefinitionComboBoxView" BasedOn="{StaticResource ServiceProviderDatumControlStyle}"/>
+
+</ResourceDictionary>

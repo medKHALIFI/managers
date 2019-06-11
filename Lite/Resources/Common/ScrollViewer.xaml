@@ -1,0 +1,66 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" >
+
+  <Style TargetType="ScrollViewer">
+    <Setter Property="Background" Value="#00000000" />
+    <Setter Property="BorderBrush" Value="{StaticResource ScrollViewer.BorderBrush}" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="VerticalContentAlignment" Value="Top" />
+    <Setter Property="VerticalScrollBarVisibility" Value="Visible" />
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ScrollViewer">
+          <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding BorderBrush}">
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+              </Grid.ColumnDefinitions>
+              <ScrollContentPresenter x:Name="ScrollContentPresenter" Cursor="{TemplateBinding Cursor}" Margin="{TemplateBinding Padding}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+              <Border Background="{StaticResource ScrollViewer.Corner.Background}" Grid.Column="1" Grid.Row="1" />
+              <ScrollBar x:Name="VerticalScrollBar" Width="17" Orientation="Vertical" IsTabStop="False" Grid.Column="1" Grid.Row="0" ViewportSize="{TemplateBinding ViewportHeight}" Maximum="{TemplateBinding ScrollableHeight}" Minimum="0" Value="{TemplateBinding VerticalOffset}" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" />
+              <ScrollBar x:Name="HorizontalScrollBar" Height="17" Orientation="Horizontal" IsTabStop="False" Grid.Column="0" Grid.Row="1" ViewportSize="{TemplateBinding ViewportWidth}" Maximum="{TemplateBinding ScrollableWidth}" Minimum="0" Value="{TemplateBinding HorizontalOffset}" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" />
+            </Grid>
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="SimpleScrollViewer" TargetType="ScrollViewer">
+    <Setter Property="Background" Value="#00000000" />
+    <Setter Property="BorderBrush" Value="{StaticResource ScrollViewer.BorderBrush}" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="VerticalContentAlignment" Value="Top" />
+    <Setter Property="VerticalScrollBarVisibility" Value="Visible" />
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ScrollViewer">
+          <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding BorderBrush}">
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+              </Grid.ColumnDefinitions>
+              <ScrollContentPresenter x:Name="ScrollContentPresenter" Cursor="{TemplateBinding Cursor}" Margin="{TemplateBinding Padding}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+              <Border Background="{StaticResource ScrollViewer.Corner.Background}" Grid.Column="1" Grid.Row="1" />
+              <ScrollBar x:Name="VerticalScrollBar" Style="{StaticResource SimpleScrollBar}" Width="17" Orientation="Vertical" IsTabStop="False" Grid.Column="1" Grid.Row="0" ViewportSize="{TemplateBinding ViewportHeight}" Maximum="{TemplateBinding ScrollableHeight}" Minimum="0" Value="{TemplateBinding VerticalOffset}" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" />
+              <ScrollBar x:Name="HorizontalScrollBar" Style="{StaticResource SimpleScrollBar}" Height="17" Orientation="Horizontal" IsTabStop="False" Grid.Column="0" Grid.Row="1" ViewportSize="{TemplateBinding ViewportWidth}" Maximum="{TemplateBinding ScrollableWidth}" Minimum="0" Value="{TemplateBinding HorizontalOffset}" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" />
+            </Grid>
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

@@ -1,0 +1,1150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6BB5FD93-ECC9-445B-8404-ED29991351CD}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lite</RootNamespace>
+    <AssemblyName>Lite</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>en;nl;fr;de;es;pt;ko;ru;it;tr;sv;et;fi;cs;ja</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Lite.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Lite.App</SilverlightAppEntry>
+    <TestPageFileName>LiteTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <ExpressionBlendVersion>5.2.30810.0</ExpressionBlendVersion>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <NuGetPackageImportStamp>a8ec253e</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(SpatialEyeCompileConstants)' != ''">
+    <DefineConstants>$(DefineConstants);$(SpatialEyeCompileConstants)</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\Framework\Silverlight\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Framework\Silverlight\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Framework\Silverlight\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Silverlight, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Framework\Silverlight\Microsoft.Threading.Tasks.Extensions.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="MsgPack">
+      <HintPath>..\Framework\Silverlight\MsgPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Client">
+      <HintPath>..\Framework\Silverlight\ServiceStack.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\Framework\Silverlight\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\Framework\Silverlight\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="SpatialEye.Framework, Version=2014.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Framework\Silverlight\SpatialEye.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SpatialEye.Framework.ClientToolkit, Version=2014.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Framework\Silverlight\SpatialEye.Framework.ClientToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="SpatialEye.Framework.ServiceProviders, Version=2014.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Framework\Silverlight\SpatialEye.Framework.ServiceProviders.dll</HintPath>
+    </Reference>
+    <Reference Include="SpatialEye.Framework.XY.Dtos, Version=2014.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Framework\Silverlight\SpatialEye.Framework.XY.Dtos.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO, Version=1.5.11.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Framework\Silverlight\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Json, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Framework\Silverlight\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.ServiceModel.Web.Extensions, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Threading.Tasks, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Framework\Silverlight\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core">
+      <HintPath>$(TargetFrameworkDirectory)System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Serialization, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.XPath, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Behaviors\FixCaretBrushBehavior.cs" />
+    <Compile Include="Lite\BrowserAPI\BrowserAPI.cs" />
+    <Compile Include="Lite\BrowserAPI\BrowserFunctionStatusEventArgs.cs" />
+    <Compile Include="Lite\ClientSettings\LiteClientSettingsViewModel.cs" />
+    <Compile Include="Lite\EdicionSw\EdicionSwExProperty.cs" />
+    <Compile Include="Lite\EdicionSw\ViewModel\EdicionSwViewModel.cs" />
+    <Compile Include="Lite\EdicionSw\ViewModel\LiteEdicionSWDefinition.cs" />
+    <Compile Include="Lite\EdicionSw\ViewModel\LiteEdicionSwObjetoJson.cs" />
+    <Compile Include="Lite\EdicionSw\ViewModel\LiteMapFreeMeasurerIS.cs" />
+    <Compile Include="Lite\EdicionSw\ViewModel\LiteMapMarkInteractionModeIS.cs" />
+    <Compile Include="Lite\EdicionSw\ViewModel\LiteMapMarkISViewModel.cs" />
+    <Compile Include="Lite\EdicionSw\ViewModel\LiteMapMeasureInteractionModeIS.cs" />
+    <Compile Include="Lite\EdicionSw\ViewModel\LiteMapMeasureISViewModel.cs" />
+    <Compile Include="Lite\EdicionSw\ViewModel\MapPointInteractionModeIS.cs" />
+    <Compile Include="Lite\EdicionSw\ViewModel\MapPointISViewModel.cs" />
+    <Compile Include="Lite\EdicionSw\ViewModel\MapTrailInteractionModeIS.cs" />
+    <Compile Include="Lite\EdicionSw\ViewModel\MapTrailISViewModel.cs" />
+    <Compile Include="Lite\EdicionSw\View\EdicionSwView.xaml.cs">
+      <DependentUpon>EdicionSwView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\EdicionSw\VisibilityConverter.cs" />
+    <Compile Include="Lite\Extensions\ButtonExtensions.cs" />
+    <Compile Include="Lite\Extensions\VisualTreeExtensions.cs" />
+    <Compile Include="Lite\Factibilidad\ViewModel\LiteFactibilidadViewModel.cs" />
+    <Compile Include="Lite\Factibilidad\ViewModel\LiteInventarioCajaViewModel.cs" />
+    <Compile Include="Lite\Factibilidad\ViewModel\LiteMapMarkInteractionMode.cs" />
+    <Compile Include="Lite\Factibilidad\ViewModel\LiteMapMarkViewModel.cs" />
+    <Compile Include="Lite\Factibilidad\View\LiteClientesView.xaml.cs">
+      <DependentUpon>LiteClientesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Factibilidad\View\LiteFactibilidadView.xaml.cs">
+      <DependentUpon>LiteFactibilidadView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Factibilidad\View\LiteIncidentesView.xaml.cs">
+      <DependentUpon>LiteIncidentesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Factibilidad\View\LiteInventarioCajaView.xaml.cs">
+      <DependentUpon>LiteInventarioCajaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Factibilidad\View\LiteProspectosView.xaml.cs">
+      <DependentUpon>LiteProspectosView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Factibilidad\View\LiteU2000View.xaml.cs">
+      <DependentUpon>LiteU2000View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\FeatureCollectionRestriction\LiteFeatureCollectionRestrictionViewModel.cs" />
+    <Compile Include="Lite\FeatureDetails\ViewModel\LiteFeatureDetailFeatureDetailsProvider.cs" />
+    <Compile Include="Lite\FeatureDetails\ViewModel\LiteFeatureDetailsViewModelAttachItem.cs" />
+    <Compile Include="Lite\MapLayerChanges\ViewModel\LiteMapLayerChangesRetriever.cs" />
+    <Compile Include="Lite\Messenger\LiteNewFeatureRequestMessage.cs" />
+    <Compile Include="Lite\FeatureEdit\ViewModel\FeatureInsertItemViewModel.cs" />
+    <Compile Include="Lite\FeatureEdit\ViewModel\FeatureInsertViewModel.cs" />
+    <Compile Include="Lite\FeatureEdit\ViewModel\LiteFeatureInsertViewModel.cs" />
+    <Compile Include="Lite\MapBar\View\LiteSubMapBar.cs" />
+    <Compile Include="Lite\MapEditGeometry\LiteMapEditGeometryViewModel.cs" />
+    <Compile Include="Lite\MapPopupMenu\ViewModel\LiteMapPopupMenuViewModel.cs" />
+    <Compile Include="Lite\MapPopupMenu\View\LiteMapPopupMenu.xaml.cs">
+      <DependentUpon>LiteMapPopupMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\MapSelection\LiteMapCustomSelectionViewModel.cs" />
+    <Compile Include="Lite\Maps\ViewModel\LiteMapSelectInteractionMode.cs" />
+    <Compile Include="Lite\Maps\ViewModel\UserMap\LiteUserMapStorageModel.cs" />
+    <Compile Include="Lite\Maps\View\LiteMapControl.cs" />
+    <Compile Include="Lite\MapBar\ViewModel\LiteMenuItemViewModel .cs" />
+    <Compile Include="Lite\MapBar\ViewModel\LiteMenuCategoryViewModel.cs" />
+    <Compile Include="Lite\MapTrail\LiteMapTrailViewModel.cs" />
+    <Compile Include="Lite\Messenger\LiteDisplayCoordinateSystemChangedMessage.cs" />
+    <Compile Include="Lite\Messenger\LiteCustomSelectionRequestMessage.cs" />
+    <Compile Include="Lite\Messenger\LiteFeatureDetailsEditModeChangedMessage.cs" />
+    <Compile Include="Lite\Messenger\LiteFeatureTransactionMessage.cs" />
+    <Compile Include="Lite\Messenger\LiteMapLayerChangeMessage.cs" />
+    <Compile Include="Lite\Messenger\LiteMapTrailModelChangedMessage.cs" />
+    <Compile Include="Lite\Messenger\LiteRestrictFeatureCollectionRequestMessage.cs" />
+    <Compile Include="Lite\Messenger\LiteClearTrailRequestMessage.cs" />
+    <Compile Include="Lite\Messenger\LiteGetAttachCandidatesRequestMessage.cs" />
+    <Compile Include="Lite\Messenger\LiteMapSelectionChangedMessage.cs" />
+    <Compile Include="Lite\Messenger\LiteStopEditFeatureRequestMessage.cs" />
+    <Compile Include="Lite\Messenger\LiteStopEditGeometryRequestMessage.cs" />
+    <Compile Include="Lite\Messenger\LiteStartEditGeometryRequestMessage.cs" />
+    <Compile Include="Lite\Print\ViewModel\A4Template3_Legend\1. HeaderPage\LitePrintA4Template3HeaderPageContext.cs" />
+    <Compile Include="Lite\Print\ViewModel\A4Template3_Legend\1. HeaderPage\LitePrintA4Template3HeaderPageView.xaml.cs">
+      <DependentUpon>LitePrintA4Template3HeaderPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Print\ViewModel\A4Template3_Legend\2. MainPage\LitePrintA4Template3MainPageContext.cs" />
+    <Compile Include="Lite\Print\ViewModel\A4Template3_Legend\2. MainPage\LitePrintA4Template3MainPageView.xaml.cs">
+      <DependentUpon>LitePrintA4Template3MainPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Print\ViewModel\A4Template3_Legend\3. FooterPage\LitePrintA4Template3FooterPageContext.cs" />
+    <Compile Include="Lite\Print\ViewModel\A4Template3_Legend\3. FooterPage\LitePrintA4Template3FooterPageView.xaml.cs">
+      <DependentUpon>LitePrintA4Template3FooterPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Print\ViewModel\A4Template3_Legend\LitePrintA4Template3SettingsContext.cs" />
+    <Compile Include="Lite\Print\ViewModel\A4Template3_Legend\LitePrintA4Template3SettingsControl.xaml.cs">
+      <DependentUpon>LitePrintA4Template3SettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Print\ViewModel\A4Template2_WithLegend\1. HeaderPage\LitePrintA4Template2HeaderPageContext.cs" />
+    <Compile Include="Lite\Print\ViewModel\A4Template2_WithLegend\1. HeaderPage\LitePrintA4Template2HeaderPageView.xaml.cs">
+      <DependentUpon>LitePrintA4Template2HeaderPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Print\ViewModel\A4Template2_WithLegend\2. MainPage\LitePrintA4Template2MainPageContext.cs" />
+    <Compile Include="Lite\Print\ViewModel\A4Template2_WithLegend\2. MainPage\LitePrintA4Template2MainPageView.xaml.cs">
+      <DependentUpon>LitePrintA4Template2MainPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Print\ViewModel\A4Template2_WithLegend\3. FooterPage\LitePrintA4Template2FooterPageContext.cs" />
+    <Compile Include="Lite\Print\ViewModel\A4Template2_WithLegend\3. FooterPage\LitePrintA4Template2FooterPageView.xaml.cs">
+      <DependentUpon>LitePrintA4Template2FooterPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Print\ViewModel\A4Template2_WithLegend\LitePrintA4Template2SettingsContext.cs" />
+    <Compile Include="Lite\Print\ViewModel\A4Template2_WithLegend\LitePrintA4Template2SettingsControl.xaml.cs">
+      <DependentUpon>LitePrintA4Template2SettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Queries\ViewModel\UserQuery\LiteUserQueryStorageModel.cs" />
+    <Compile Include="Lite\StreetView\Interaction\StreetViewInteractionMode.cs" />
+    <Compile Include="Lite\StreetView\ViewModel\StreetViewViewModel.cs" />
+    <Compile Include="Lite\TraceLogger\ViewModel\LiteTraceLogger.cs" />
+    <Compile Include="Lite\ServerEvents\ViewModel\ServerEventsViewModel.cs" />
+    <Compile Include="Lite\ServerEvents\ViewModel\ServerNotificationsReceiver.cs" />
+    <Compile Include="Lite\WaterQuality\View\LiteChart.xaml.cs">
+      <DependentUpon>LiteChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\WaterQuality\View\LiteCreateMission.xaml.cs">
+      <DependentUpon>LiteCreateMission.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\WaterQuality\View\LiteStatisticView.xaml.cs">
+      <DependentUpon>LiteStatisticView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\WaterQuality\View\LiteViewMission.xaml.cs">
+      <DependentUpon>LiteViewMission.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\WaterQuality\View\LiteWaterQualityView.xaml.cs">
+      <DependentUpon>LiteWaterQualityView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceAlmacenaCliente\Reference1.cs">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Service References\ServiceAlmacenaIncidente\Reference1.cs">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Service References\ServiceAlmacenaProspecto\Reference3.cs">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Service References\ServiceEditarLevantamiento\Reference1.cs">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Service References\ServiceEliminaCliente\Reference3.cs">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Service References\ServiceEliminaIncidente\Reference1.cs">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Service References\ServiceEliminaProspecto\Reference3.cs">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Service References\ServiceFactibilidad1\Reference1.cs">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Service References\ServiceFactibilidadEmpresarial\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceFactibilidadResidencial\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceFactibilidad\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceGestionCuentas1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceGestionCuentas\Reference1.cs">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Service References\ServiceGestionPuertos\Reference1.cs">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Service References\ServiceModificaCliente\Reference1.cs">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Service References\ServiceModificaIncidente\Reference1.cs">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Service References\ServiceU2000\Reference2.cs">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="ViewModelLocator.AdditionalViewModels.cs" />
+    <Compile Include="Lite\Analytics\LiteAnalyticsTracker.cs" />
+    <Compile Include="Lite\MapBackdropLayerModeSelection\ViewModel\LiteMapBackdropLayerModeSelectionViewModel.cs" />
+    <Compile Include="Lite\MapHover\ViewModel\LiteMapHoverViewModel.cs" />
+    <Compile Include="Lite\MapHover\View\LiteMapHoverView.cs" />
+    <Compile Include="Lite\MapMeasure\LiteMapMeasureInteractionMode.cs" />
+    <Compile Include="Lite\MapMeasure\LiteMapMeasureViewModel.cs" />
+    <Compile Include="Lite\MapMeasure\Measurers\LiteMapDimMeasurer.cs" />
+    <Compile Include="Lite\MapMeasure\Measurers\LiteMapFreeMeasurer.cs" />
+    <Compile Include="Lite\MapMeasure\Measurers\LiteMapMeasurerBase.cs" />
+    <Compile Include="Lite\MapOverviewMap\ViewModel\LiteOverviewMapViewModel.cs" />
+    <Compile Include="Lite\Maps\ViewModel\LiteMapsViewModel.CustomLayers.cs" />
+    <Compile Include="Lite\Maps\ViewModel\LiteMapType.cs" />
+    <Compile Include="Lite\Maps\ViewModel\LiteMapViewModel.cs" />
+    <Compile Include="Lite\Maps\ViewModel\UserMap\LiteNewUserMapViewModel.cs" />
+    <Compile Include="Lite\Maps\View\LiteMapsControl.xaml.cs">
+      <DependentUpon>LiteMapsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\MapThemes\ViewModel\Elements\LiteMapThemeLayerFeatureGeometryElement.cs" />
+    <Compile Include="Lite\MapThemes\ViewModel\LiteMapThemeLayerViewModel.cs" />
+    <Compile Include="Lite\MessageBox\ViewModel\LiteMessageBoxViewModel.cs" />
+    <Compile Include="Lite\MessageBox\View\LiteMessageBoxView.xaml.cs">
+      <DependentUpon>LiteMessageBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Messenger\LiteHighlightGeometryRequestMessage.cs" />
+    <Compile Include="ViewModelLocator.App.cs" />
+    <Compile Include="Lite\Authentication\View\LiteAuthenticationDialog.xaml.cs">
+      <DependentUpon>LiteAuthenticationDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\FeatureCollectionResult\ViewModel\LiteFeatureCollectionResultViewModel.cs" />
+    <Compile Include="Lite\FeatureCollectionResult\ViewModel\LiteFeatureCollectionResultViewModelProperties.cs" />
+    <Compile Include="Lite\FeatureCollectionResult\View\LiteFeatureCollectionResultView.xaml.cs">
+      <DependentUpon>LiteFeatureCollectionResultView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\FeatureDetails\ViewModel\LiteFeatureDetailsViewModel.cs" />
+    <Compile Include="Lite\FeatureDetails\View\LiteFeatureDetailsView.xaml.cs">
+      <DependentUpon>LiteFeatureDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\FeatureValueActivation\ViewModel\LiteFeatureValueActivationViewModel.cs" />
+    <Compile Include="Lite\FeatureValueActivation\View\LiteFeatureValueActivationSelectionView.xaml.cs">
+      <DependentUpon>LiteFeatureValueActivationSelectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\IsolatedStorageManager\LiteIsolatedStorageManager.cs" />
+    <Compile Include="Lite\MapBar\ViewModel\LiteMapBarViewModel.cs" />
+    <Compile Include="Lite\MapBar\View\LiteMapBar.xaml.cs">
+      <DependentUpon>LiteMapBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\MapPlaceFinder\ViewModel\LiteMapPlaceFinderViewModel.cs" />
+    <Compile Include="Lite\MapPlaceFinder\ViewModel\LiteMapPlaceFinderFavoritesViewModel.cs" />
+    <Compile Include="Lite\MapPlaceFinder\View\LiteMapPlaceFinderControl.xaml.cs">
+      <DependentUpon>LiteMapPlaceFinderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\MapSelectHover\ViewModel\LiteMapSelectHoverViewModel.cs" />
+    <Compile Include="Lite\MapSelectHover\View\LiteMapSelectHoverView.xaml.cs">
+      <DependentUpon>LiteMapSelectHoverView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\MapThemes\ViewModel\LiteNewMapLayerViewModel.cs" />
+    <Compile Include="Lite\Messenger\LiteGoToWorldRequestMessage.cs" />
+    <Compile Include="Lite\Print\ViewModel\LitePrintViewModel.cs" />
+    <Compile Include="Lite\Queries\View\LiteQueriesControl.xaml.cs">
+      <DependentUpon>LiteQueriesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\ServerInfo\ViewModel\LiteServerInfoViewModel.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Maps\ViewModel\LiteMapsViewModel.cs" />
+    <Compile Include="Lite\MapThemes\ViewModel\LiteMapThemesViewModel.cs" />
+    <Compile Include="Lite\MapThemes\View\LiteThemesControl.xaml.cs">
+      <DependentUpon>LiteThemesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Messenger\LiteGoToGeometryRequestMessage.cs" />
+    <Compile Include="Lite\Messenger\LiteActivateFeatureValueRequestMessage.cs" />
+    <Compile Include="Lite\Messenger\LiteDisplayFeatureCollectionRequestMessage.cs" />
+    <Compile Include="Lite\Messenger\LiteDisplayFeatureDetailsRequestMessage.cs" />
+    <Compile Include="Lite\Messenger\LiteRunningStateMessage.cs" />
+    <Compile Include="Lite\Print\ViewModel\A4Template1\1. HeaderPage\LitePrintA4Template1HeaderPageContext.cs" />
+    <Compile Include="Lite\Print\ViewModel\A4Template1\1. HeaderPage\LitePrintA4Template1HeaderPageView.xaml.cs">
+      <DependentUpon>LitePrintA4Template1HeaderPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Print\ViewModel\A4Template1\2. MainPage\LitePrintA4Template1MainPageContext.cs" />
+    <Compile Include="Lite\Print\ViewModel\A4Template1\2. MainPage\LitePrintA4Template1MainPageView.xaml.cs">
+      <DependentUpon>LitePrintA4Template1MainPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Print\ViewModel\A4Template1\3. FooterPage\LitePrintA4Template1FooterPageContext.cs" />
+    <Compile Include="Lite\Print\ViewModel\A4Template1\3. FooterPage\LitePrintA4Template1FooterPageView.xaml.cs">
+      <DependentUpon>LitePrintA4Template1FooterPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\Print\ViewModel\A4Template1\LitePrintA4Template1SettingsContext.cs" />
+    <Compile Include="Lite\Print\ViewModel\A4Template1\LitePrintA4Template1SettingsControl.xaml.cs">
+      <DependentUpon>LitePrintA4Template1SettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Lite\Queries\ViewModel\LiteQueriesViewModel.cs" />
+    <Compile Include="Lite\Queries\ViewModel\LiteQueryViewModel.cs" />
+    <Compile Include="Lite\Queries\ViewModel\UserQuery\LiteNewUserQueryViewModel.cs" />
+    <Compile Include="Lite\Queries\ViewModel\UserQuery\Modes\LiteNewUserQueryViewModelBuilderMode.cs" />
+    <Compile Include="Lite\Queries\ViewModel\UserQuery\Modes\LiteNewUserQueryViewModelMode.cs" />
+    <Compile Include="Lite\Queries\View\LiteQueryControl.cs" />
+    <Compile Include="Lite\ServiceProviders\Base\LiteWebServiceProviderBase.cs" />
+    <Compile Include="Lite\ServiceProviders\Base\LiteWebGeoLocatorAgentServiceBase.cs" />
+    <Compile Include="Lite\ServiceProviders\OpenStreetMap\LiteOsmGeoLocatorServiceAgent.cs" />
+    <Compile Include="Lite\ServiceProviders\OpenStreetMap\LiteOsmServiceProvider.cs" />
+    <Compile Include="Resources\Localization\ApplicationResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApplicationResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModelLocator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Lite\Authentication\View\LiteAuthenticationDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\EdicionSw\View\EdicionSwView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\Factibilidad\View\LiteClientesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\Factibilidad\View\LiteFactibilidadView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\Factibilidad\View\LiteIncidentesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\Factibilidad\View\LiteInventarioCajaView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\Factibilidad\View\LiteProspectosView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\Factibilidad\View\LiteU2000View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\FeatureCollectionResult\View\LiteFeatureCollectionResultView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\FeatureDetails\View\LiteFeatureDetailsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\FeatureValueActivation\View\LiteFeatureValueActivationSelectionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\MapBar\View\LiteMapBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lite\MapPlaceFinder\View\LiteMapPlaceFinderControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\MapPopupMenu\View\LiteMapPopupMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lite\MapSelectHover\View\LiteMapSelectHoverView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\Maps\View\LiteMapsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\MapThemes\View\LiteThemesControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\MessageBox\View\LiteMessageBoxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lite\Print\ViewModel\A4Template3_Legend\1. HeaderPage\LitePrintA4Template3HeaderPageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\Print\ViewModel\A4Template3_Legend\2. MainPage\LitePrintA4Template3MainPageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\Print\ViewModel\A4Template3_Legend\3. FooterPage\LitePrintA4Template3FooterPageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\Print\ViewModel\A4Template3_Legend\LitePrintA4Template3SettingsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\Print\ViewModel\A4Template2_WithLegend\1. HeaderPage\LitePrintA4Template2HeaderPageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\Print\ViewModel\A4Template2_WithLegend\2. MainPage\LitePrintA4Template2MainPageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\Print\ViewModel\A4Template2_WithLegend\3. FooterPage\LitePrintA4Template2FooterPageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\Print\ViewModel\A4Template2_WithLegend\LitePrintA4Template2SettingsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\Print\ViewModel\A4Template1\1. HeaderPage\LitePrintA4Template1HeaderPageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\Print\ViewModel\A4Template1\2. MainPage\LitePrintA4Template1MainPageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\Print\ViewModel\A4Template1\3. FooterPage\LitePrintA4Template1FooterPageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\Print\ViewModel\A4Template1\LitePrintA4Template1SettingsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lite\WaterQuality\View\LiteChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lite\WaterQuality\View\LiteCreateMission.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lite\WaterQuality\View\LiteStatisticView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lite\WaterQuality\View\LiteViewMission.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lite\WaterQuality\View\LiteWaterQualityView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Application\LiteComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="Resources\Application\LitePopupMenu.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Framework\MapLayerSelectionControl.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Framework\MapZoomControl.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\DataGrid.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Framework\ExpressionBuilderControl.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Application\LiteMapControl.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Application\LiteSlider.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Application\LiteTabControl.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Application\LiteTabItem.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Application\LiteResources.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Framework\MapPanRotateControl.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Framework\ProgressIndicator.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Fonts\GEInspMdSC.TTF">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </Resource>
+    <Resource Include="Resources\Framework\FeatureDetailsPropertyGrid.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Framework\ParameterValuesPropertyGrid.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Framework\PropertyGridCategoryHeader.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Framework\ServiceProviderDatumControl.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Application\Resources.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Application\SharedResources.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\Resources.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Framework\ResizableContentControl.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Framework\Resources.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Framework\SharedResources.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\SharedResources.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Application\LiteQueryControl.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\Button.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\CheckBox.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\ComboBox.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\ComboBoxItem.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\Label.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\ListBox.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\ListBoxItem.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\ProgressBar.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\RadioButton.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\ScrollBar.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\ScrollViewer.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\Slider.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\TabControl.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\TabItem.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\TextBox.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\ToolTip.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\TreeView.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\TreeViewItem.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Common\ValidationToolTip.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Framework\MapThemeLayerControl.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Framework\MapThemesControl.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Framework\TypedValueControl.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Themes\ColorScheme1.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="Lite\Queries\View\LiteQueriesControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\AppManifest.xml" />
+    <Content Include="Service References\ServiceAlmacenaCliente\configuration.svcinfo" />
+    <Content Include="Service References\ServiceAlmacenaCliente\configuration91.svcinfo" />
+    <Content Include="Service References\ServiceAlmacenaCliente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\ServiceAlmacenaIncidente\configuration.svcinfo" />
+    <Content Include="Service References\ServiceAlmacenaIncidente\configuration91.svcinfo" />
+    <Content Include="Service References\ServiceAlmacenaIncidente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\ServiceAlmacenaProspecto\configuration.svcinfo" />
+    <Content Include="Service References\ServiceAlmacenaProspecto\configuration91.svcinfo" />
+    <Content Include="Service References\ServiceAlmacenaProspecto\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference3.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\ServiceEditarLevantamiento\configuration.svcinfo" />
+    <Content Include="Service References\ServiceEditarLevantamiento\configuration91.svcinfo" />
+    <Content Include="Service References\ServiceEditarLevantamiento\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\ServiceEliminaCliente\configuration.svcinfo" />
+    <Content Include="Service References\ServiceEliminaCliente\configuration91.svcinfo" />
+    <Content Include="Service References\ServiceEliminaCliente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference3.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\ServiceEliminaIncidente\configuration.svcinfo" />
+    <Content Include="Service References\ServiceEliminaIncidente\configuration91.svcinfo" />
+    <Content Include="Service References\ServiceEliminaIncidente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\ServiceEliminaProspecto\configuration.svcinfo" />
+    <Content Include="Service References\ServiceEliminaProspecto\configuration91.svcinfo" />
+    <Content Include="Service References\ServiceEliminaProspecto\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference3.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\ServiceFactibilidad1\configuration.svcinfo" />
+    <Content Include="Service References\ServiceFactibilidad1\configuration91.svcinfo" />
+    <Content Include="Service References\ServiceFactibilidad1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference1.cs</LastGenOutput>
+    </Content>
+    <None Include="Service References\ServiceFactibilidadEmpresarial\Lite.ServiceFactibilidadEmpresarial.getFactibilidadEmpresarialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceFactibilidadEmpresarial\WsFactibilidadEmpresarial.wsdl" />
+    <None Include="Service References\ServiceFactibilidadEmpresarial\WsFactibilidadEmpresarial.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceFactibilidadEmpresarial\WsFactibilidadEmpresarial1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceFactibilidadEmpresarial\WsFactibilidadEmpresarial2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceFactibilidadResidencial\Lite.ServiceFactibilidadResidencial.getFactibilidadResidencialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceFactibilidadResidencial\WsFactibilidadResidencial.wsdl" />
+    <None Include="Service References\ServiceFactibilidadResidencial\WsFactibilidadResidencial.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceFactibilidadResidencial\WsFactibilidadResidencial1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceFactibilidadResidencial\WsFactibilidadResidencial2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceFactibilidad\configuration91.svcinfo" />
+    <None Include="Service References\ServiceFactibilidad\configuration.svcinfo" />
+    <None Include="Service References\ServiceFactibilidad\Lite.ServiceFactibilidad.calculaFactibilidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceFactibilidad\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceGestionCuentas1\configuration91.svcinfo" />
+    <None Include="Service References\ServiceGestionCuentas1\configuration.svcinfo" />
+    <None Include="Service References\ServiceGestionCuentas1\Lite.ServiceGestionCuentas1.gestionaCuentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGestionCuentas1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceFactibilidadResidencial\configuration91.svcinfo" />
+    <None Include="Service References\ServiceFactibilidadResidencial\configuration.svcinfo" />
+    <None Include="Service References\ServiceFactibilidadResidencial\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceFactibilidadEmpresarial\configuration91.svcinfo" />
+    <None Include="Service References\ServiceFactibilidadEmpresarial\configuration.svcinfo" />
+    <None Include="Service References\ServiceFactibilidadEmpresarial\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\ServiceGestionCuentas\configuration.svcinfo" />
+    <Content Include="Service References\ServiceGestionCuentas\configuration91.svcinfo" />
+    <Content Include="Service References\ServiceGestionCuentas\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\ServiceGestionPuertos\configuration.svcinfo" />
+    <Content Include="Service References\ServiceGestionPuertos\configuration91.svcinfo" />
+    <Content Include="Service References\ServiceGestionPuertos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\ServiceModificaCliente\configuration.svcinfo" />
+    <Content Include="Service References\ServiceModificaCliente\configuration91.svcinfo" />
+    <Content Include="Service References\ServiceModificaCliente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\ServiceModificaIncidente\configuration.svcinfo" />
+    <Content Include="Service References\ServiceModificaIncidente\configuration91.svcinfo" />
+    <Content Include="Service References\ServiceModificaIncidente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\ServiceU2000\configuration.svcinfo" />
+    <Content Include="Service References\ServiceU2000\configuration91.svcinfo" />
+    <Content Include="Service References\ServiceU2000\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference2.cs</LastGenOutput>
+    </Content>
+    <Content Include="ServiceReferences.ClientConfig">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Service References\ServiceAlmacenaCliente\Lite.ServiceAlmacenaCliente.almacenaUbicacionClienteFVResponse.datasource" />
+    <None Include="Service References\ServiceAlmacenaCliente\WsAlmacenaUbicacionClienteFV.wsdl" />
+    <None Include="Service References\ServiceAlmacenaCliente\WsAlmacenaUbicacionClienteFV.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceAlmacenaCliente\WsAlmacenaUbicacionClienteFV1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceAlmacenaCliente\WsAlmacenaUbicacionClienteFV2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceAlmacenaIncidente\Lite.ServiceAlmacenaIncidente.almacenaUbicacionIncidenteResponse.datasource" />
+    <None Include="Service References\ServiceAlmacenaIncidente\WsAlmacenaUbicacionIncidente.wsdl" />
+    <None Include="Service References\ServiceAlmacenaIncidente\WsAlmacenaUbicacionIncidente.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceAlmacenaIncidente\WsAlmacenaUbicacionIncidente1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceAlmacenaIncidente\WsAlmacenaUbicacionIncidente2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceAlmacenaProspecto\Lite.ServiceAlmacenaProspecto.almacenaUbicacionProspectoFVResponse.datasource" />
+    <None Include="Service References\ServiceAlmacenaProspecto\WsAlmacenaUbicacionProspectoFV1.wsdl" />
+    <None Include="Service References\ServiceAlmacenaProspecto\WsAlmacenaUbicacionProspectoFV3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceAlmacenaProspecto\WsAlmacenaUbicacionProspectoFV31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceAlmacenaProspecto\WsAlmacenaUbicacionProspectoFV32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEditarLevantamiento\EditEnviarLevantamiento.wsdl" />
+    <None Include="Service References\ServiceEditarLevantamiento\EditEnviarLevantamiento.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEditarLevantamiento\EditEnviarLevantamiento1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEditarLevantamiento\EditEnviarLevantamiento2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEditarLevantamiento\Lite.ServiceEditarLevantamiento.enviarLevantamientoResponse.datasource" />
+    <None Include="Service References\ServiceEliminaCliente\Lite.ServiceEliminaCliente.eliminaUbicacionClienteFVResponse.datasource" />
+    <None Include="Service References\ServiceEliminaCliente\WsEliminaUbicacionClienteFV1.wsdl" />
+    <None Include="Service References\ServiceEliminaCliente\WsEliminaUbicacionClienteFV3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEliminaCliente\WsEliminaUbicacionClienteFV31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEliminaCliente\WsEliminaUbicacionClienteFV32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEliminaIncidente\Lite.ServiceEliminaIncidente.eliminaUbicacionIncidenteResponse.datasource" />
+    <None Include="Service References\ServiceEliminaIncidente\WsEliminaUbicacionIncidente.wsdl" />
+    <None Include="Service References\ServiceEliminaIncidente\WsEliminaUbicacionIncidente.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEliminaIncidente\WsEliminaUbicacionIncidente1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEliminaIncidente\WsEliminaUbicacionIncidente2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEliminaProspecto\Lite.ServiceEliminaProspecto.eliminaUbicacionProspectoFVResponse1.datasource" />
+    <None Include="Service References\ServiceEliminaProspecto\WsEliminaUbicacionProspectoFV1.wsdl" />
+    <None Include="Service References\ServiceEliminaProspecto\WsEliminaUbicacionProspectoFV3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEliminaProspecto\WsEliminaUbicacionProspectoFV31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEliminaProspecto\WsEliminaUbicacionProspectoFV32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceFactibilidad1\Lite.ServiceFactibilidad1.calculaFactibilidadResponse.datasource" />
+    <None Include="Service References\ServiceFactibilidad1\WsCalculaFactibilidad.wsdl" />
+    <None Include="Service References\ServiceFactibilidad1\WsCalculaFactibilidad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceFactibilidad1\WsCalculaFactibilidad1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceFactibilidad1\WsCalculaFactibilidad2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceFactibilidad\WsCalculaFactibilidad.wsdl" />
+    <None Include="Service References\ServiceFactibilidad\WsCalculaFactibilidad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceFactibilidad\WsCalculaFactibilidad1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceFactibilidad\WsCalculaFactibilidad2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceGestionCuentas1\WsGestionaInfoCuentas.wsdl" />
+    <None Include="Service References\ServiceGestionCuentas1\WsGestionaInfoCuentas.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceGestionCuentas1\WsGestionaInfoCuentas1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceGestionCuentas1\WsGestionaInfoCuentas2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceGestionCuentas\Lite.ServiceGestionCuentas.gestionaCuentaResponse.datasource" />
+    <None Include="Service References\ServiceGestionCuentas\WsGestionaInfoCuentas.wsdl" />
+    <None Include="Service References\ServiceGestionCuentas\WsGestionaInfoCuentas.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceGestionCuentas\WsGestionaInfoCuentas1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceGestionCuentas\WsGestionaInfoCuentas2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceGestionPuertos\Lite.ServiceGestionPuertos.actualizaPuertosResponse.datasource" />
+    <None Include="Service References\ServiceGestionPuertos\WsGestionaInfoPuertos.wsdl" />
+    <None Include="Service References\ServiceGestionPuertos\WsGestionaInfoPuertos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceGestionPuertos\WsGestionaInfoPuertos1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceGestionPuertos\WsGestionaInfoPuertos2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceModificaCliente\Lite.ServiceModificaCliente.modificaUbicacionClienteFV.datasource" />
+    <None Include="Service References\ServiceModificaCliente\WsModificaUbicacionClienteFV.wsdl" />
+    <None Include="Service References\ServiceModificaCliente\WsModificaUbicacionClienteFV.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceModificaCliente\WsModificaUbicacionClienteFV1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceModificaCliente\WsModificaUbicacionClienteFV2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceModificaIncidente\Lite.ServiceModificaIncidente.modificaUbicacionIncidente.datasource" />
+    <None Include="Service References\ServiceModificaIncidente\WsModificaUbicacionIncidente.wsdl" />
+    <None Include="Service References\ServiceModificaIncidente\WsModificaUbicacionIncidente.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceModificaIncidente\WsModificaUbicacionIncidente1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceModificaIncidente\WsModificaUbicacionIncidente2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceU2000\Lite.ServiceAlmacenaCliente.almacenaUbicacionClienteFVResponse1.datasource" />
+    <None Include="Service References\ServiceU2000\Lite.ServiceU2000.opticalInformationResponse.datasource" />
+    <None Include="Service References\ServiceU2000\WsOpticalInformation.wsdl" />
+    <None Include="Service References\ServiceU2000\WsOpticalInformation.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceU2000\WsOpticalInformation1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Resource Include="Lite\Images\SpatialEye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Localization\ApplicationResources.cs.resx" />
+    <EmbeddedResource Include="Resources\Localization\ApplicationResources.et.resx" />
+    <EmbeddedResource Include="Resources\Localization\ApplicationResources.fi.resx" />
+    <EmbeddedResource Include="Resources\Localization\ApplicationResources.nl.resx" />
+    <EmbeddedResource Include="Resources\Localization\ApplicationResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ApplicationResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Localization\ApplicationResources.de.resx" />
+    <EmbeddedResource Include="Resources\Localization\ApplicationResources.es.resx" />
+    <EmbeddedResource Include="Resources\Localization\ApplicationResources.pt.resx" />
+    <EmbeddedResource Include="Resources\Localization\ApplicationResources.ko.resx" />
+    <EmbeddedResource Include="Resources\Localization\ApplicationResources.fr.resx" />
+    <EmbeddedResource Include="Resources\Localization\ApplicationResources.ru.resx" />
+    <EmbeddedResource Include="Resources\Localization\ApplicationResources.it.resx" />
+    <EmbeddedResource Include="Resources\Localization\ApplicationResources.sv.resx" />
+    <EmbeddedResource Include="Resources\Localization\ApplicationResources.tr.resx" />
+    <EmbeddedResource Include="Resources\Localization\ApplicationResources.ja.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\JavaScript\GoogleStreetView\GoogleStreetViewCheck.js" />
+    <EmbeddedResource Include="Resources\JavaScript\GoogleStreetView\GoogleStreetViewForLocation.js" />
+    <EmbeddedResource Include="Resources\JavaScript\GoogleStreetView\GoogleStreetViewGlobals.js" />
+    <EmbeddedResource Include="Resources\JavaScript\GoogleStreetView\GoogleStreetViewStatus.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Lite\StreetView\Images\streetview.png" />
+    <Resource Include="Lite\StreetView\Images\streetview_bw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Lite\FeatureEdit\View\" />
+    <Folder Include="Lite\WaterQuality\ViewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceFactibilidadEmpresarial\" />
+    <WCFMetadataStorage Include="Service References\ServiceFactibilidadResidencial\" />
+    <WCFMetadataStorage Include="Service References\ServiceFactibilidad\" />
+    <WCFMetadataStorage Include="Service References\ServiceGestionCuentas1\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+      <UserProperties DocumentXCommentEditorState="&lt;HtmlEditState&gt;&#xA;  &lt;Attributes&gt;&#xA;    &lt;Attribute key=&quot;dtscrollpos&quot; valuetype=&quot;integer&quot;&gt;0&lt;/Attribute&gt;&#xA;    &lt;Attribute key=&quot;inheritedMembers&quot; valuetype=&quot;string&quot;&gt;on&lt;/Attribute&gt;&#xA;    &lt;Attribute key=&quot;protectedMembers&quot; valuetype=&quot;string&quot;&gt;on&lt;/Attribute&gt;&#xA;  &lt;/Attributes&gt;&#xA;&lt;/HtmlEditState&gt;" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

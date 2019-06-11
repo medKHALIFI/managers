@@ -1,0 +1,71 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+                    xmlns:sfc="http://schemas.spatialeye.com/clienttoolkit" 
+                    >
+
+  <Style TargetType="sfc:TypedValueControlGeometrySubControl">
+    <Setter Property="IsTabStop" Value="False"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="sfc:TypedValueControlGeometrySubControl">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox IsReadOnly="true" Style="{StaticResource TextBoxNoReadOnlyBackGround}" TextWrapping="NoWrap" Text="{Binding TextValue}" Grid.Column="0" BorderThickness="{TemplateBinding BorderThickness}"/>
+            <Button Content="&#183;&#183;&#183;" Command="{Binding GeometryEditCommand}" ToolTipService.ToolTip="{Binding ApplicationViewModel.Resources.TypedValueGeometryControlEditToolTip, Source={StaticResource Locator}}" ToolTipService.Placement="Bottom" Grid.Column="1" HorizontalAlignment="Right" Width="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="{TemplateBinding BorderThickness}" Padding="0" Margin="0.5,0,0,0"/>
+            <Button Content="+" Command="{Binding GeometryCopyCommand}" ToolTipService.ToolTip="{Binding ApplicationViewModel.Resources.TypedValueGeometryControlCopyToolTip, Source={StaticResource Locator}}" ToolTipService.Placement="Bottom" Grid.Column="2" HorizontalAlignment="Right" Width="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="{TemplateBinding BorderThickness}" Padding="0" Margin="0.5,0,0,0"/>
+            <Button Content="x" Command="{Binding GeometryClearCommand}" ToolTipService.ToolTip="{Binding ApplicationViewModel.Resources.TypedValueGeometryControlClearToolTip, Source={StaticResource Locator}}" ToolTipService.Placement="Bottom" Grid.Column="3" HorizontalAlignment="Right" Width="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="{TemplateBinding BorderThickness}" Padding="0" Margin="0.5,0,0,0"/>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style TargetType="sfc:TypedValueControlJoinSubControl">
+    <Setter Property="IsTabStop" Value="False"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="sfc:TypedValueControlJoinSubControl">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBox IsReadOnly="true" Style="{StaticResource TextBoxNoReadOnlyBackGround}" TextWrapping="NoWrap" Text="{Binding TextValue}" Grid.Column="0" BorderThickness="{TemplateBinding BorderThickness}"/>
+            
+            <Button Content="+" Command="{Binding JoinCopyCommand}" ToolTipService.ToolTip="{Binding ApplicationViewModel.Resources.TypedValueJoinControlCopyToolTip, Source={StaticResource Locator}}" ToolTipService.Placement="Bottom" Grid.Column="1" HorizontalAlignment="Right" Width="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="{TemplateBinding BorderThickness}" Padding="0" Margin="0.5,0,0,0"/>
+            
+            <Button Content="x" Command="{Binding JoinClearCommand}" ToolTipService.ToolTip="{Binding ApplicationViewModel.Resources.TypedValueJoinControlClearToolTip, Source={StaticResource Locator}}" ToolTipService.Placement="Bottom" Grid.Column="2" HorizontalAlignment="Right" Width="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="{TemplateBinding BorderThickness}" Padding="0" Margin="0.5,0,0,0"/>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style TargetType="sfc:TypedValueControl">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="sfc:TypedValueControl">
+          <Grid>
+            <sdk:DatePicker x:Name="DateTimeValuePresenter" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="0" BorderThickness="0.5" Foreground="{StaticResource TextBox.Foreground}"/>
+            <ComboBox x:Name="ListValuePresenter" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="0" BorderThickness="0.5"/>
+            <CheckBox x:Name="BooleanValuePresenter" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="0" BorderThickness="0.5"/>
+            <TextBox x:Name="StringValuePresenter" TextWrapping="NoWrap" Text="Test" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="0" BorderThickness="0.5"/>
+            <TextBox x:Name="NumberValuePresenter" TextWrapping="NoWrap" Text="123" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="0" MaxLength="15" BorderThickness="0.5"/>
+            <sdk:Label x:Name="ReadOnlyValuePresenter" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="0" BorderThickness="0.5"/>
+            <sfc:TypedValueControlGeometrySubControl x:Name="GeometryValuePresenter" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="0" BorderThickness="0.5"/>
+            <sfc:TypedValueControlJoinSubControl x:Name="JoinValuePresenter" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="0" BorderThickness="0.5"/>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>
