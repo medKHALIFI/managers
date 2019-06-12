@@ -19,7 +19,10 @@ namespace Lite
         public LiteStatisticView()
         {
             InitializeComponent();
+            chart.Visibility = Visibility.Collapsed;
         }
+
+    
     }
     // Class to store sales data
     public class SalesInfo
@@ -33,17 +36,17 @@ namespace Lite
     {
         public IEnumerator<SalesInfo> GetEnumerator()
         {
-            yield return new SalesInfo { SaleDate = DateTime.Parse("12/27/2011", CultureInfo.InvariantCulture), Sales = 2041 };
+           // yield return new SalesInfo { SaleDate = DateTime.Parse("12/27/2011", CultureInfo.InvariantCulture), Sales = 10 };
 
-            yield return new SalesInfo { SaleDate = DateTime.Parse("12/28/2011", CultureInfo.InvariantCulture), Sales = 1991 };
+          //  yield return new SalesInfo { SaleDate = DateTime.Parse("12/28/2011", CultureInfo.InvariantCulture), Sales = 3 };
 
-            yield return new SalesInfo { SaleDate = DateTime.Parse("01/01/2010", CultureInfo.InvariantCulture), Sales = 1033 };
+            yield return new SalesInfo { SaleDate = DateTime.Parse("01/01/2010", CultureInfo.InvariantCulture), Sales = 5 };
 
-            yield return new SalesInfo { SaleDate = DateTime.Parse("01/01/2010", CultureInfo.InvariantCulture), Sales = 1167 };
-            yield return new SalesInfo { SaleDate = DateTime.Parse("04/01/2010", CultureInfo.InvariantCulture), Sales = 5815 };
-            yield return new SalesInfo { SaleDate = DateTime.Parse("05/01/2010", CultureInfo.InvariantCulture), Sales = 5586 };
-            yield return new SalesInfo { SaleDate = DateTime.Parse("03/01/2010", CultureInfo.InvariantCulture), Sales = 5064 };
-            yield return new SalesInfo { SaleDate = DateTime.Parse("01/17/2010", CultureInfo.InvariantCulture), Sales = 2268 };
+            yield return new SalesInfo { SaleDate = DateTime.Parse("01/01/2010", CultureInfo.InvariantCulture), Sales = 1 };
+            yield return new SalesInfo { SaleDate = DateTime.Parse("04/01/2010", CultureInfo.InvariantCulture), Sales = 2 };
+            yield return new SalesInfo { SaleDate = DateTime.Parse("05/01/2010", CultureInfo.InvariantCulture), Sales = 9 };
+            yield return new SalesInfo { SaleDate = DateTime.Parse("03/01/2010", CultureInfo.InvariantCulture), Sales = 8 };
+            yield return new SalesInfo { SaleDate = DateTime.Parse("01/17/2010", CultureInfo.InvariantCulture), Sales = 0 };
         }
 
         IEnumerator IEnumerable.GetEnumerator()
