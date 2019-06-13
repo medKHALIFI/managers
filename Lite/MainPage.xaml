@@ -266,9 +266,51 @@
                     </sdk:TabItem>
                     <!-- End View mission-->
 
+            
+            <!--test simo  -->
 
+                    
+
+                    <sdk:TabItem Header="{Binding}"  Style="{StaticResource LiteTabItemStyle}" DataContext="{StaticResource Locator}">
+                        <sdk:TabItem.HeaderTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="16"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Fill="#00FFFFFF" />
+                                    <Path x:Name="outer"  Margin="0,0,4,0"  Stretch="Fill" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"  Visibility="Visible" Width="12" Height="12" Grid.Column="0"/>
+                                    <sdk:Label Content="waterquality" Grid.Column="1"/>
+                                </Grid>
+                            </DataTemplate>
+                        </sdk:TabItem.HeaderTemplate>
+                        <Grid Margin="0,0,0,0">
+                            <Grid VerticalAlignment="Top" Margin="0,15,0,0" >
+                                <sdk:TabControl HorizontalAlignment="Left" Height="477" Margin="0,30,0,0" VerticalAlignment="Top" Width="340" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                    <sdk:TabItem Header="waterquality" Background="#FFD2D4D4" Foreground="#FF1B1B1B" >
+                                        <local:LiteClientesView Height="Auto" HorizontalAlignment="Left" Width="347" Margin="-10,-10,-21,0"/>
+                                    </sdk:TabItem>
+                                    <sdk:TabItem Header="waterquality" Background="#FFD2D4D4" Foreground="#FF1B1B1B">
+                                        <local:LiteCreateMission  Margin="-10,-10,-20,-10" VerticalAlignment="Top" Height="449"/>
+                                    </sdk:TabItem>
+                                    
+                                </sdk:TabControl>
+                            </Grid>
+                            <Grid HorizontalAlignment="Right"  Height="40" VerticalAlignment="Top" Background="{StaticResource SchemeBrush.Background.2}" Margin="0,0,19,0">
+                                <CheckBox x:Name="chkMarca" Height="29" VerticalAlignment="Center"
+                                		Style="{StaticResource MetroCheckBoxStyleLight}" Content="{StaticResource MetroIcon.Content.Locate}"
+                                		ToolTipService.ToolTip="Genera Ubicación" Foreground="Red"
+                                		IsChecked="{Binding MapMarkViewModel.MarcaActiva, Mode=TwoWay,Source={StaticResource Locator}}" 
+                                        Margin="0,5,3,6" HorizontalAlignment="Right" Width="33"/>
+                            </Grid>
+                        </Grid>
+                    </sdk:TabItem>
+
+                    
+            <!-- end test simo-->
                     <!-- FMEJIA: 15-02-2014 COMIENZA PESTAÑA DE FACTIVILIDAD PARA TP-->
-         
+         <!-- 
                     <sdk:TabItem Header="{Binding}"  Style="{StaticResource LiteTabItemStyle}" DataContext="{StaticResource Locator}">
                         <sdk:TabItem.HeaderTemplate>
                             <DataTemplate>
@@ -309,7 +351,7 @@
                             </Grid>
                         </Grid>
                     </sdk:TabItem>
-       
+       -->
                     <!-- FINALZAN CAMBIOS DE PESTAÑA PARA TP-->
 
 
@@ -367,7 +409,7 @@
                                     Style="{StaticResource MetroCheckBoxStyleLight}" Content="{StaticResource MetroIcon.Content.TrailPoint}"
                                     ToolTipService.ToolTip="Genera Ubicación" Foreground="{StaticResource Lite.Brush.Text.Light}"
                                     IsChecked="{Binding MapMarkISViewModel.MarcaActiva, Mode=TwoWay,Source={StaticResource Locator}}" Grid.Row="0"/>
-
+                                
                                 <CheckBox x:Name="chkTrazo" Height="24" HorizontalAlignment="Center" VerticalAlignment="Top" Width="24" Margin="50,0,0,0"
         	                        Style="{StaticResource MetroCheckBoxStyleLight}" Content="{StaticResource MetroIcon.Content.MeasureFree}"
         	                        ToolTipService.ToolTip="Genera Trazo" Foreground="{StaticResource Lite.Brush.Text.Light}"
