@@ -10,80 +10,80 @@
     xmlns:my="clr-namespace:EdicionSwExProperty"
     mc:Ignorable="d" d:DesignWidth="1200">
 
-  <UserControl.Resources>
-    <sfc:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
-  </UserControl.Resources>
+    <UserControl.Resources>
+        <sfc:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </UserControl.Resources>
 
-  <Grid x:Name="LayoutRoot" DataContext="{StaticResource Locator}" MouseRightButtonDown="LayoutRoot_MouseRightButtonDown" KeyDown="LayoutRoot_KeyDown">
+    <Grid x:Name="LayoutRoot" DataContext="{StaticResource Locator}" MouseRightButtonDown="LayoutRoot_MouseRightButtonDown" KeyDown="LayoutRoot_KeyDown">
 
-    <Grid x:Name="ApplicationBackground" d:IsHidden="True"/>
+        <Grid x:Name="ApplicationBackground" d:IsHidden="True"/>
 
-    <Grid x:Name="Application" Opacity="{Binding AuthenticationOpacity.Value}" Background="{StaticResource Lite.Brush.Background.Dark}">
+        <Grid x:Name="Application" Opacity="{Binding AuthenticationOpacity.Value}" Background="{StaticResource Lite.Brush.Background.Dark}">
 
-      <Grid.RowDefinitions>
-        <RowDefinition Height="40"/>
-        <RowDefinition/>
-        <RowDefinition Height="Auto"/>
-      </Grid.RowDefinitions>
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="*"/>
-        <ColumnDefinition Width="Auto"/>
-      </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto" MinWidth="429"/>
+            </Grid.ColumnDefinitions>
 
-      <Grid x:Name="TitleGrid" Background="{StaticResource Lite.Brush.Background.Title}" Grid.ColumnSpan="2" Margin="0,0,0,0" >
-        <Path  Data="{Binding LiteVectorLogo}" Width="32" Height="32" Margin="10,0,0,0" Fill="{StaticResource Lite.Brush.Logo.Dark}" Stretch="Fill" HorizontalAlignment="Left" StrokeThickness="0" />
+            <Grid x:Name="TitleGrid" Background="{StaticResource Lite.Brush.Background.Title}" Grid.ColumnSpan="2" Margin="0,0,0,0" >
+                <Path  Data="{Binding LiteVectorLogo}" Width="32" Height="32" Margin="10,0,0,0" Fill="{StaticResource Lite.Brush.Logo.Dark}" Stretch="Fill" HorizontalAlignment="Left" StrokeThickness="0" />
 
-        <sdk:Label x:Name="LiteLabel" VerticalAlignment="Top" Content="water quality" Foreground="{StaticResource Lite.Brush.Text.Title.Dark}" FontSize="36" HorizontalAlignment="Left" Margin="67,-1,0,0" FontFamily="/Lite;component/Fonts/GEInspMdSC.ttf#GE Inspira Medium SC"/>
-        <sdk:Label x:Name="UserLabel" HorizontalAlignment="Right" Height="19" VerticalAlignment="Top" Width="120" Margin="0,4,32,0" Foreground="{StaticResource Lite.Brush.Text.Title.Dark}" Content="{Binding AuthenticationViewModel.CurrentAuthenticationContext.FullName}" FontWeight="Bold"/>
-        <ComboBox HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,4,9,0" DataContext="{Binding ApplicationViewModel}" ToolTipService.ToolTip="{Binding Resources.ChangeLanguage}" Style="{StaticResource LiteLanguageMenuComboBoxStyle}"/>
-        <HyperlinkButton x:Name="SignOffLink" Command="{Binding AuthenticationViewModel.SignOutCommand}" Content="{Binding ApplicationViewModel.Resources.SignOut}" HorizontalAlignment="Right" Margin="0,20,8,0" VerticalAlignment="Top" FontStyle="Italic" Height="17" Foreground="{StaticResource Lite.Brush.Text.Title.Dark}"/>
-        <Button Style="{StaticResource TraceLoggerButtonStyle}" Width="20" Height="20" HorizontalAlignment="Center" Visibility="{Binding TraceLogger.LoggingEnabledVisibility}"/>
-      </Grid>
+                <sdk:Label x:Name="LiteLabel" VerticalAlignment="Top" Content="water quality" Foreground="{StaticResource Lite.Brush.Text.Title.Dark}" FontSize="36" HorizontalAlignment="Left" Margin="67,-1,0,0" FontFamily="/Lite;component/Fonts/GEInspMdSC.ttf#GE Inspira Medium SC"/>
+                <sdk:Label x:Name="UserLabel" HorizontalAlignment="Right" Height="19" VerticalAlignment="Top" Width="120" Margin="0,4,32,0" Foreground="{StaticResource Lite.Brush.Text.Title.Dark}" Content="{Binding AuthenticationViewModel.CurrentAuthenticationContext.FullName}" FontWeight="Bold"/>
+                <ComboBox HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,4,9,0" DataContext="{Binding ApplicationViewModel}" ToolTipService.ToolTip="{Binding Resources.ChangeLanguage}" Style="{StaticResource LiteLanguageMenuComboBoxStyle}"/>
+                <HyperlinkButton x:Name="SignOffLink" Command="{Binding AuthenticationViewModel.SignOutCommand}" Content="{Binding ApplicationViewModel.Resources.SignOut}" HorizontalAlignment="Right" Margin="0,20,8,0" VerticalAlignment="Top" FontStyle="Italic" Height="17" Foreground="{StaticResource Lite.Brush.Text.Title.Dark}"/>
+                <Button Style="{StaticResource TraceLoggerButtonStyle}" Width="20" Height="20" HorizontalAlignment="Center" Visibility="{Binding TraceLogger.LoggingEnabledVisibility}"/>
+            </Grid>
 
-      <Grid x:Name="MapGrid" Background="White" Grid.Row="1" Grid.Column="0" DataContext="{Binding MapsViewModel.CurrentMap}" Margin="0">
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="*"/>
-          <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
-        <sfc:MapControl x:Name="MapControl" Grid.ColumnSpan="2"/>
-        <local:LiteMapHoverView x:Name="MapHover" DataContext="{Binding MapHoverViewModel, Source={StaticResource Locator}}"  Background="{StaticResource Lite.Brush.Background.Light}" Foreground="{StaticResource Lite.Brush.Background.Dark}" BorderBrush="{StaticResource Lite.Brush.Background.Light}" Grid.ColumnSpan="2"/>
-        <local:LiteMapSelectHoverView x:Name="MapSelectHover" DataContext="{Binding MapSelectHoverViewModel, Source={StaticResource Locator}}" Background="{StaticResource Lite.Brush.Background.Light}" Foreground="{StaticResource Lite.Brush.Background.Dark}" BorderBrush="{StaticResource Lite.Brush.Background.Light}" Grid.ColumnSpan="2"/>
-        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="4,43,4,0" >
-          <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-          </Grid.ColumnDefinitions>
-          <sfc:MapLayerSelectionControl  Visibility="{Binding ViewVisibility}" VerticalAlignment="Top" HorizontalAlignment="Left" SelectionPanelVisibility="Pressed"  Margin="8,8,0,0" HorizontalContentAlignment="Left" DataContext="{Binding MapBackdropLayerModeSelectionViewModel, Source={StaticResource Locator}}"   IsHitTestVisible="{Binding MapsViewModel.CurrentMap.DecoratorIsHitTestVisible, Source={StaticResource Locator}}"/>
-          <sfc:MapZoomControl Grid.Column="1" Margin="0,14,8,0" VerticalAlignment="Top" ZoomPanelVisibility="Auto"/>
-          <sfc:MapPanRotateControl x:Name="MapPanRotate" Grid.Column="2" VerticalAlignment="Top"/>
-        </Grid>
-        <Grid Name="OverviewMapGrid" DataContext="{Binding OverviewMapViewModel, Source={StaticResource Locator}}" Grid.Column="1" Background="Snow"
+            <Grid x:Name="MapGrid" Background="White" Grid.Row="1" Grid.Column="0" DataContext="{Binding MapsViewModel.CurrentMap}" Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <sfc:MapControl x:Name="MapControl" Grid.ColumnSpan="2"/>
+                <local:LiteMapHoverView x:Name="MapHover" DataContext="{Binding MapHoverViewModel, Source={StaticResource Locator}}"  Background="{StaticResource Lite.Brush.Background.Light}" Foreground="{StaticResource Lite.Brush.Background.Dark}" BorderBrush="{StaticResource Lite.Brush.Background.Light}" Grid.ColumnSpan="2"/>
+                <local:LiteMapSelectHoverView x:Name="MapSelectHover" DataContext="{Binding MapSelectHoverViewModel, Source={StaticResource Locator}}" Background="{StaticResource Lite.Brush.Background.Light}" Foreground="{StaticResource Lite.Brush.Background.Dark}" BorderBrush="{StaticResource Lite.Brush.Background.Light}" Grid.ColumnSpan="2"/>
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="4,43,4,0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <sfc:MapLayerSelectionControl  Visibility="{Binding ViewVisibility}" VerticalAlignment="Top" HorizontalAlignment="Left" SelectionPanelVisibility="Pressed"  Margin="8,8,0,0" HorizontalContentAlignment="Left" DataContext="{Binding MapBackdropLayerModeSelectionViewModel, Source={StaticResource Locator}}"   IsHitTestVisible="{Binding MapsViewModel.CurrentMap.DecoratorIsHitTestVisible, Source={StaticResource Locator}}"/>
+                    <sfc:MapZoomControl Grid.Column="1" Margin="0,14,8,0" VerticalAlignment="Top" ZoomPanelVisibility="Auto"/>
+                    <sfc:MapPanRotateControl x:Name="MapPanRotate" Grid.Column="2" VerticalAlignment="Top"/>
+                </Grid>
+                <Grid Name="OverviewMapGrid" DataContext="{Binding OverviewMapViewModel, Source={StaticResource Locator}}" Grid.Column="1" Background="Snow"
               HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,40,0,0" 
               Visibility="{Binding OverviewMapVisibility}"
               IsHitTestVisible="{Binding MapsViewModel.CurrentMap.DecoratorIsHitTestVisible, Source={StaticResource Locator}}">
-          <Border BorderThickness="6, 0, 0, 6" BorderBrush="{StaticResource Lite.Brush.Background.Dark}">
-            <sfc:MapControl x:Name="MapOverview" DataContext="{Binding OverviewMap}"
+                    <Border BorderThickness="6, 0, 0, 6" BorderBrush="{StaticResource Lite.Brush.Background.Dark}">
+                        <sfc:MapControl x:Name="MapOverview" DataContext="{Binding OverviewMap}"
                             Width="{Binding OverviewMapViewModel.Width, FallbackValue=150, Source={StaticResource Locator}}" 
                             Height="{Binding OverviewMapViewModel.Height, FallbackValue=150, Source={StaticResource Locator}}" 
                             Opacity="{Binding OverviewMapViewModel.OverviewMapOpacity.Value, Source={StaticResource Locator}}"/>
-          </Border>
-        </Grid>
+                    </Border>
+                </Grid>
 
-        <sdk:Label x:Name="InteractionMode" IsHitTestVisible="False" 
+                <sdk:Label x:Name="InteractionMode" IsHitTestVisible="False" 
                    Foreground="{StaticResource Lite.Brush.Text.Light}" 
                    Background="{StaticResource Lite.Brush.Background.Dark}" 
                    HorizontalAlignment="Left" VerticalAlignment="Bottom" BorderThickness="8,8,0,0" Padding="4,0,4,0" Margin="8,0,8,8"  OpacityMask="#D8000000"
                    Grid.ColumnSpan="2" Visibility="{Binding DynamicInteractionModeViewVisibility}" Content="{Binding DynamicInteractionModeDescription, FallbackValue=Interaction, Mode=OneWay}"/>
 
-        <sdk:Label x:Name="MapCenter" IsHitTestVisible="{Binding DecoratorIsHitTestVisible}" 
+                <sdk:Label x:Name="MapCenter" IsHitTestVisible="{Binding DecoratorIsHitTestVisible}" 
                    Foreground="{StaticResource Lite.Brush.Text.Light}" 
                    Background="{StaticResource Lite.Brush.Background.Dark}" 
                    HorizontalAlignment="Right" VerticalAlignment="Bottom" BorderThickness="8,8,0,0" Padding="4,0,4,0" Margin="8,0,8,8"  OpacityMask="#D8000000"
                    Grid.ColumnSpan="2" Visibility="{Binding CenterCoordinateViewVisibility}" Content="{Binding CenterCoordinateDescription, FallbackValue=51° 56\' 42.3\'\' N   5° 12\' 29.5\'\' E, Mode=OneWay}"
                    ToolTipService.ToolTip="{Binding SelectedEpsgCoordinateSystem.Name}" ToolTipService.Placement="Top"/>
 
-        <sfc:MapScaleBarControl x:Name="MapScaleBar"  OpacityMask="#D8000000"
+                <sfc:MapScaleBarControl x:Name="MapScaleBar"  OpacityMask="#D8000000"
                                 Foreground="{StaticResource Lite.Brush.Text.Light}" 
                                 Background="{StaticResource Lite.Brush.Background.Dark}" 
                                 BorderBrush="{StaticResource Lite.Brush.Background.DarkMid}" 
@@ -94,91 +94,91 @@
                                 Grid.ColumnSpan="2"
                                 Margin="8" VerticalAlignment="Bottom" Height="26" HorizontalAlignment="Center"/>
 
-        <local:LiteMapBar x:Name="MapBar" DataContext="{Binding MapBarViewModel, Source={StaticResource Locator}}" Margin="0" VerticalAlignment="Top" d:DesignHeight="40" Opacity="0.9" Grid.ColumnSpan="2"/>
+                <local:LiteMapBar x:Name="MapBar" DataContext="{Binding MapBarViewModel, Source={StaticResource Locator}}" Margin="0" VerticalAlignment="Top" d:DesignHeight="40" Opacity="0.9" Grid.ColumnSpan="2"/>
 
-      </Grid>
-
-      <sfc:ResizableContentControl x:Name="RightContentControl" DragBarAlignment="Left" Grid.Column="1" Grid.Row="1"  AllowExpandCollapse="True">
-        <sdk:TabControl x:Name="ToolboxTabControl" Style="{StaticResource LiteTabControlStyle}"
-        Margin="0,0,8,0" SelectedIndex="0" MinWidth="240" MaxWidth="500" Grid.Row="1" Grid.Column="1" Width="360" Padding="0" Background="{StaticResource Lite.Brush.Background.Light}" BorderThickness="0">
-
-          <sdk:TabItem Header="{Binding}" Style="{StaticResource LiteTabItemStyle}">
-            <sdk:TabItem.HeaderTemplate>
-              <DataTemplate>
-                <Grid>
-                  <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="16"/>
-                    <ColumnDefinition Width="*"/>
-                  </Grid.ColumnDefinitions>
-                  <Rectangle Fill="#00FFFFFF" />
-                  <Path x:Name="outer" Margin="0,0,4,0" Data="{StaticResource MetroIcon.Content.World}" Stretch="Fill" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"  Visibility="Visible" Width="12" Height="12" Grid.Column="0"/>
-                  <sdk:Label Content="{Binding ApplicationViewModel.Resources.Maps}" Grid.Column="1"/>
-                </Grid>
-              </DataTemplate>
-            </sdk:TabItem.HeaderTemplate>
-            <Grid>
-              <local:LiteMapsControl Margin="0" DataContext="{Binding MapsViewModel}"/>
             </Grid>
-          </sdk:TabItem>
 
-          <sdk:TabItem Header="{Binding}" Style="{StaticResource LiteTabItemStyle}">
-            <sdk:TabItem.HeaderTemplate>
-              <DataTemplate>
-                <Grid>
-                  <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="16"/>
-                    <ColumnDefinition Width="*"/>
-                  </Grid.ColumnDefinitions>
-                  <Rectangle Fill="#00FFFFFF" />
-                  <Path x:Name="outer" Margin="0,0,4,0"  Data="{StaticResource MetroIcon.Content.Layers}" Stretch="Fill" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"  Visibility="Visible" Width="12" Height="12" Grid.Column="0"/>
-                  <sdk:Label Content="{Binding ApplicationViewModel.Resources.Layers}" Grid.Column="1"/>
-                </Grid>
-              </DataTemplate>
-            </sdk:TabItem.HeaderTemplate>
-            <Grid>
-              <local:LiteThemesControl Margin="0" DataContext="{Binding MapThemesViewModel}"/>
-            </Grid>
-          </sdk:TabItem>
+            <sfc:ResizableContentControl x:Name="RightContentControl" DragBarAlignment="Left" Grid.Column="1" Grid.Row="1"  AllowExpandCollapse="True">
+                <sdk:TabControl x:Name="ToolboxTabControl" Style="{StaticResource LiteTabControlStyle}"
+        Margin="0,0,8,0" SelectedIndex="0" MinWidth="240" MaxWidth="500" Grid.Row="1" Grid.Column="1" Width="500" Padding="0" Background="{StaticResource Lite.Brush.Background.Light}" BorderThickness="0">
 
-          <sdk:TabItem Header="{Binding}"  Style="{StaticResource LiteTabItemStyle}" IsSelected="{Binding FeatureDetailsViewModel.ViewIsActive, Mode=TwoWay}">
-            <sdk:TabItem.HeaderTemplate>
-              <DataTemplate>
-                <Grid>
-                  <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="16"/>
-                    <ColumnDefinition Width="*"/>
-                  </Grid.ColumnDefinitions>
-                  <Rectangle Fill="#00FFFFFF" />
-                  <Path x:Name="outer"  Margin="0,0,4,0" Data="{StaticResource MetroIcon.Content.Details}" Stretch="Fill" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"  Visibility="Visible" Width="12" Height="12" Grid.Column="0"/>
-                  <sdk:Label Content="{Binding ApplicationViewModel.Resources.FeatureDetails}" Grid.Column="1"/>
-                </Grid>
-              </DataTemplate>
-            </sdk:TabItem.HeaderTemplate>
-            <Grid>
-              <local:LiteFeatureDetailsView DataContext="{Binding FeatureDetailsViewModel}"/>
-            </Grid>
-          </sdk:TabItem>
+                    <sdk:TabItem Header="{Binding}" Style="{StaticResource LiteTabItemStyle}">
+                        <sdk:TabItem.HeaderTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="16"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Fill="#00FFFFFF" />
+                                    <Path x:Name="outer" Margin="0,0,4,0" Data="{StaticResource MetroIcon.Content.World}" Stretch="Fill" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"  Visibility="Visible" Width="12" Height="12" Grid.Column="0"/>
+                                    <sdk:Label Content="{Binding ApplicationViewModel.Resources.Maps}" Grid.Column="1"/>
+                                </Grid>
+                            </DataTemplate>
+                        </sdk:TabItem.HeaderTemplate>
+                        <Grid>
+                            <local:LiteMapsControl Margin="0" DataContext="{Binding MapsViewModel}"/>
+                        </Grid>
+                    </sdk:TabItem>
 
-          <sdk:TabItem Header="{Binding}"  Style="{StaticResource LiteTabItemStyle}">
-            <sdk:TabItem.HeaderTemplate>
-              <DataTemplate>
-                <Grid>
-                  <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="16"/>
-                    <ColumnDefinition Width="*"/>
-                  </Grid.ColumnDefinitions>
-                  <Rectangle Fill="#00FFFFFF" />
-                  <Path x:Name="outer"  Margin="0,0,4,0" Data="{StaticResource MetroIcon.Content.Filter}" Stretch="Fill" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"  Visibility="Visible" Width="12" Height="12" Grid.Column="0"/>
-                  <sdk:Label Content="{Binding ApplicationViewModel.Resources.Queries}" Grid.Column="1"/>
-                </Grid>
-              </DataTemplate>
-            </sdk:TabItem.HeaderTemplate>
-            <Grid>
-              <local:LiteQueriesControl DataContext="{Binding QueriesViewModel}"/>
-            </Grid>
-          </sdk:TabItem>
+                    <sdk:TabItem Header="{Binding}" Style="{StaticResource LiteTabItemStyle}">
+                        <sdk:TabItem.HeaderTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="16"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Fill="#00FFFFFF" />
+                                    <Path x:Name="outer" Margin="0,0,4,0"  Data="{StaticResource MetroIcon.Content.Layers}" Stretch="Fill" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"  Visibility="Visible" Width="12" Height="12" Grid.Column="0"/>
+                                    <sdk:Label Content="{Binding ApplicationViewModel.Resources.Layers}" Grid.Column="1"/>
+                                </Grid>
+                            </DataTemplate>
+                        </sdk:TabItem.HeaderTemplate>
+                        <Grid>
+                            <local:LiteThemesControl Margin="0" DataContext="{Binding MapThemesViewModel}"/>
+                        </Grid>
+                    </sdk:TabItem>
 
-            <!-- create mission-->
+                    <sdk:TabItem Header="{Binding}"  Style="{StaticResource LiteTabItemStyle}" IsSelected="{Binding FeatureDetailsViewModel.ViewIsActive, Mode=TwoWay}">
+                        <sdk:TabItem.HeaderTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="16"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Fill="#00FFFFFF" />
+                                    <Path x:Name="outer"  Margin="0,0,4,0" Data="{StaticResource MetroIcon.Content.Details}" Stretch="Fill" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"  Visibility="Visible" Width="12" Height="12" Grid.Column="0"/>
+                                    <sdk:Label Content="{Binding ApplicationViewModel.Resources.FeatureDetails}" Grid.Column="1"/>
+                                </Grid>
+                            </DataTemplate>
+                        </sdk:TabItem.HeaderTemplate>
+                        <Grid>
+                            <local:LiteFeatureDetailsView DataContext="{Binding FeatureDetailsViewModel}"/>
+                        </Grid>
+                    </sdk:TabItem>
+
+                    <sdk:TabItem Header="{Binding}"  Style="{StaticResource LiteTabItemStyle}">
+                        <sdk:TabItem.HeaderTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="16"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Fill="#00FFFFFF" />
+                                    <Path x:Name="outer"  Margin="0,0,4,0" Data="{StaticResource MetroIcon.Content.Filter}" Stretch="Fill" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"  Visibility="Visible" Width="12" Height="12" Grid.Column="0"/>
+                                    <sdk:Label Content="{Binding ApplicationViewModel.Resources.Queries}" Grid.Column="1"/>
+                                </Grid>
+                            </DataTemplate>
+                        </sdk:TabItem.HeaderTemplate>
+                        <Grid>
+                            <local:LiteQueriesControl DataContext="{Binding QueriesViewModel}"/>
+                        </Grid>
+                    </sdk:TabItem>
+
+                    <!-- create mission
                     <sdk:TabItem Header="{Binding}"  Style="{StaticResource LiteTabItemStyle}" DataContext="{StaticResource Locator}">
                         <sdk:TabItem.HeaderTemplate>
                             <DataTemplate>
@@ -199,14 +199,15 @@
                                     <sdk:TabItem Header="Mission" Background="#FFD2D4D4" Foreground="#FF1B1B1B" >
                                         <local:LiteCreateMission Height="Auto" HorizontalAlignment="Left" Width="347" Margin="-10,-10,-21,0"/>
                                     </sdk:TabItem>
-                                   
+
                                 </sdk:TabControl>
                             </Grid>
-                          
+
                         </Grid>
                     </sdk:TabItem>
-<!-- End create mission-->
-            
+                    -->
+                    <!-- End create mission-->
+
                     <!-- chart-->
                     <sdk:TabItem Header="{Binding}"  Style="{StaticResource LiteTabItemStyle}" DataContext="{StaticResource Locator}">
                         <sdk:TabItem.HeaderTemplate>
@@ -237,7 +238,42 @@
                     <!-- End chart-->
 
 
-                    <!-- View mission-->
+
+                    <!-- sensor-->
+                    <sdk:TabItem Header="{Binding}"  Style="{StaticResource LiteTabItemStyle}" DataContext="{StaticResource Locator}">
+                        <sdk:TabItem.HeaderTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="16"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Fill="#00FFFFFF" />
+                                    <Path x:Name="outer"  Margin="0,0,4,0"  Stretch="Fill" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"  Visibility="Visible" Width="12" Height="12" Grid.Column="0"/>
+                                    <sdk:Label Content="Sensor" Grid.Column="1"/>
+                                </Grid>
+                            </DataTemplate>
+                        </sdk:TabItem.HeaderTemplate>
+                        <Grid Margin="0,0,0,0">
+                            <Grid VerticalAlignment="Top" Margin="0,15,0,0" >
+                                <sdk:TabControl HorizontalAlignment="Left" Height="477" Margin="0,30,0,0" VerticalAlignment="Top" Width="340" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                    <sdk:TabItem Header="Create" Background="#FFD2D4D4" Foreground="#FF1B1B1B" >
+                                        <local:LiteCreateSensor Height="Auto" HorizontalAlignment="Left" Width="347" Margin="-10,-10,-21,0"/>
+                                    </sdk:TabItem>
+                                    <sdk:TabItem Header="view" Background="#FFD2D4D4" Foreground="#FF1B1B1B" >
+                                        <local:LiteViewSonsor Height="Auto" HorizontalAlignment="Left" Width="347" Margin="-10,-10,-21,0"/>
+                                    </sdk:TabItem>
+
+                                </sdk:TabControl>
+                            </Grid>
+
+                        </Grid>
+                    </sdk:TabItem>
+                    <!-- End sensor-->
+                    
+
+
+                    <!-- View mission
                     <sdk:TabItem Header="{Binding}"  Style="{StaticResource LiteTabItemStyle}" DataContext="{StaticResource Locator}">
                         <sdk:TabItem.HeaderTemplate>
                             <DataTemplate>
@@ -264,12 +300,13 @@
 
                         </Grid>
                     </sdk:TabItem>
+                    -->
                     <!-- End View mission-->
 
-            
-            <!--test simo  -->
 
-                    
+                    <!--test simo  
+-->
+
 
                     <sdk:TabItem Header="{Binding}"  Style="{StaticResource LiteTabItemStyle}" DataContext="{StaticResource Locator}">
                         <sdk:TabItem.HeaderTemplate>
@@ -281,20 +318,20 @@
                                     </Grid.ColumnDefinitions>
                                     <Rectangle Fill="#00FFFFFF" />
                                     <Path x:Name="outer"  Margin="0,0,4,0"  Stretch="Fill" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"  Visibility="Visible" Width="12" Height="12" Grid.Column="0"/>
-                                    <sdk:Label Content="waterquality" Grid.Column="1"/>
+                                    <sdk:Label Content="Mission" Grid.Column="1"/>
                                 </Grid>
                             </DataTemplate>
                         </sdk:TabItem.HeaderTemplate>
                         <Grid Margin="0,0,0,0">
                             <Grid VerticalAlignment="Top" Margin="0,15,0,0" >
                                 <sdk:TabControl HorizontalAlignment="Left" Height="477" Margin="0,30,0,0" VerticalAlignment="Top" Width="340" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
-                                    <sdk:TabItem Header="waterquality" Background="#FFD2D4D4" Foreground="#FF1B1B1B" >
-                                        <local:LiteClientesView Height="Auto" HorizontalAlignment="Left" Width="347" Margin="-10,-10,-21,0"/>
+                                    <sdk:TabItem Header="View" Background="#FFD2D4D4" Foreground="#FF1B1B1B" >
+                                        <local:LiteViewMission Height="Auto" HorizontalAlignment="Left" Width="347" Margin="-10,-10,-21,0"/>
                                     </sdk:TabItem>
-                                    <sdk:TabItem Header="waterquality" Background="#FFD2D4D4" Foreground="#FF1B1B1B">
+                                    <sdk:TabItem Header="create" Background="#FFD2D4D4" Foreground="#FF1B1B1B">
                                         <local:LiteCreateMission  Margin="-10,-10,-20,-10" VerticalAlignment="Top" Height="449"/>
                                     </sdk:TabItem>
-                                    
+
                                 </sdk:TabControl>
                             </Grid>
                             <Grid HorizontalAlignment="Right"  Height="40" VerticalAlignment="Top" Background="{StaticResource SchemeBrush.Background.2}" Margin="0,0,19,0">
@@ -307,10 +344,10 @@
                         </Grid>
                     </sdk:TabItem>
 
-                    
-            <!-- end test simo-->
+
+                    <!-- end test simo-->
                     <!-- FMEJIA: 15-02-2014 COMIENZA PESTAÑA DE FACTIVILIDAD PARA TP-->
-         <!-- 
+                    <!-- 
                     <sdk:TabItem Header="{Binding}"  Style="{StaticResource LiteTabItemStyle}" DataContext="{StaticResource Locator}">
                         <sdk:TabItem.HeaderTemplate>
                             <DataTemplate>
@@ -356,7 +393,7 @@
 
 
                     <!--PESTAÑA PARA EDICION GSA-->
-         
+
                     <sdk:TabItem Header="{Binding}"  Style="{StaticResource LiteTabItemStyle}" DataContext="{StaticResource Locator}">
                         <sdk:TabItem.HeaderTemplate>
                             <DataTemplate>
@@ -372,7 +409,7 @@
                             </DataTemplate>
                         </sdk:TabItem.HeaderTemplate>
                         <Grid Background="{StaticResource SchemeBrush.Background.5}" Margin="0,0,0,0">
-          
+
 
                             <!--Grid HorizontalAlignment="Left" Width="380" Height="30" VerticalAlignment="Top"  Margin="0,3,0,0" Background="{StaticResource SchemeBrush.Background.5}">
 
@@ -399,8 +436,8 @@
                                     ToolTipService.ToolTip="Actualizar Mapas" Foreground="{StaticResource Lite.Brush.Text.Light}"
                                         Grid.Row="0"/>
                             </Grid-->
-            
-           
+
+
 
                             <Grid  VerticalAlignment="Top" Margin="0,0,0,0" >
 
@@ -409,7 +446,7 @@
                                     Style="{StaticResource MetroCheckBoxStyleLight}" Content="{StaticResource MetroIcon.Content.TrailPoint}"
                                     ToolTipService.ToolTip="Genera Ubicación" Foreground="{StaticResource Lite.Brush.Text.Light}"
                                     IsChecked="{Binding MapMarkISViewModel.MarcaActiva, Mode=TwoWay,Source={StaticResource Locator}}" Grid.Row="0"/>
-                                
+
                                 <CheckBox x:Name="chkTrazo" Height="24" HorizontalAlignment="Center" VerticalAlignment="Top" Width="24" Margin="50,0,0,0"
         	                        Style="{StaticResource MetroCheckBoxStyleLight}" Content="{StaticResource MetroIcon.Content.MeasureFree}"
         	                        ToolTipService.ToolTip="Genera Trazo" Foreground="{StaticResource Lite.Brush.Text.Light}"
@@ -430,41 +467,41 @@
 
                         </Grid>
                     </sdk:TabItem>
-            
-          
+
+
 
                     <!--FINALIZA PESTAÑA EDICION GSA-->
 
                 </sdk:TabControl>
-      </sfc:ResizableContentControl>
+            </sfc:ResizableContentControl>
 
-      <local:LiteMessageBoxView x:Name="ToolboxMessageBoxOverlay" Grid.Column="1" Grid.Row="1" ContentMaxWidth="250"
+            <local:LiteMessageBoxView x:Name="ToolboxMessageBoxOverlay" Grid.Column="1" Grid.Row="1" ContentMaxWidth="250"
                                 DataContext="{Binding ToolboxMessageBoxViewModel}" 
                                 Visibility="{Binding ViewVisibility}" d:IsHidden="True"/>
 
-      <sfc:ResizableContentControl x:Name="BottomContentControl" DataContext="{Binding FeatureCollectionResultViewModel, Source={StaticResource Locator}}"
+            <sfc:ResizableContentControl x:Name="BottomContentControl" DataContext="{Binding FeatureCollectionResultViewModel, Source={StaticResource Locator}}"
                                    DragBarAlignment="Top" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"  AllowExpandCollapse="True" 
                                    IsExpanded="{Binding RequestActivationExpanded, Mode=TwoWay}" 
                                    Visibility="{Binding RequestActivationVisibility, Mode=TwoWay}"
                                    >
 
-        <local:LiteFeatureCollectionResultView Height="171" MinHeight="171" MaxHeight="700"/>
-      </sfc:ResizableContentControl>
+                <local:LiteFeatureCollectionResultView Height="171" MinHeight="171" MaxHeight="700"/>
+            </sfc:ResizableContentControl>
 
-      <local:LiteMapPopupMenu Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" DataContext="{Binding MapPopupViewModel, Source={StaticResource Locator}}"  Visibility="{Binding PopupMenuVisibility}"/>
+            <local:LiteMapPopupMenu Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" DataContext="{Binding MapPopupViewModel, Source={StaticResource Locator}}"  Visibility="{Binding PopupMenuVisibility}"/>
 
-    </Grid>
+        </Grid>
 
-    <local:LiteAuthenticationDialog x:Name="AuthenticationOverlay" 
+        <local:LiteAuthenticationDialog x:Name="AuthenticationOverlay" 
                                 DataContext="{Binding AuthenticationViewModel}" 
                                 Visibility="{Binding ViewVisibility}" d:IsHidden="True"/>
 
-    <local:LiteFeatureValueActivationSelectionView x:Name="SmartLinkSelectionOverlay" 
+        <local:LiteFeatureValueActivationSelectionView x:Name="SmartLinkSelectionOverlay" 
                                                    DataContext="{Binding FeatureValueActivationViewModel}"
                                                    Visibility="{Binding ViewVisibility}" d:IsHidden="True" 
                                                    />
 
-    <sfc:PrintView x:Name="PrintDialogOverlay" 
+        <sfc:PrintView x:Name="PrintDialogOverlay" 
       DataContext="{Binding PrintViewModel, Source={StaticResource Locator}}" 
       Visibility="{Binding ViewIsActive, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay}"  
       Grid.Column="1" Margin="0" 
@@ -473,7 +510,7 @@
                      Width="550" Height="550" 
                      TitleBackgroundBrush="{StaticResource Lite.Brush.Background.Dark}" d:IsHidden="True"/>
 
-    <local:LiteMessageBoxView DataContext="{Binding MessageBoxViewModel}" Visibility="{Binding ViewVisibility}" d:IsHidden="True"/>
-  </Grid>
+        <local:LiteMessageBoxView DataContext="{Binding MessageBoxViewModel}" Visibility="{Binding ViewVisibility}" d:IsHidden="True"/>
+    </Grid>
 
 </UserControl>

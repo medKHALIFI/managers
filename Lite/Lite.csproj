@@ -274,11 +274,17 @@
     <Compile Include="Lite\WaterQuality\View\LiteCreateMission.xaml.cs">
       <DependentUpon>LiteCreateMission.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Lite\WaterQuality\View\LiteCreateSensor.xaml.cs">
+      <DependentUpon>LiteCreateSensor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Lite\WaterQuality\View\LiteStatisticView.xaml.cs">
       <DependentUpon>LiteStatisticView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Lite\WaterQuality\View\LiteViewMission.xaml.cs">
       <DependentUpon>LiteViewMission.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lite\WaterQuality\View\LiteViewSonsor.xaml.cs">
+      <DependentUpon>LiteViewSonsor.xaml</DependentUpon>
     </Compile>
     <Compile Include="Lite\WaterQuality\View\LiteWaterQualityView.xaml.cs">
       <DependentUpon>LiteWaterQualityView.xaml</DependentUpon>
@@ -611,11 +617,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Lite\WaterQuality\View\LiteCreateSensor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Lite\WaterQuality\View\LiteStatisticView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Lite\WaterQuality\View\LiteViewMission.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lite\WaterQuality\View\LiteViewSonsor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
