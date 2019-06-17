@@ -34,7 +34,7 @@ namespace Lite
         private void button__Click(object sender, RoutedEventArgs e)
         {
             // todo
-            MessageBox.Show("Mission created sussfuly");
+            MessageBox.Show("Mission created successfully");
             comboBox_laboratory.SelectedItem = null;
             comboBox_Labasstant.SelectedItem = null;
             comboBox_param_type.SelectedItem = null; 
