@@ -206,7 +206,8 @@
                         </Grid>
                     </sdk:TabItem>
                     -->
-                    <!-- End create mission-->
+                    <!-- End 
+                    mission-->
 
                     <!-- chart-->
                     <sdk:TabItem Header="{Binding}"  Style="{StaticResource LiteTabItemStyle}" DataContext="{StaticResource Locator}">
@@ -240,6 +241,7 @@
 
 
                     <!-- sensor-->
+                    
                     <sdk:TabItem Header="{Binding}"  Style="{StaticResource LiteTabItemStyle}" DataContext="{StaticResource Locator}">
                         <sdk:TabItem.HeaderTemplate>
                             <DataTemplate>
@@ -254,7 +256,14 @@
                                 </Grid>
                             </DataTemplate>
                         </sdk:TabItem.HeaderTemplate>
-                        <Grid Margin="0,0,0,0">
+                        <Grid Margin="0,0,0,0" Background="{StaticResource SchemeBrush.Background.5}" >
+                            <CheckBox x:Name="chkMarca1" Visibility="Visible" Height="24" HorizontalAlignment="Center"  Width="24"  Margin="0,0,0,0" 
+                                    VerticalAlignment="Top"
+                                    Style="{StaticResource MetroCheckBoxStyleLight}" Content="{StaticResource MetroIcon.Content.TrailPoint}"
+                                    ToolTipService.ToolTip="Controle point" Foreground="{StaticResource Lite.Brush.Text.Light}"
+                                    IsChecked="{Binding MapMarkISViewModel.MarcaActiva, Mode=TwoWay,Source={StaticResource Locator}}" Grid.Row="0"/>
+
+
                             <Grid VerticalAlignment="Top" Margin="0,15,0,0" >
                                 <sdk:TabControl HorizontalAlignment="Left" Height="477" Margin="0,30,0,0" VerticalAlignment="Top" Width="340" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
                                     <sdk:TabItem Header="Create" Background="#FFD2D4D4" Foreground="#FF1B1B1B" >

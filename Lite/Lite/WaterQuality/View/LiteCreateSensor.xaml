@@ -12,13 +12,23 @@
 
 
     <Grid x:Name="LayoutRoot" Background="{StaticResource SchemeBrush.Background.5}">
+
+
+        <sdk:Label x:Name="lblLatitud" Content="Lat." Margin="10,63,236,0" Height="23" Visibility="Visible" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtLatitudP" Margin="76,63,0,0" TextWrapping="Wrap" Visibility="Visible"
+                 Text="{Binding MapMarkISViewModel.Latitud , Mode=TwoWay, BindsDirectlyToSource=True}" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="208" ToolTipService.ToolTip="Latitud" AcceptsReturn="True" IsEnabled="False"/>
+
+        <sdk:Label x:Name="lblLongitud" Content="Long." Margin="10,93,230,0" Height="23" Visibility="Visible" VerticalAlignment="Top" />
+        <TextBox x:Name="txtLongitudP" Margin="76,93,0,0" TextWrapping="Wrap" Visibility="Visible"
+               Text="{Binding MapMarkISViewModel.Longitud , Mode=TwoWay, BindsDirectlyToSource=True}" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="208" ToolTipService.ToolTip="Longitud" IsEnabled="False"/>
+
         <sdk:Label x:Name="label" Height="26" Margin="93,10,53,0" VerticalAlignment="Top" Content="create sensor" FontWeight="Bold" FontSize="14"/>
-        <sdk:Label x:Name="label_name" HorizontalAlignment="Left" Height="28" Margin="25,119,0,0" VerticalAlignment="Top" Width="120" Content="name" FontWeight="Bold"/>
-        <sdk:Label x:Name="label_name_Copy" HorizontalAlignment="Left" Height="28" Margin="25,147,0,0" VerticalAlignment="Top" Width="120" Content="type" FontWeight="Bold"/>
-        <sdk:Label x:Name="label_id" HorizontalAlignment="Left" Height="28" Margin="25,91,0,0" VerticalAlignment="Top" Width="120" Content="id" FontWeight="Bold"/>
-        <sdk:Label x:Name="label_id_view" HorizontalAlignment="Left" Height="28" Margin="150,91,0,0" VerticalAlignment="Top" Width="120" FontWeight="Bold"/>
-        <TextBox x:Name="textBox_name" HorizontalAlignment="Left" Height="23" Margin="145,119,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="comboBox_type" HorizontalAlignment="Left" Margin="145,147,0,0" VerticalAlignment="Top" Width="120"/>
+        <sdk:Label x:Name="label_name" HorizontalAlignment="Left" Height="28" Margin="25,191,0,0" VerticalAlignment="Top" Width="120" Content="name" FontWeight="Bold"/>
+        <sdk:Label x:Name="label_name_Copy" HorizontalAlignment="Left" Height="28" Margin="25,219,0,0" VerticalAlignment="Top" Width="120" Content="type" FontWeight="Bold"/>
+        <sdk:Label x:Name="label_id" HorizontalAlignment="Left" Height="28" Margin="25,158,0,0" VerticalAlignment="Top" Width="120" Content="id" FontWeight="Bold"/>
+        <sdk:Label x:Name="label_id_view" HorizontalAlignment="Left" Height="28" Margin="145,158,0,0" VerticalAlignment="Top" Width="120" FontWeight="Bold" Content=" "/>
+        <TextBox x:Name="textBox_name" HorizontalAlignment="Left" Height="23" Margin="145,191,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="comboBox_type" HorizontalAlignment="Left" Margin="145,219,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="button_save" Content="save" HorizontalAlignment="Left" Margin="190,286,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold" Click="button_save_Click"/>
 
     </Grid>

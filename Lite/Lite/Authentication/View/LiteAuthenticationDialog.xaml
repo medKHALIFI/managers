@@ -26,7 +26,7 @@
           <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Path Data="{Binding LiteVectorLogo, Source={StaticResource Locator}}" Width="32" Height="32" Margin="0,6,0,0" Fill="{StaticResource Lite.Brush.Logo.Light}" Stretch="Fill" HorizontalAlignment="Left" StrokeThickness="0" UseLayoutRounding="False" VerticalAlignment="Top" />
-        <sdk:Label Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="36" Foreground="{StaticResource Lite.Brush.Text.Light}" Content="{Binding LiteName, Source={StaticResource Locator}}" Margin="8,0,0,0" FontFamily="/Lite;component/Fonts/GEInspMdSC.TTF#GE Inspira Medium SC" />
+        <sdk:Label Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="36" Foreground="{StaticResource Lite.Brush.Text.Light}" Content="welcome" Margin="8,0,0,0" FontFamily="/Lite;component/Fonts/GEInspMdSC.TTF#GE Inspira Medium SC" />
         <Path Data="M8,47 L388,47" Height="1" Grid.Row="1" Grid.ColumnSpan="2" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Margin="0,5,0,0" Stroke="{StaticResource Lite.Brush.Text.Light}"/>
       </Grid>
 
