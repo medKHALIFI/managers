@@ -11,8 +11,23 @@
     d:DesignHeight="300" d:DesignWidth="400">
 
 
-    <Grid x:Name="LayoutRoot" Background="White">
+    <Grid x:Name="LayoutRoot" Background="{StaticResource SchemeBrush.Background.5}">
         <sdk:Label x:Name="label" Height="26" Margin="93,10,53,0" VerticalAlignment="Top" Content="view sensor" FontWeight="Bold" FontSize="14"/>
+        <ListBox x:Name="listBox_sensor" HorizontalAlignment="Left" Height="100" Margin="36,90,0,0" VerticalAlignment="Top" Width="100">
+            <ListBoxItem Content="sensor 1"></ListBoxItem>
+            <ListBoxItem Content="sensor 2"></ListBoxItem>
+            <ListBoxItem Content="sensor 3"></ListBoxItem>
+            <ListBoxItem Content="sensor 4"></ListBoxItem>
+        </ListBox>
+        <sdk:Label x:Name="label_proprites" HorizontalAlignment="Left" Height="28" Margin="93,233,0,0" VerticalAlignment="Top" Width="120" Content="proprites" FontWeight="Bold" FontSize="14"/>
+        <sdk:Label x:Name="label_id" HorizontalAlignment="Left" Height="28" Margin="36,300,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold" Content="Id"/>
+        <sdk:Label x:Name="label_id_view" HorizontalAlignment="Left" Height="28" Margin="141,300,0,0" VerticalAlignment="Top" Width="120" Content="..."/>
+        <sdk:Label x:Name="label_type" HorizontalAlignment="Left" Height="28" Margin="36,333,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold" Content="Type"/>
+        <sdk:Label x:Name="label_type_view" HorizontalAlignment="Left" Height="28" Margin="141,333,0,0" VerticalAlignment="Top" Width="120" Content="..."/>
+        <sdk:Label x:Name="label_stat" HorizontalAlignment="Left" Height="28" Margin="36,361,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold" Content="Stat"/>
+        <sdk:Label x:Name="label_stat_view" HorizontalAlignment="Left" Height="28" Margin="141,361,0,0" VerticalAlignment="Top" Width="120" Content="..."/>
+        <sdk:Label x:Name="label_name" HorizontalAlignment="Left" Height="28" Margin="36,389,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold" Content="Name"/>
+        <sdk:Label x:Name="label_name_view" HorizontalAlignment="Left" Height="28" Margin="136,389,0,0" VerticalAlignment="Top" Width="120" Content="..."/>
 
     </Grid>
 </UserControl>
