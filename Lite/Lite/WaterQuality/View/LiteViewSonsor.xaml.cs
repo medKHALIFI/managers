@@ -50,5 +50,37 @@ namespace Lite
 
 
         }
+
+        private void button_edit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button_delete_Click(object sender, RoutedEventArgs e)
+        {
+            // MessageBox.Show("MessageBox for Silverlight", "AlertMessageBox", MessageBoxButton.OKCancel);
+
+            if(listBox_sensor.SelectedIndex == -1) {
+                MessageBox.Show("please select sensor");
+
+            }
+            else
+            {
+                MessageBoxResult isConfirmed = MessageBox.Show("are you sure you want delete this mission", "Alert delete", MessageBoxButton.OKCancel);
+
+                if (isConfirmed == MessageBoxResult.OK)
+
+                {
+
+                    //Perfrom some Action;
+                    listBox_sensor.Items.Remove(listBox_sensor.SelectedItem);
+                    label_stat_view.Content = " ";
+
+                    label_name_view.Content = "  ";
+                    label_type_view.Content = "  ";
+                    label_id_view.Content = "  ";
+                }
+            }
+    }
     }
 }
