@@ -10,15 +10,13 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-
 namespace Lite
 {
-    public partial class LiteChart : UserControl
+    public partial class LiteChart1 : UserControl
     {
-        public LiteChart()
+        public LiteChart1()
         {
             InitializeComponent();
         }
     }
-
 }

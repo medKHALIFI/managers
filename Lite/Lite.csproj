@@ -271,6 +271,9 @@
     <Compile Include="Lite\WaterQuality\View\LiteChart.xaml.cs">
       <DependentUpon>LiteChart.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Lite\WaterQuality\View\LiteChart1.xaml.cs">
+      <DependentUpon>LiteChart1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Lite\WaterQuality\View\LiteCreateMission.xaml.cs">
       <DependentUpon>LiteCreateMission.xaml</DependentUpon>
     </Compile>
@@ -610,6 +613,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Lite\WaterQuality\View\LiteChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lite\WaterQuality\View\LiteChart1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

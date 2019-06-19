@@ -42,11 +42,11 @@ namespace Lite
 
             yield return new SalesInfo { SaleDate = DateTime.Parse("01/01/2010", CultureInfo.InvariantCulture), Sales = 5 };
 
-            yield return new SalesInfo { SaleDate = DateTime.Parse("01/01/2010", CultureInfo.InvariantCulture), Sales = 1 };
-            yield return new SalesInfo { SaleDate = DateTime.Parse("04/01/2010", CultureInfo.InvariantCulture), Sales = 2 };
-            yield return new SalesInfo { SaleDate = DateTime.Parse("05/01/2010", CultureInfo.InvariantCulture), Sales = 9 };
-            yield return new SalesInfo { SaleDate = DateTime.Parse("03/01/2010", CultureInfo.InvariantCulture), Sales = 8 };
-            yield return new SalesInfo { SaleDate = DateTime.Parse("01/17/2010", CultureInfo.InvariantCulture), Sales = 0 };
+            yield return new SalesInfo { SaleDate = DateTime.Parse("01/01/2011", CultureInfo.InvariantCulture), Sales = 1 };
+            yield return new SalesInfo { SaleDate = DateTime.Parse("04/01/2012", CultureInfo.InvariantCulture), Sales = 2 };
+            yield return new SalesInfo { SaleDate = DateTime.Parse("05/01/2015", CultureInfo.InvariantCulture), Sales = 9 };
+            yield return new SalesInfo { SaleDate = DateTime.Parse("03/01/2017", CultureInfo.InvariantCulture), Sales = 8 };
+            yield return new SalesInfo { SaleDate = DateTime.Parse("01/17/2019", CultureInfo.InvariantCulture), Sales = 0 };
         }
 
         IEnumerator IEnumerable.GetEnumerator()

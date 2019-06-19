@@ -226,14 +226,19 @@
                         </sdk:TabItem.HeaderTemplate>
                         <Grid Margin="0,0,0,0">
                             <Grid VerticalAlignment="Top" Margin="0,15,0,0" >
-                                <sdk:TabControl HorizontalAlignment="Left" Height="477" Margin="0,30,0,0" VerticalAlignment="Top" Width="340" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
-                                    <sdk:TabItem Header="Mission" Background="#FFD2D4D4" Foreground="#FF1B1B1B" >
-                                        <local:LiteStatisticView Height="Auto" HorizontalAlignment="Left" Width="347" Margin="-10,-10,-21,0"/>
+                                <sdk:TabControl HorizontalAlignment="Left" Height="477" Margin="0,30,0,0" VerticalAlignment="Top" Width="auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                    <sdk:TabItem Header="chart 1" Background="#FFD2D4D4" Foreground="#FF1B1B1B" >
+                                        <local:LiteChart Height="Auto" HorizontalAlignment="Left" Width="auto" Margin="-10,-10,-21,0"/>
+                                    </sdk:TabItem>
+                                    <sdk:TabItem Header="chart 2" Background="#FFD2D4D4" Foreground="#FF1B1B1B">
+                                        <local:LiteChart1  Margin="-10,-10,-20,-10" VerticalAlignment="Top" Height="Auto"  Width="auto"/>
                                     </sdk:TabItem>
 
                                 </sdk:TabControl>
                             </Grid>
-
+                            <Grid HorizontalAlignment="Right"  Height="40" VerticalAlignment="Top" Background="{StaticResource SchemeBrush.Background.2}" Margin="0,0,19,0">
+                             
+                            </Grid>
                         </Grid>
                     </sdk:TabItem>
                     <!-- End chart-->
@@ -269,7 +274,7 @@
                                     <sdk:TabItem Header="Create" Background="#FFD2D4D4" Foreground="#FF1B1B1B" >
                                         <local:LiteCreateSensor Height="Auto" HorizontalAlignment="Left" Width="347" Margin="-10,-10,-21,0"/>
                                     </sdk:TabItem>
-                                    <sdk:TabItem Header="view" Background="#FFD2D4D4" Foreground="#FF1B1B1B" >
+                                    <sdk:TabItem Header="View" Background="#FFD2D4D4" Foreground="#FF1B1B1B" >
                                         <local:LiteViewSonsor Height="Auto" HorizontalAlignment="Left" Width="347" Margin="-10,-10,-21,0"/>
                                     </sdk:TabItem>
 

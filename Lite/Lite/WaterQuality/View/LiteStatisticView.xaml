@@ -44,8 +44,7 @@
                     <StackPanel>
 
                         <Button x:Name="view" Content="Button" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="75"/>
-
-                        <toolkit:Chart x:Name="chart" Height="350.195" Margin="-1216.137,0,0,0" Background="#FF020000" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" HorizontalAlignment="Left" Width="1143.331">
+                        <toolkit:Chart x:Name="chart" Height="204.938" Margin="8.918,0,0,0" Background="#FF020000" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" HorizontalAlignment="Left" Width="266.326">
                             <toolkit:Chart.RenderTransform>
                                 <CompositeTransform Rotation="0.134"/>
                             </toolkit:Chart.RenderTransform>
@@ -58,7 +57,7 @@
 
 
                     </StackPanel>
-                   
+
                 </Grid>
 
             </sdk:TabItem>
@@ -68,15 +67,12 @@
                 <Grid Background = "#FFE5E5E5">
 
                     <StackPanel>
-
                         <toolkit:Chart Margin="-408,-10,0,0">
-                            <toolkit:Chart.Series>
-                                <toolkit:PieSeries IsSelectionEnabled="True"
+                            <toolkit:PieSeries IsSelectionEnabled="True"
                     Title="Water Quality"
                     ItemsSource="{StaticResource SalesInfo}"
-                    IndependentValueBinding="{Binding Path=SaleDate}"
+                    IndependentValueBinding="{Binding SaleDate}"
                     DependentValueBinding="{Binding Sales}" Margin="28,38,209,43" />
-                            </toolkit:Chart.Series>
                         </toolkit:Chart>
 
                     </StackPanel>
